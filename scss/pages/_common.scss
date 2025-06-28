@@ -1,0 +1,31 @@
+@use '../base/_setting' as *;
+/************************
+    common
+**************************/
+
+
+body {
+    font-family: , sans-serif;
+    color: $main-color;
+    font-size: px;
+    -webkit-text-size-adjust: 100%;
+
+    @include sp {
+        font-size: 14px;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $sab-color;
+    cursor: pointer;
+    
+}
