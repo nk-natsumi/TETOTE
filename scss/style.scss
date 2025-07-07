@@ -3,7 +3,11 @@
 
 @use './pages/_common';
 @use './pages/_header';
-@use './pages/top/fv';
-@use './pages/top/about';
+@use './pages/top/top-fv';
+@use './pages/top/top-about';
+@use './pages/top/top-staff';
+@use './pages/top/top-benefits';
+@use './pages/top/top-blog';
+@use './pages/top/top-recruit';
 
 @use './pages/_footer';

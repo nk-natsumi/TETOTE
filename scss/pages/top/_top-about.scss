@@ -1,0 +1,59 @@
+@use '../../base/_setting' as *;
+
+/************************
+    about
+**************************/
+.top-about__inner {
+    margin-top: 101px;
+}
+
+.swiper-slide-active .top-about__img {
+    position: relative;
+    z-index: 1;
+}
+
+
+.top-about__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: margin-top 0.3s ease;
+}
+
+.top-about__slogan {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    text-align: center;
+
+    p {
+        font-size: 2.5rem;
+        background-color: #fff;
+        padding: 7px 11px 17px;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .slogan_02 {
+        margin-top: 7px;
+    }
+}
+
+.top-about__textarea {
+    margin-top: 48px;
+    font-size: 2.25rem;
+    line-height: 1.8;
+    font-weight: bold;
+    text-align: center;
+}
+
+.top-about__text {
+        padding-bottom: 52px;
+    background: url("./img/map.png") center / contain no-repeat;
+
+    p {
+        margin-top: 52px;
+    }
+}

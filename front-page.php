@@ -1,67 +1,90 @@
 <?php get_header(); ?>
 
 <main class="main">
-    <section class="fv">
-        <div class="swiper fv-swiper">
+    <section class="top-fv">
+        <div class="swiper top-fv__swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv01.jpg" alt="" class="fv__img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv01.jpg" alt="" class="top-fv__img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv02.jpg" alt="" class="fv__img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv02.jpg" alt="" class="top-fv__img">
                 </div>
             </div>
         </div>
-        <div class="fv__textarea">
-            <h2 class="fv__title">BECOME A<br>CHALLENGER.</h2>
-            <p class="fv__text">君の挑戦が、意思が、未来を変える</p>
+
+        <div class="top-fv__textarea">
+            <h2 class="top-fv__title">BECOME A<br>CHALLENGER.</h2>
+            <p class="top-fv__text">君の挑戦が、意思が、未来を変える</p>
         </div>
+
         <?php
         $args = array(
-            'post_type' => 'post',        // 投稿タイプ（デフォルトの投稿）
-            'posts_per_page' => 1         // 最新1件だけ取得
+            'post_type'      => 'post',
+            'posts_per_page' => 1
         );
         $latest_post = new WP_Query($args);
 
         if ($latest_post->have_posts()) :
-            while ($latest_post->have_posts()) : $latest_post->the_post(); ?>
-                <section class="fv-blog">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="fv-img"><?php the_post_thumbnail('medium'); ?></div>
-                        <?php endif; ?>
-                        <div class="fv-text">
-                            <span class="date"><?php echo get_the_date(); ?></span>
-                            <h2 class="title"><?php the_title(); ?></h2>
-                        </div>
+            while ($latest_post->have_posts()) : $latest_post->the_post();
+
+                $custom_title = get_field('blog_custom_title');
+        ?>
+                <section class="fv__blog-title">
+                    <a href="<?php echo esc_url(get_permalink()); ?>" class="fv__blog-link flex-box">
+                        <p>NEWS</p>
+                        <h2 class="fv__blog-title">
+                            <?php
+                            $custom_title = get_field('blog_custom_title');
+                            if (!empty($custom_title)) {
+                                echo esc_html($custom_title);
+                            } else {
+                                the_title();
+                            }
+                            ?>
+                        </h2>
+                        <p>VIEW MORE</p>
                     </a>
                 </section>
         <?php
             endwhile;
-            wp_reset_postdata(); // ← 忘れずにリセット！
+            wp_reset_postdata();
         endif;
         ?>
     </section>
 
-    <section id="about" class="about">
-        <div class="about__inner">
-            <div class="swiper about-swiper">
+    <section id="top-about" class="top-about">
+        <div class="top-about__inner">
+            <div class="swiper top-about__swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide01 1.jpg" alt="取り組みイメージ" class="about__img">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide01 1.jpg" alt="取り組みイメージ" class="top-about__img">
+                    </div>
+                    <div class="swiper-slide about-slide02">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide02 1.jpg" alt="取り組みイメージ" class="top-about__img">
                     </div>
                     <div class="swiper-slide">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide02 1.jpg" alt="取り組みイメージ" class="about__img">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide03 1.jpg" alt="取り組みイメージ" class="top-about__img">
                     </div>
                     <div class="swiper-slide">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide03 1.jpg" alt="取り組みイメージ" class="about__img">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide01 1.jpg" alt="取り組みイメージ" class="top-about__img">
+                    </div>
+                    <div class="swiper-slide about-slide02">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide02 1.jpg" alt="取り組みイメージ" class="top-about__img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide03 1.jpg" alt="取り組みイメージ" class="top-about__img">
                     </div>
                 </div>
+                <h2 class="top-about__slogan">
+                    <p>後悔しないキャリアを作る、</p>
+                    <p class="slogan_02">それこそが、我々の使命だ</p>
+                </h2>
             </div>
-            <h2 class="about__slogan">後悔しないキャリアを作る、<br>それこそが、我々の使命だ</h2>
+
         </div>
-        <div class="about__textarea content-wrappe">
-            <div class="about-text">
+        <div class="top-about__textarea content__wrapper">
+            <div class="top-about__text">
                 <p>「人手不足」<br>
                     今の日本が抱えるこの社会課題に挑み、<br>
                     企業と個人の可能性を最大限に引き出す。<br>
@@ -70,112 +93,116 @@
                     「手と手」を取り合っていけるような、<br>
                     持続可能な社会を、一緒に作りませんか？</p>
             </div>
-            <div class="about__btn more-btn">
+            <div class="top-about__btn more-btn">
                 <a href="<?php echo home_url('/about-us/'); ?>">VIEW MORE</a>
             </div>
         </div>
     </section>
 
-    <section id="staff" class="staff">
-        <div class="section-wrapper">
-            <div class="section-title">
-                <div class="title-img">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/member.png" alt="<?php bloginfo('name'); ?>" class="section__title-img">
-                </div>
-                <h2 data-title="staff" class="title">人を知る</h2>
-                <p class="sabtitle">TETOTEの社員がどういった信念を持って働いているのか、<br>一日のスケジュールや仕事内容などを紹介します。</p>
-            </div>
-            <div class="swiper staff__swiper">
-                <div class="swiper-wrapper ">
-                    <?php
-                    $args = array(
-                        'post_type' => 'staff',
-                        'posts_per_page' => 4
-                    );
-                    $staff_query = new WP_Query($args);
-                    if ($staff_query->have_posts()):
-                        while ($staff_query->have_posts()): $staff_query->the_post();
-                    ?>
-                            <div class="swiper-slide staff__slide">
-                                <div class="staff__img-wrap">
-                                    <img src="<?php the_field('staff_img'); ?>" alt="<?php the_title(); ?>" class="staff__img">
+    <section id="top-staff" class="top-staff">
+        <div class="top-title">
+            <h2 data-title="staff" class="main-title"><span>人</span>を知る</h2>
+        </div>
+        <div class="section__wrapper section__title">
+            <p class="sabtitle">TETOTEの社員がどういった信念を持って働いているのか、<br>一日のスケジュールや仕事内容などを紹介します。</p>
+        </div>
+        <div class="swiper staff__swiper">
+            <div class="swiper-wrapper ">
+                <?php
+                $args = array(
+                    'post_type' => 'staff',
+                    'posts_per_page' => 4
+                );
+                $staff_query = new WP_Query($args);
+                if ($staff_query->have_posts()):
+                    while ($staff_query->have_posts()): $staff_query->the_post();
+                ?>
+                        <div class="swiper-slide top-staff__slide">
+                            <div class="top-staff__img-wrap">
+                                <img src="<?php the_field('staff_img'); ?>" alt="<?php the_title(); ?>" class="top-staff__img">
 
-                                    <div class="staff__message">
-                                        <p class="msg1"><?php the_field('staff_message_1'); ?></p>
-                                        <p class="msg2"><?php the_field('staff_message_2'); ?></p>
-                                    </div>
-
-                                    <div class="staff__meta">
-                                        <p class="staff__name"><?php the_title(); ?></p>
-                                        <p class="staff__job"><?php the_field('staff_job'); ?>（<?php the_field('staff_year'); ?>年 入社）</p>
-                                    </div>
+                                <div class="top-staff__message">
+                                    <p class="msg1"><?php the_field('staff_message_1'); ?></p>
+                                    <p class="msg2"><?php the_field('staff_message_2'); ?></p>
                                 </div>
-                            </div>
-                    <?php
-                        endwhile;
-                        wp_reset_postdata();
-                    endif;
-                    ?>
-                </div>
-            </div>
 
-            <div class="about__btn more-btn">
-                <a href="<?php echo home_url('/staff/'); ?>">VIEW MORE</a>
+                                <div class="top-staff__meta">
+                                    <p class="top-staff__job"><?php the_field('staff_job'); ?>　<?php the_field('staff_year'); ?>年入社</p>
+                                    <p class="top-staff__name"><?php the_title(); ?></p>
+                                </div>
+
+                            </div>
+                        </div>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+                ?>
             </div>
         </div>
+
+        <div class="top-staff__btn more-btn">
+            <a href="<?php echo home_url('/staff/'); ?>">VIEW MORE</a>
+        </div>
+
     </section>
 
-    <section id="benefits" class="benefits">
+    <section id="top-benefits" class="top-benefits">
         <div class="section__wrapper">
-            <div class="section-title">
-                <div class="title-img">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/benefits.png" alt="benefits" class="section__title-img">
+            <div class="section__title">
+                <div class="top-title">
+                    <h2 class="main-title"><span>制度・環境</span>を知る</h2>
                 </div>
-                <h2 data-title="staff" class="title"><span>制度・環境</span>を知る</h2>
                 <p class="sabtitle">当社では働く従業員とそのご家族が健やかに過ごせるよう、多様な研修、福利厚生を提供しています。</p>
             </div>
-            <div class="benefits__link-area grid-box">
-                <a href="<?php echo home_url('/career/'); ?>">
-                    <div class="benefits__img">
+            <div class="top-benefits__link flex-box">
+                <a class="top-benefits__item" href="<?php echo home_url('/career/'); ?>">
+                    <div class="top-benefits__img benefits__img01">
                         <p class="link-name-e">Traning And Career</p>
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/career.png" alt="" class="benefits__img">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/career.png" alt="" class="top-benefits__img">
                     </div>
-                    <div class="benefits__text">
+                    <div class="top-benefits__text">
                         <h3 class="link-name-j">研修制度とキャリアパス</h3>
                         <p class="link-text">個々の目標に合わせたキャリアパスを支える、豊富な研修メニューで、あなた自身の成長を強力にサポートします。</p>
                     </div>
-                </a>
-                <a href="<?php echo home_url('/benefits/'); ?>">
-                    <div class="benefits__img">
-                        <p class="link-name-e">Employee Benefitsr</p>
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/welfare.png" alt="" class="benefits__img">
+                    <div class="arrow">
+                        <span></span>
                     </div>
-                    <div class="benefits__text">
+                </a>
+                <a class="top-benefits__item" href="<?php echo home_url('/benefits/'); ?>">
+                    <div class="top-benefits__img benefits__img02">
+                        <p class="link-name-e">Employee Benefitsr</p>
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/welfare.png" alt="" class="top-benefits__img">
+                    </div>
+                    <div class="top-benefits__text">
                         <h3 class="link-name-j">福利厚生</h3>
                         <p class="link-text">TETOTEの福利厚生制度は、従業員の健康と幸福を重視し、働きやすい環境を提供することを目的としています。</p>
+                    </div>
+                    <div class="arrow">
+                        <span></span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="blog">
+    <section id="top-blog" class="top-blog">
         <div class="section__wrapper">
-            <div class="flex-box">
-                <div class="section-title">
-                    <div class="title-img">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog.png" alt="blog" class="blog__title-img">
+            <div class="section__title">
+                <div class="flex-box">
+                    <div class="top-title">
+                        <h2 class="main-title">採用ブログ</h2>
                     </div>
-                    <h2 class="title">採用ブログ</h2>
-                    <p class="sabtitle">採用情報やイベント情報、社員の紹介など、<br>日々の現場の様子をご紹介します。</p>
+                    <div class="top-blog__btn">
+                        <a href="<?php echo home_url('/blog/'); ?>">
+                            VIEW MORE
+                            <p class="arrow"><span></span></p>
+                        </a>
+                    </div>
                 </div>
-                <div class="blog__btn">
-                    <a href="<?php echo home_url('/blog/'); ?>">
-                        <p>VIEW MORE</p>
-                    </a>
-                </div>
+                <p class="sabtitle">採用情報やイベント情報、社員の紹介など、<br>日々の現場の様子をご紹介します。</p>
             </div>
-            <ul class="blog__content grid-box">
+            <ul class="top-blog__content grid-box">
                 <?php
                 $args = array(
                     'post_type' => 'post',
@@ -185,39 +212,58 @@
 
                 if ($blog_query->have_posts()) :
                     while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-                        <li class="blog__item">
-                            <a href="<?php the_permalink(); ?>" class="blog__link">
-                                <div class="blog__inner">
-                                    <div class="blog__img">
-                                        <?php
-                                        if (has_post_thumbnail()) {
-                                            the_post_thumbnail('medium');
-                                        } else {
-                                            echo '<img src="' . get_stylesheet_directory_uri() . '/img/no-image.png" alt="No Image">';
-                                        }
-                                        ?>
-                                    </div>
-
-                                    <div class="blog__text">
-                                        <span class="blog__category">
+                        <li class="top-blog__item">
+                            <article class="top-blog__link">
+                                <a href="<?php the_permalink(); ?>">
+                                    <div class="top-blog__inner flex-box">
+                                        <div class="top-blog__img">
                                             <?php
-                                            $category = get_the_category();
-                                            if (!empty($category)) {
-                                                echo esc_html($category[0]->name); // 最初のカテゴリ名を表示
+                                            if (has_post_thumbnail()) {
+                                                the_post_thumbnail('medium');
+                                            } else {
+                                                echo '<img src="' . get_stylesheet_directory_uri() . '/img/no-image.png" alt="No Image">';
                                             }
                                             ?>
-                                        </span>
-                                        <h3 class="blog__title"><?php the_title(); ?></h3>
-                                        <p class="blog__date"><?php the_time('Y.m.d'); ?></p>
+                                        </div>
+                                        <div class="top-blog__text">
+                                            <span class="top-blog__category">
+                                                <?php
+                                                $category = get_the_category();
+                                                if (!empty($category)) {
+                                                    echo esc_html($category[0]->name);
+                                                }
+                                                ?>
+                                            </span>
+                                            <h3 class="top-blog__title"><?php the_title(); ?></h3>
+                                            <p class="top-blog__date"><?php the_time('Y.m.d'); ?></p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </article>
                         </li>
                 <?php endwhile;
                     wp_reset_postdata();
                 endif;
                 ?>
             </ul>
+        </div>
+    </section>
+
+    <section id="top-recruit" class="top-recruit">
+        <div class="section__wrapper recruit__wrapper">
+            <div class="section-title">
+                <div class="top-title">
+                    <h2 class="main-title">採用情報</h2>
+                </div>
+                <p class="sabtitle">募集要項（職種、業務内容、応募条件、選考フロー）とよくある質問・会社概要などをまとめています。</p>
+            </div>
+           
+                <div class="grid-box more-btn top-recruit__btn">
+                    <a class="top-recruit-btn recruit-item1 " href="<?php echo home_url('/details/'); ?>">募集要項</a>
+                    <a class="top-recruit-btn recruit-item2" href="<?php echo home_url('/faq/'); ?>">よくある質問</a>
+                    <a class="top-recruit-btn recruit-item3" href="<?php echo home_url('/about-us/'); ?>">会社概要</a>
+                </div>
+           
         </div>
     </section>
 

@@ -1,0 +1,98 @@
+@use '../../base/_setting' as *;
+
+/************************
+    staff
+**************************/
+.top-staff {
+    margin-top: 121px;
+
+    .top-title {
+        max-width: 540px;
+        background: url("./img/member.png") center / 100% no-repeat;
+        margin-left: 76px;
+
+        .main-title {
+            position: absolute;
+            top: 42px;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 3.25rem;
+        }
+    }
+
+    .sabtitle {
+        margin-left: 34px;
+    }
+
+    /* 前へ次への矢印カスタマイズ */
+    .swiper-button-prev,
+    .swiper-button-next {
+        height: 50px;
+        width: 50px;
+    }
+
+    /* 前へ次への矢印カスタマイズ */
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        height: 50px;
+        margin: auto;
+        width: 50px;
+    }
+
+    /* 前への矢印カスタマイズ */
+    .swiper-button-prev::after {
+        background-image: url(https://junpei-sugiyama.com/wp-content/uploads/2021/02/e0379d76f3f78d80011fc748c93b6cbe.png);
+    }
+
+    /* 次への矢印カスタマイズ */
+    .swiper-button-next::after {
+        background-image: url(https://junpei-sugiyama.com/wp-content/uploads/2021/02/e1bdcdb129887882c13aaf571f555b16.png);
+    }
+
+    /* 画像サイズ調整 */
+    .swiper-slide img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+.staff__swiper {
+    margin-top: 52px;
+    margin-left: 242px;
+    padding-bottom: 170px;
+}
+
+.top-staff__img-wrap {
+    position: relative;
+}
+
+.top-staff__message {
+    position: absolute;
+    top: 331px;
+
+    p {
+        display: inline-block;
+        font-size: 1.25rem;
+        font-weight: bold;
+        background-color: $btn-color;
+        padding: 5px 7px;
+        margin-top: 6px;
+    }
+}
+
+.top-staff__meta {
+    position: absolute;
+    top: 413px;
+
+    p {
+        font-weight: bold;
+    }
+}
+
+.top-staff__name {
+    margin-top: 16px;
+    font-size: 1.5rem;
+}

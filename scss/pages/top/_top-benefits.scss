@@ -1,0 +1,106 @@
+@use '../../base/_setting' as *;
+
+/************************
+    benefits
+**************************/
+.top-benefits {
+    padding-bottom: 182px;
+
+    .top-title {
+        max-width: 574px;
+        background: url("./img/benefits.png") center / 100% no-repeat;
+        margin: 108px auto 0px;
+
+        .main-title {
+            position: absolute;
+            top: 42px;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 3.25rem;
+            max-width: 416px;
+            width: 100%;
+        }
+    }
+
+    .sabtitle {
+        text-align: center;
+    }
+
+    .flex-box {
+        gap: calc((94/1024)*100%);
+        margin-top: 114px;
+    }
+
+}
+
+.top-benefits__item {
+    max-width: 430px;
+    width: 100%;
+    position: relative;
+    background-color: $bg-color;
+    border-radius: 50%;
+    padding-bottom: 430px;
+}
+
+.top-benefits__img {
+
+    .link-name-e {
+        writing-mode: vertical-rl;
+        font-family: $sab-font;
+        font-weight: bold;
+        letter-spacing: 0.15rem;
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 1.5rem;
+    }
+
+    img {
+        max-width: 327px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.benefits__img02 {
+    img {
+        max-width: 344px;
+    }
+}
+
+
+.link-name-j {
+    position: absolute;
+    bottom: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: $btn-color;
+    padding: 5px 7px;
+}
+
+.link-text {
+    position: absolute;
+    bottom: -75px;
+    line-height: 1.5;
+}
+
+.top-benefits__link {
+    .arrow {
+        background-color:$main-color ;
+        top: 306px;
+        left: 352px;
+        span {
+            background: #fff;
+
+            &::before,
+            &::after {
+                background: #fff;
+            }
+        }
+    }
+}

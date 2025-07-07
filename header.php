@@ -29,16 +29,14 @@
             <?php if (is_front_page()): ?>
                 <h1 class="header__logo">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="home-link">
-                        <?php bloginfo('name'); ?>
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Group 19.svg" alt="<?php bloginfo('name'); ?>" class="header__img">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Group 18.svg" alt="<?php bloginfo('name'); ?>" class="header__img scrolled-logo">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-w.svg" alt="<?php bloginfo('name'); ?>" class="header__img">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-b.svg" alt="<?php bloginfo('name'); ?>" class="header__img scrolled-logo">
                     </a>
                 </h1>
             <?php else: ?>
                 <p class="header__logo">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="home-link">
-                        <?php bloginfo('name'); ?>
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Group 18.svg" alt="<?php bloginfo('name'); ?>" class="header__img">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-b.svg" alt="<?php bloginfo('name'); ?>" class="header__img">
                     </a>
                 </p>
             <?php endif; ?>
@@ -48,7 +46,7 @@
             <ul class="header__list">
                 <li>
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="home-link">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Group 18.svg" alt="<?php bloginfo('name'); ?>" class="hamberger-logo">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-b.svg" alt="<?php bloginfo('name'); ?>" class="hamberger-logo">
                     </a>
                 </li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>/">ホーム</a></li>

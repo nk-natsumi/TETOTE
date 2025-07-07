@@ -5,14 +5,10 @@
 
 
 body {
-    font-family:  sans-serif;
+    font-family: $main-font , sans-serif;
     color: $main-color;
-    font-size: px;
+    font-size: 16px;
     -webkit-text-size-adjust: 100%;
-
-    @include sp {
-        font-size: 14px;
-    }
 }
 
 li {
@@ -25,7 +21,131 @@ img {
 
 a {
     text-decoration: none;
-    color: $sab-color;
+    color: $main-color;
     cursor: pointer;
-    
 }
+
+.section__wrapper {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    grid-template-columns: 200px 50px 100px;
+    grid-template-rows: 100px 30px;
+}
+
+.flex-box {
+    display: flex;
+}
+
+.grid-box{
+    display: grid;
+}
+
+.top-title {
+    position: relative;
+    padding-bottom: 136px;
+
+    .main-title {
+        position: absolute;
+        top: 42px;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 3.25rem;
+
+        span {
+            border-bottom: 2px $main-color solid;
+        }
+    }
+}
+
+.sabtitle {
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.more-btn {
+    a {
+        font-family: $sab-font;
+        display: block;
+        font-size: 1.25rem;
+        font-weight: bold;
+        border: 1px solid $main-color;
+        max-width: 355px;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+        position: relative;
+        transition:  all 0.3s;
+
+
+        &:hover {
+            background-color: $main-color;
+            color: #FFF;
+
+            &::after {
+            border-top: solid 4px #fff;
+            border-right: solid 4px #fff;
+            }
+        }
+
+
+        &::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border: 0;
+            border-top: solid 4px $main-color;
+            border-right: solid 4px $main-color;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            bottom: 50%;
+            margin: auto;
+            transition:  all 0.3s;
+        }
+    }
+}
+
+.arrow {
+        position: absolute;
+        top: -21px;
+        left: -71px;
+        background-color: #fff;
+        border: $main-color solid 1px;
+        padding: 27px 20px;
+        border-radius: 50%;
+
+        span {
+            display: block;
+            width: 16px;
+            height: 2px;
+            background: $main-color;
+            position: relative;
+
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: '';
+                right: 1px;
+                width: 2px;
+                height: 10px;
+                background: $main-color;
+                border-radius: 4px;
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                top: -1px;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                bottom: -1px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
