@@ -1,17 +1,18 @@
 <footer class="footer">
+    <div class="footer__upper">
     <div class="footer__entry-box">
-        <p>わたしたちと一緒に働く仲間を募集中です。<br>
+        <p class="footer__entry-text">わたしたちと一緒に働く仲間を募集中です。<br>
             少数精鋭のチームで、<br>あなたも会社も一緒に成長していきましょう。</p>
-        <div class="top-entry-btn">
+        <div class=" more-btn footer__entry-btn">
             <a href="<?php echo home_url('/entry/'); ?>">ENTRY</a>
         </div>
     </div>
-    <div class="footer__inner">
-        <div class="">
+    </div>
+    <div class="footer__main">
+        <div class="footer__inner flex-box">
             <?php if (is_front_page()): ?>
                 <h1 class="footer__logo">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="home-link">
-                        <?php bloginfo('name'); ?>
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-b.svg" alt="<?php bloginfo('name'); ?>" class="footer__img">
                     </a>
                 </h1>
@@ -26,22 +27,25 @@
 
             <nav id="footer__nav" class="footer__nav">
                 <ul class="footer__list">
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/">ホーム</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/about.us/">TETOTEについて</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/staff/">人を知る</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/company/" <?php if (is_page('company')) echo ' class="current"'; ?>>研修制度とキャリアパス</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/benefits/" <?php if (is_single() || is_archive() || is_home()) echo ' class="current"'; ?>>福利厚生</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/blog/" <?php if (is_page('contact')) echo ' class="current"'; ?>>採用ブログ</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/details/">募集要項</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/faq/">よくある質問</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/about.us/#company">会社概要</a></li>
+                    <li class="footer__item footer__item-upper"><a href="<?php echo esc_url(home_url('/')); ?>/">ホーム</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/about.us/">TETOTEについて</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/staff/">人を知る</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/company/" <?php if (is_page('company')) echo ' class="current"'; ?>>研修制度とキャリアパス</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/benefits/" <?php if (is_single() || is_archive() || is_home()) echo ' class="current"'; ?>>福利厚生</a>
+                    </li>
+
+                    <li class="footer__item footer__item-lower"><a href="<?php echo esc_url(home_url('/')); ?>/blog/" <?php if (is_page('contact')) echo ' class="current"'; ?>>採用ブログ</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/details/">募集要項</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/faq/">よくある質問</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/about.us/#company">会社概要</a>
+                    </li>
                 </ul>
             </nav>
         </div>
 
-        <div class="flex-box">
+        <div class="footer__sns-box flex-box">
             <small class="copyright">&copy;2024 TETOTE All Right Reserved.</small>
-            <ul class="sns-list">
+            <ul class="sns-list flex-box">
                 <li class="sns-item">
                     <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/facebook-icon.png" alt="Facebook">

@@ -25,11 +25,11 @@
 
 <body>
     <header class="header <?php if (!is_front_page()) echo 'scrolled'; ?>">
-        <div class="header__inner">
+        <div class="header__bar flex-box">
             <?php if (is_front_page()): ?>
                 <h1 class="header__logo">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="home-link">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-w.svg" alt="<?php bloginfo('name'); ?>" class="header__img">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-w.svg" alt="<?php bloginfo('name'); ?>" class="header__img main-logo">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-b.svg" alt="<?php bloginfo('name'); ?>" class="header__img scrolled-logo">
                     </a>
                 </h1>
@@ -40,34 +40,48 @@
                     </a>
                 </p>
             <?php endif; ?>
+
+            <li class="header__bar-btn header__link">
+                <a class="details-btn" href="<?php echo esc_url(home_url('/')); ?>/details/">募集要項</a>
+                <a class="entry-btn" href="<?php echo esc_url(home_url('/')); ?>/entry/">ENTRY</a>
+            </li>
+
+            <button type="button" class="menu-trigger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
 
-        <nav id="header__nav" class="header__nav">
-            <ul class="header__list">
-                <li>
+        <div id="hamburger__menu" class="hamburger__menu">
+            <div class="hamburger__inner">
+                <h2 class="hamburger__logo">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="home-link">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-b.svg" alt="<?php bloginfo('name'); ?>" class="hamberger-logo">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-b.svg" alt="<?php bloginfo('name'); ?>" class="hamburger__logo-img">
                     </a>
-                </li>
-                <li><a href="<?php echo esc_url(home_url('/')); ?>/">ホーム</a></li>
-                <li><a href="<?php echo esc_url(home_url('/')); ?>/#about">私たちの取り組み</a></li>
-                <li><a href="<?php echo esc_url(home_url('/')); ?>/#service">事業内容</a></li>
-                <li><a href="<?php echo esc_url(home_url('/')); ?>/company/" <?php if (is_page('company')) echo ' class="current"'; ?>>会社概要</a></li>
-                <li><a href="<?php echo esc_url(home_url('/')); ?>/news/" <?php if (is_single() || is_archive() || is_home()) echo ' class="current"'; ?>>お知らせ</a></li>
-                <li><a href="<?php echo esc_url(home_url('/')); ?>/contact/" <?php if (is_page('contact')) echo ' class="current"'; ?>>お問い合わせ</a></li>
-            </ul>
+                </h2>
+                <nav class="hamburger__nav">
+                    <ul class="hamburger__list flex-box">
+                        <li class="hamburger-item">
+                            <a href="<?php echo esc_url(home_url('/')); ?>/">ABOUT US<br><span>TETOTEについて</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/#about">STAFF<br><span>社員について</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/#service">BLOG<br><span>採用ブログ</span></a>
+                        </li>
+                        <li class="hamburger-item">
+                            <a href="<?php echo esc_url(home_url('/')); ?>/company/" <?php if (is_page('company')) echo ' class="current"'; ?>>BENEFITS<br><span>福利厚生について</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/news/" <?php if (is_single() || is_archive() || is_home()) echo ' class="current"'; ?>>CARRER<br><span>研修制度とキャリアパス</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/contact/" <?php if (is_page('contact')) echo ' class="current"'; ?>>FAQ<br><span>よくある質問</span></a>
+                        </li>
+                    </ul>
 
-            <ul class="header__link">
-                <li class="details-btn"><a href="<?php echo esc_url(home_url('/')); ?>/details/">募集要項</a></li>
-                <li class="entry-btn"><a href="<?php echo esc_url(home_url('/')); ?>/entry/">ENTRY</a></li>
-            </ul>
-        </nav>
+                    <ul class="hamburger__link header__link">
+                        <a class="details-btn" href="<?php echo esc_url(home_url('/')); ?>/details/">募集要項</a>
+                        <a class="entry-btn" href="<?php echo esc_url(home_url('/')); ?>/entry/">ENTRY</a>
+                    </ul>
+                </nav>
 
-        <button type="button" class="menu-trigger" aria-label="メニュー">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+            </div>
+        </div>
 
     </header>
 

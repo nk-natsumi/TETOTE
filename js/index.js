@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $(".menu-trigger").click(function () {
         $(this).toggleClass("active");
-        $(".header__nav, .overlay").toggleClass("active");
+        $(".hamburger__menu, .header__bar , body").toggleClass("active");
 
     })
 

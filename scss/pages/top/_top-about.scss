@@ -3,8 +3,9 @@
 /************************
     about
 **************************/
-.top-about__inner {
-    margin-top: 101px;
+
+.top-about{
+    margin-top: calc(100vh + 101px);
 }
 
 .swiper-slide-active .top-about__img {

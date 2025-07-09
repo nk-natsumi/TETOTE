@@ -2,3 +2,117 @@
 /************************
     top
 **************************/
+
+.top-fv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.top-fv__img {
+    height: 100vh;
+}
+
+.top-fv__textarea {
+    position: absolute;
+    top: calc((286/823)*100%);
+    z-index: 4;
+    width: 100%;
+}
+
+.top-fv__title {
+    font-family: $sab-font;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #fff;
+    position: absolute;
+    left: calc((66/1440)*100%);
+}
+
+.top-fv__text {
+    margin-top: 316px;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    width: 485px;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 54px;
+        border-right: 30px solid transparent;
+        border-top: 54px solid $main-color;
+        z-index: -1; // 台形を文字の背面に
+    }
+}
+
+.fv__blog {
+    a {
+        position: absolute;
+        bottom: 38px;
+        left: calc((71/1440)*100%);
+        z-index: 4;
+        width: calc((1263/1440)*100%);
+        border: $main-color 1px solid;
+        border-radius: 50px;
+        margin: 0 auto;
+        background-color: #fff;
+        color: $main-color;
+    }
+}
+
+.fv__blog-left {
+    font-family: $sab-font;
+    background-color: $main-color;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    width: calc((186/1263)*100%);
+    padding: 19px 0;
+    border-radius: 50px 0 0 50px;
+}
+
+.fv__blog-title {
+    padding: 23px 0;
+    margin-left: 90px;
+}
+
+.fv__blog-btn {
+    font-family: $sab-font;
+    font-size: 0.875rem;
+    font-weight: bold;
+    position: relative;
+    padding: 24px 0;
+    position: absolute;
+    right: 63px;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        right: -16px;
+        width: 2px;
+        height: 8px;
+        background: $main-color;
+    }
+
+    &::before {
+        top: 29px;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        bottom: 29.5px;
+        transform: rotate(-45deg);
+    }
+}

@@ -21,23 +21,37 @@
         }
     }
 
-    .sabtitle{
+    .sabtitle {
         text-align: center;
         margin-top: 10px;
     }
 
-    .top-recruit__btn{
-        margin-top: 64px;
-    display: grid;
-    grid-template-columns: 470px 470px;
-    gap: calc((52/1024)*100%);
+    .top-recruit__btn {
+        margin: 64px 34px 0;
 
-    a{
+        .flex-box {
+            gap: calc((52/1024)*100%);
 
-        max-width: 470px;
-        background-color: #fff;
-        border: none;
-        padding: 50px 0;
+            a {
+                max-width: 470px;
+            }
+        }
+
+        a {
+            background-color: #fff;
+            border: none;
+            padding: 50px 0;
+
+            &:hover {
+                background-color: $main-color;
+            }
+        }
     }
+
+    .recruit-item3 a {
+        margin-top: 21px;
+        max-width: 956px;
+        width: 100%;
     }
 }
+

@@ -2,3 +2,109 @@
 /************************
     footer
 **************************/
+
+.footer{
+    padding-bottom: 506px;
+    position: relative;
+}
+.footer__upper {
+    position: relative;
+    background: url(./img/cta\ 1.jpg) center / cover no-repeat;
+    padding-bottom: 488.32px;
+}
+
+.footer__entry-box {
+    max-width: calc((956/1440)*100%);
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 352px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 20px;
+    z-index: 5;
+    
+}
+
+.footer__entry-text {
+    line-height: 1.5;
+}
+
+.footer__entry-btn {
+    a {
+        max-width:  calc((556/956)*100%);
+        padding: 27px 0;
+        background-color: $btn-color;
+        border: none;
+        margin-top: 31px;
+
+    }
+}
+
+.footer__main {
+    position: absolute;
+    top: 488.32px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width:  calc((1312/1440)*100%);
+    width: 100%;
+    background-color: $bg-color;
+    border-radius: 0 0 20px 20px;
+    padding: 0 20px 61px;
+    
+}
+
+.footer__inner {
+    margin: 198px auto 0;
+    max-width: 956px;
+    gap: calc((109/956))*100%;
+}
+
+.footer__logo {
+    a {
+        display: inline-block;
+    }
+
+    img {
+        max-width: 250px;
+
+    }
+}
+.footer__item{
+    display: flex;
+    gap: 22px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.footer__item-upper{
+    margin-top: 25px;
+}
+
+.footer__item-lower{
+    margin-top: 41px;
+}
+
+.footer__sns-box {
+    max-width: 956px;
+    margin: 0 auto;
+    margin-top: 61px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright{
+    font-size: 0.75rem;
+    font-family: $sab-font;
+}
+
+.sns-list{
+    gap: 16px;
+
+    .sns-item{
+        max-width: 24px;
+        width: 100%;
+    }
+}

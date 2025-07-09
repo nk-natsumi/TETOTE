@@ -30,10 +30,10 @@
 
                 $custom_title = get_field('blog_custom_title');
         ?>
-                <section class="fv__blog-title">
+                <section class="fv__blog">
                     <a href="<?php echo esc_url(get_permalink()); ?>" class="fv__blog-link flex-box">
-                        <p>NEWS</p>
-                        <h2 class="fv__blog-title">
+                        <p class="fv__blog-left" >NEWS</p>
+                        <p class="fv__blog-title">
                             <?php
                             $custom_title = get_field('blog_custom_title');
                             if (!empty($custom_title)) {
@@ -42,8 +42,8 @@
                                 the_title();
                             }
                             ?>
-                        </h2>
-                        <p>VIEW MORE</p>
+                        </p>
+                        <p class="fv__blog-btn">VIEW MORE</p>
                     </a>
                 </section>
         <?php
@@ -257,13 +257,16 @@
                 </div>
                 <p class="sabtitle">募集要項（職種、業務内容、応募条件、選考フロー）とよくある質問・会社概要などをまとめています。</p>
             </div>
-           
-                <div class="grid-box more-btn top-recruit__btn">
+
+            <div class="more-btn top-recruit__btn">
+                <div class="flex-box">
                     <a class="top-recruit-btn recruit-item1 " href="<?php echo home_url('/details/'); ?>">募集要項</a>
                     <a class="top-recruit-btn recruit-item2" href="<?php echo home_url('/faq/'); ?>">よくある質問</a>
-                    <a class="top-recruit-btn recruit-item3" href="<?php echo home_url('/about-us/'); ?>">会社概要</a>
                 </div>
-           
+                <div class="recruit-item3">
+                <a class="top-recruit-btn recruit-item3" href="<?php echo home_url('/about-us/'); ?>">会社概要</a>
+            </div></div>
+
         </div>
     </section>
 
