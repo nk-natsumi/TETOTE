@@ -32,7 +32,7 @@
         ?>
                 <section class="fv__blog">
                     <a href="<?php echo esc_url(get_permalink()); ?>" class="fv__blog-link flex-box">
-                        <p class="fv__blog-left" >NEWS</p>
+                        <p class="fv__blog-left">NEWS</p>
                         <p class="fv__blog-title">
                             <?php
                             $custom_title = get_field('blog_custom_title');
@@ -111,7 +111,9 @@
                 <?php
                 $args = array(
                     'post_type' => 'staff',
-                    'posts_per_page' => 4
+                    'posts_per_page' => 6,
+                    'orderby'        => 'date',    // 投稿日時で並べ替え（デフォルト）
+                    'order'          => 'ASC',   // 昇順 → 古い順
                 );
                 $staff_query = new WP_Query($args);
                 if ($staff_query->have_posts()):
@@ -140,10 +142,19 @@
                 ?>
             </div>
         </div>
+        <div class="top-staff__controls">
+            <div class="top-staff__btn more-btn">
+                <a href="<?php echo home_url('/staff/'); ?>">VIEW MORE</a>
+            </div>
 
-        <div class="top-staff__btn more-btn">
-            <a href="<?php echo home_url('/staff/'); ?>">VIEW MORE</a>
+            <div class="swiper-button-prev">
+                <span></span>
+            </div>
+            <div class="swiper-button-next">
+                <span></span>
+            </div>
         </div>
+
 
     </section>
 
@@ -155,7 +166,7 @@
                 </div>
                 <p class="sabtitle">当社では働く従業員とそのご家族が健やかに過ごせるよう、多様な研修、福利厚生を提供しています。</p>
             </div>
-            <div class="top-benefits__link flex-box">
+            <div class="top-benefits__link grid-box">
                 <a class="top-benefits__item" href="<?php echo home_url('/career/'); ?>">
                     <div class="top-benefits__img benefits__img01">
                         <p class="link-name-e">Traning And Career</p>
@@ -171,7 +182,7 @@
                 </a>
                 <a class="top-benefits__item" href="<?php echo home_url('/benefits/'); ?>">
                     <div class="top-benefits__img benefits__img02">
-                        <p class="link-name-e">Employee Benefitsr</p>
+                        <p class="link-name-e">Employee Benefits</p>
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/welfare.png" alt="" class="top-benefits__img">
                     </div>
                     <div class="top-benefits__text">
@@ -250,24 +261,24 @@
     </section>
 
     <section id="top-recruit" class="top-recruit">
-        <div class="section__wrapper recruit__wrapper">
-            <div class="section-title">
-                <div class="top-title">
-                    <h2 class="main-title">採用情報</h2>
-                </div>
-                <p class="sabtitle">募集要項（職種、業務内容、応募条件、選考フロー）とよくある質問・会社概要などをまとめています。</p>
-            </div>
-
-            <div class="more-btn top-recruit__btn">
-                <div class="flex-box">
-                    <a class="top-recruit-btn recruit-item1 " href="<?php echo home_url('/details/'); ?>">募集要項</a>
-                    <a class="top-recruit-btn recruit-item2" href="<?php echo home_url('/faq/'); ?>">よくある質問</a>
-                </div>
-                <div class="recruit-item3">
-                <a class="top-recruit-btn recruit-item3" href="<?php echo home_url('/about-us/'); ?>">会社概要</a>
-            </div></div>
-
+        <div class="top-title">
+            <h2 class="main-title">採用情報</h2>
         </div>
+        <div class="recruit__wrapper section-title">
+            <p class="sabtitle">募集要項（職種、業務内容、応募条件、選考フロー）とよくある質問・会社概要などをまとめています。</p>
+        </div>
+
+        <div class="more-btn top-recruit__btn">
+            <div class="flex-box">
+                <a class="top-recruit-btn recruit-item1 " href="<?php echo home_url('/details/'); ?>">募集要項</a>
+                <a class="top-recruit-btn recruit-item2" href="<?php echo home_url('/faq/'); ?>">よくある質問</a>
+            </div>
+            <div class="recruit-item3">
+                <a class="top-recruit-btn recruit-item3" href="<?php echo home_url('/about-us/'); ?>">会社概要</a>
+            </div>
+        </div>
+
+
     </section>
 
 

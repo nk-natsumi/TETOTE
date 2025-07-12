@@ -27,19 +27,24 @@ a {
 }
 
 .section__wrapper {
-    max-width: 1024px;
+    max-width: clamp(21.313rem, 4.088rem + 79.88vw, 64rem);
     width: 100%;
     margin: 0 auto;
-
+    padding: 0 17px;
+    box-sizing: border-box;
     grid-template-columns: 200px 50px 100px;
     grid-template-rows: 100px 30px;
+
+    @include sp{
+        margin: 0;
+    }
 }
 
 .flex-box {
     display: flex;
 }
 
-.grid-box{
+.grid-box {
     display: grid;
 }
 
@@ -49,13 +54,20 @@ a {
 
     .main-title {
         position: absolute;
-        top: 42px;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%);
-        font-size: 3.25rem;
+        transform: translate(-50%,-50%);
+        font-size: clamp(2rem, -0.222rem + 4.63vw, 3.25rem);
+        
+
+        @include sp{
+            left: 67px;
+        }
 
         span {
-            border-bottom: 2px $main-color solid;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+            
         }
     }
 }
@@ -69,16 +81,17 @@ a {
     a {
         font-family: $sab-font;
         display: block;
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 0.556rem + 0.93vw, 1.25rem);
         font-weight: bold;
         border: 1px solid $main-color;
-        max-width: 355px;
+        max-width: clamp(17.313rem, 8.646rem + 18.06vw, 22.188rem);
         margin: 0 auto;
         width: 100%;
         text-align: center;
         padding: 30px 0;
         position: relative;
-        transition:  all 0.3s;
+        transition: all 0.3s;
+        line-height: 1;
 
 
         &:hover {
@@ -86,8 +99,8 @@ a {
             color: #FFF;
 
             &::after {
-            border-top: solid 4px #fff;
-            border-right: solid 4px #fff;
+                border-top: solid 4px #fff;
+                border-right: solid 4px #fff;
             }
         }
 
@@ -102,51 +115,56 @@ a {
             transform: rotate(45deg);
             position: absolute;
             top: 50%;
-            right: 20px;
+            right: 24px;
             bottom: 50%;
             margin: auto;
-            transition:  all 0.3s;
+            transition: all 0.3s;
         }
     }
 }
 
 .arrow {
-        position: absolute;
-        top: -21px;
-        left: -71px;
-        background-color: #fff;
-        border: $main-color solid 1px;
-        padding: 27px 20px;
-        border-radius: 50%;
+    position: absolute;
+    top: -21px;
+    left: -71px;
+    background-color: #fff;
+    border: $main-color solid 1px;
+    padding: 27px 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 
-        span {
-            display: block;
-            width: 16px;
-            height: 2px;
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    span {
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: $main-color;
+        position: relative;
+
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            right: 1px;
+            width: 2px;
+            height: 10px;
             background: $main-color;
-            position: relative;
+            border-radius: 4px;
+            transform: translateY(-50%);
+        }
 
+        &::before {
+            top: -1px;
+            transform: rotate(45deg);
+        }
 
-            &::before,
-            &::after {
-                position: absolute;
-                content: '';
-                right: 1px;
-                width: 2px;
-                height: 10px;
-                background: $main-color;
-                border-radius: 4px;
-                transform: translateY(-50%);
-            }
-
-            &::before {
-                top: -1px;
-                transform: rotate(45deg);
-            }
-
-            &::after {
-                bottom: -1px;
-                transform: rotate(-45deg);
-            }
+        &::after {
+            bottom: -1px;
+            transform: rotate(-45deg);
         }
     }
+}

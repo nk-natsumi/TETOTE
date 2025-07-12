@@ -1,13 +1,15 @@
 @use './base/_reset';
 @use './base/_setting' as *;
 
+@use './components/_parts-fv';
+
 @use './pages/_common';
 @use './pages/_header';
-@use './pages/top/top-fv';
-@use './pages/top/top-about';
-@use './pages/top/top-staff';
-@use './pages/top/top-benefits';
-@use './pages/top/top-blog';
-@use './pages/top/top-recruit';
+@use './pages/top/_top-fv';
+@use './pages/top/_top-about';
+@use './pages/top/_top-staff';
+@use './pages/top/_top-benefits';
+@use './pages/top/_top-blog';
+@use './pages/top/_top-recruit';
 
 @use './pages/_footer';

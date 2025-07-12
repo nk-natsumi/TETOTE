@@ -4,65 +4,174 @@
     staff
 **************************/
 .top-staff {
-    margin-top: 121px;
+    margin-top: clamp(4.438rem, -1.118rem + 11.57vw, 7.563rem);
+    
 
     .top-title {
-        max-width: 540px;
+        max-width: clamp(19.875rem, -4.792rem + 51.39vw, 33.75rem);
         background: url("./img/member.png") center / 100% no-repeat;
-        margin-left: 76px;
-
-        .main-title {
-            position: absolute;
-            top: 42px;
-            left: 50%;
-            transform: translate(-50%);
-            font-size: 3.25rem;
-        }
+        margin-left: clamp(1.063rem, -5.493rem + 13.66vw, 4.75rem);
     }
 
     .sabtitle {
-        margin-left: 34px;
+        margin-left: clamp(0rem, -1.889rem + 3.94vw, 1.063rem);
     }
 
-    /* 前へ次への矢印カスタマイズ */
-    .swiper-button-prev,
-    .swiper-button-next {
-        height: 50px;
-        width: 50px;
+    .swiper {
+        height: 505px;
+
+        @include sp {
+            height: 413px;
+        }
     }
 
-    /* 前へ次への矢印カスタマイズ */
-    .swiper-button-prev::after,
-    .swiper-button-next::after {
-        background-repeat: no-repeat;
-        background-size: contain;
-        content: "";
-        height: 50px;
-        margin: auto;
-        width: 50px;
+    .swiper-slide:nth-child(2n) {
+        position: relative;
+        z-index: 1;
+        margin-top: 36px;
+
+        @include sp {
+            margin-top: 25px;
+        }
     }
 
-    /* 前への矢印カスタマイズ */
-    .swiper-button-prev::after {
-        background-image: url(https://junpei-sugiyama.com/wp-content/uploads/2021/02/e0379d76f3f78d80011fc748c93b6cbe.png);
+    .top-staff__controls {
+        position: relative;
+        margin-top: clamp(4rem, 2.222rem + 3.7vw, 5rem);
+        justify-content: center;
+        padding-bottom: clamp(3.875rem, 1.875rem + 4.17vw, 5rem);
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: absolute;
+            top: 35px;
+            width: 58px;
+            height: 58px;
+            background-color: transparent;
+            border: 1px solid $main-color;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            &::after {
+                display: none;
+            }
+
+            @include sp{
+                display: none;
+            }
+        }
+
+        .swiper-button-prev {
+            left: calc(((1077/1440)*100%));
+
+            span {
+                display: block;
+                width: 16px;
+                height: 2px;
+                background: $main-color;
+                position: relative;
+
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: '';
+                    left: 1px;
+                    width: 2px;
+                    height: 10px;
+                    background: $main-color;
+                    border-radius: 4px;
+                    transform: translateY(-50%);
+                }
+
+                &::before {
+                    top: -1px;
+                    transform: rotate(-45deg);
+                }
+
+                &::after {
+                    bottom: -1px;
+                    transform: rotate(45deg);
+                }
+
+            }
+        }
+
+        .swiper-button-next {
+
+            left: calc(((1155/1440)*100%));
+
+            @include tab{
+                left: 85%;
+            }
+
+            span {
+                display: block;
+                width: 16px;
+                height: 2px;
+                background: $main-color;
+                position: relative;
+
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: '';
+                    right: 1px;
+                    width: 2px;
+                    height: 10px;
+                    background: $main-color;
+                    border-radius: 4px;
+                    transform: translateY(-50%);
+                }
+
+                &::before {
+                    top: -1px;
+                    transform: rotate(45deg);
+                }
+
+                &::after {
+                    bottom: -1px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+
+        .top-staff__btn {
+            a {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+            }
+        }
     }
 
-    /* 次への矢印カスタマイズ */
-    .swiper-button-next::after {
-        background-image: url(https://junpei-sugiyama.com/wp-content/uploads/2021/02/e1bdcdb129887882c13aaf571f555b16.png);
+}
+
+
+
+.top-staff__img {
+    display: block;
+    width: 100%;
+    height: calc((379/505)*100%);
+    transition: margin-top 0.3s ease;
+    border-radius: 30px;
+
+    @include sp {
+        height: calc((311/413)*100%);
     }
 
-    /* 画像サイズ調整 */
-    .swiper-slide img {
-        height: auto;
-        width: 100%;
-    }
 }
 
 .staff__swiper {
-    margin-top: 52px;
-    margin-left: 242px;
-    padding-bottom: 170px;
+    margin-top: clamp(3.125rem, 2.903rem + 0.46vw, 3.25rem);
+    margin-left: clamp(1.625rem, -22.375rem + 50vw, 15.125rem);
 }
 
 .top-staff__img-wrap {
@@ -71,21 +180,25 @@
 
 .top-staff__message {
     position: absolute;
-    top: 331px;
+    top: clamp(16.438rem, 8.882rem + 15.74vw, 20.688rem);
 
     p {
         display: inline-block;
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 0.556rem + 0.93vw, 1.25rem);
         font-weight: bold;
         background-color: $btn-color;
         padding: 5px 7px;
         margin-top: 6px;
+
+        @include sp{
+            padding: 5px;
+        }
     }
 }
 
 .top-staff__meta {
     position: absolute;
-    top: 413px;
+    top: clamp(21.375rem, 13.486rem + 16.44vw, 25.813rem);
 
     p {
         font-weight: bold;
@@ -93,6 +206,6 @@
 }
 
 .top-staff__name {
-    margin-top: 16px;
-    font-size: 1.5rem;
+    margin-top: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
+    font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
 }

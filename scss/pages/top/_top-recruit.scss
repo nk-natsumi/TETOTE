@@ -5,42 +5,57 @@
 **************************/
 .top-recruit {
     background-color: $bg-color;
-    padding: 45px 0 139px;
+    padding: 0 17px 139px;
 
     .top-title {
         max-width: 896px;
         background: url("./img/recruitment.png") center / 100% no-repeat;
         margin: 0 auto;
 
-        .main-title {
-            position: absolute;
-            top: 42px;
-            left: 50%;
-            transform: translate(-50%);
-            font-size: 3.25rem;
+        @include sp{
+            overflow-x: hidden;
+            width: 528px;
+            margin: 0;
         }
     }
 
     .sabtitle {
         text-align: center;
         margin-top: 10px;
+
+        @include sp{
+            text-align: left;
+        }
+
     }
 
     .top-recruit__btn {
-        margin: 64px 34px 0;
+        max-width: 956px;
+        margin: 64px auto 0;
+        
 
         .flex-box {
             gap: calc((52/1024)*100%);
 
             a {
                 max-width: 470px;
+
+                @include sp{
+                    max-width: 734px;
+                }
+            }
+
+            @include sp{
+                flex-direction: column;
+                gap: 19px;
             }
         }
 
         a {
             background-color: #fff;
             border: none;
-            padding: 50px 0;
+            padding: clamp(2.063rem, 0.174rem + 3.94vw, 3.125rem) 0;
+            font-size: 1.25rem;
 
             &:hover {
                 background-color: $main-color;
@@ -49,7 +64,7 @@
     }
 
     .recruit-item3 a {
-        margin-top: 21px;
+        margin-top: clamp(1.188rem, 0.965rem + 0.46vw, 1.313rem);
         max-width: 956px;
         width: 100%;
     }

@@ -4,31 +4,55 @@
     benefits
 **************************/
 .top-benefits {
-    padding-bottom: 182px;
+    padding-bottom: clamp(6.75rem, -1.472rem + 17.13vw, 11.375rem);
+
+
 
     .top-title {
-        max-width: 574px;
+        max-width: clamp(21.125rem, -5.097rem + 54.63vw, 35.875rem);
         background: url("./img/benefits.png") center / 100% no-repeat;
         margin: 108px auto 0px;
 
+
+        @include sp {
+            margin: 71px 0 0;
+        }
+
         .main-title {
-            position: absolute;
-            top: 42px;
-            left: 50%;
-            transform: translate(-50%);
-            font-size: 3.25rem;
             max-width: 416px;
             width: 100%;
+            text-align: center;
+
+            @include sp {
+                text-align: left;
+                left: 170px;
+            }
         }
     }
 
     .sabtitle {
-        text-align: center;
+        margin-left: clamp(0rem, -16.556rem + 34.49vw, 9.313rem);
+        line-height: 1.0;
+
+        @include sp {
+            margin-top: 19px;
+        }
     }
 
-    .flex-box {
-        gap: calc((94/1024)*100%);
+    .grid-box {
         margin-top: 114px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: calc((94/990)*100%);
+        padding: 0 18px;
+
+        @include tab {
+            grid-template-columns: 1fr;
+            gap: 129px;
+            padding: 0;
+        }
+
+
     }
 
 }
@@ -40,6 +64,13 @@
     background-color: $bg-color;
     border-radius: 50%;
     padding-bottom: 430px;
+
+    @include tab {
+        margin: 0 auto;
+        max-width: clamp(15.688rem, 8.614rem + 30.18vw, 31.25rem);
+        padding-bottom: clamp(15.688rem, 8.614rem + 30.18vw, 31.25rem);
+    }
+
 }
 
 .top-benefits__img {
@@ -48,15 +79,15 @@
         writing-mode: vertical-rl;
         font-family: $sab-font;
         font-weight: bold;
-        letter-spacing: 0.15rem;
+        letter-spacing: 0.22rem;
         position: absolute;
         top: 0;
-        right: 20px;
-        font-size: 1.5rem;
+        right: clamp(0.813rem, 0.035rem + 1.62vw, 1.25rem);
+        font-size: clamp(0.875rem, -0.236rem + 2.31vw, 1.5rem);
     }
 
     img {
-        max-width: 327px;
+        max-width: clamp(12.125rem, -2.653rem + 30.79vw, 20.438rem);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -66,18 +97,18 @@
 
 .benefits__img02 {
     img {
-        max-width: 344px;
+        max-width: clamp(12.625rem, -3.153rem + 32.87vw, 21.5rem);
     }
 }
 
 
 .link-name-j {
     position: absolute;
-    bottom: 9px;
+    bottom: clamp(-0.938rem, -3.604rem + 5.56vw, 0.563rem);
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 0.611rem + 1.85vw, 2rem);
     font-weight: bold;
     background-color: $btn-color;
     padding: 5px 7px;
@@ -85,15 +116,21 @@
 
 .link-text {
     position: absolute;
-    bottom: -75px;
+    left: clamp(-2.813rem, -7.813rem + 24.42vw, 0rem);
+    bottom: clamp(-6.75rem, -10.417rem + 7.64vw, -4.688rem);
     line-height: 1.5;
+    width: clamp(21.313rem, 11.424rem + 24.6vw, 26.875rem);
+    margin: 0 auto;
 }
 
 .top-benefits__link {
     .arrow {
-        background-color:$main-color ;
-        top: 306px;
-        left: 352px;
+        background-color: $main-color ;
+        top: clamp(10.625rem, 6.761rem + 16.48vw, 19.125rem);
+        left: clamp(12.25rem, 7.818rem + 18.91vw, 22rem);
+        padding: clamp(1.313rem, 0.646rem + 1.39vw, 1.688rem) clamp(0.813rem, -0.076rem + 1.85vw, 1.313rem);
+
+
         span {
             background: #fff;
 
@@ -101,6 +138,10 @@
             &::after {
                 background: #fff;
             }
+        }
+
+        &:hover {
+            transform: scale(1.2) translateX(15px); // 拡大しつつ右に5px移動
         }
     }
 }

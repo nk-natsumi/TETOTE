@@ -19,28 +19,38 @@
     top: calc((286/823)*100%);
     z-index: 4;
     width: 100%;
+
+    @include sp{
+        top: calc((414/667)*100%)
+    }
 }
 
 .top-fv__title {
     font-family: $sab-font;
-    font-size: 6rem;
+    font-size: clamp(3rem, -2.333rem + 11.11vw, 6rem);
     font-weight: bold;
     line-height: 1.2;
     color: #fff;
     position: absolute;
-    left: calc((66/1440)*100%);
+    left: clamp(0.75rem, -5.25rem + 12.5vw, 4.125rem);
 }
 
 .top-fv__text {
-    margin-top: 316px;
+    margin-top: 318px;
     position: relative;
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
-    width: 485px;
-    padding: 15px 0;
-    text-align: center;
+    max-width: 419px;
+    padding: 15px 0 15px 66px;
     z-index: 1;
+
+    @include sp{
+        font-size: 0.75rem;
+        max-width: 208px;
+        padding: 9px 0;
+        margin-top: 134px;
+    }
 
     &::before {
         content: "";
@@ -52,14 +62,21 @@
         border-right: 30px solid transparent;
         border-top: 54px solid $main-color;
         z-index: -1; // 台形を文字の背面に
+
+        @include sp{
+            height: 30px;
+            border-right: 15px solid transparent;
+             border-top: 30px solid $main-color;
+        }
     }
 }
 
 .fv__blog {
     a {
+        align-items: center;
         position: absolute;
-        bottom: 38px;
-        left: calc((71/1440)*100%);
+        bottom: clamp(0.625rem, -2.486rem + 6.48vw, 2.375rem);
+        left: clamp(0.75rem, -5.806rem + 13.66vw, 4.438rem);
         z-index: 4;
         width: calc((1263/1440)*100%);
         border: $main-color 1px solid;
@@ -67,6 +84,11 @@
         margin: 0 auto;
         background-color: #fff;
         color: $main-color;
+        gap: calc((90/1263)*100%);
+
+        @include sp{
+            width: calc((351/375)*100%)
+        }   
     }
 }
 
@@ -74,17 +96,23 @@
     font-family: $sab-font;
     background-color: $main-color;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: clamp(0.625rem, -0.931rem + 3.24vw, 1.5rem);
     font-weight: bold;
     text-align: center;
-    width: calc((186/1263)*100%);
+    width: clamp(3.25rem, -11.639rem + 31.02vw, 11.625rem);
     padding: 19px 0;
     border-radius: 50px 0 0 50px;
 }
 
 .fv__blog-title {
-    padding: 23px 0;
-    margin-left: 90px;
+    font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
+    padding:clamp(0.625rem, -0.819rem + 3.01vw, 1.438rem) 0;
+    margin-right: 186px;
+
+
+    @include sp{
+        margin-right: 0;
+    }
 }
 
 .fv__blog-btn {
@@ -114,5 +142,9 @@
     &::after {
         bottom: 29.5px;
         transform: rotate(-45deg);
+    }
+
+    @include sp{
+        display: none;
     }
 }

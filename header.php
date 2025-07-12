@@ -63,9 +63,9 @@
                 <nav class="hamburger__nav">
                     <ul class="hamburger__list flex-box">
                         <li class="hamburger-item">
-                            <a href="<?php echo esc_url(home_url('/')); ?>/">ABOUT US<br><span>TETOTEについて</span></a>
-                            <a href="<?php echo esc_url(home_url('/')); ?>/#about">STAFF<br><span>社員について</span></a>
-                            <a href="<?php echo esc_url(home_url('/')); ?>/#service">BLOG<br><span>採用ブログ</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/about/">ABOUT US<br><span>TETOTEについて</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/staff/">STAFF<br><span>社員について</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/blog/">BLOG<br><span>採用ブログ</span></a>
                         </li>
                         <li class="hamburger-item">
                             <a href="<?php echo esc_url(home_url('/')); ?>/company/" <?php if (is_page('company')) echo ' class="current"'; ?>>BENEFITS<br><span>福利厚生について</span></a>

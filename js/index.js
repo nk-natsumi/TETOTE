@@ -19,61 +19,79 @@ $(document).ready(function () {
     addEventListener('resize', switchViewport, false);
     switchViewport();
 
-    const topAboutSwiper = new Swiper(".top-about__swiper", {
-        loop: false, // ← ここは false！
-        speed: 6000,
-        spaceBetween: 16,
-        slidesPerView: 2.75,
-        centeredSlides: true,
-        allowTouchMove: false,
-        freeMode: true,
-        freeModeMomentum: false,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false
-        },
+(function () {
+    if ($('body').hasClass('home')) { // トップページのみ対象
+        const $header = $('.header__bar');
+        const fvHeight = $('.top-fv').outerHeight(); // ファーストビューの高さ取得
 
-        breakpoints: {
-            767: {
-                spaceBetween: 24
-            },
-            1024: {
-                spaceBetween: 34,
-                slidesPerView: 2.75,
+        $(window).on('scroll', function () {
+            if ($(this).scrollTop() > fvHeight) {
+                $header.addClass('scrolled');
+            } else {
+                $header.removeClass('scrolled');
             }
-        }
-    });
+        });
+    }
+})();
 
-    // Swiper 初期化
-    const staffSwiper = new Swiper(".staff__swiper", {
-        loop: true,
-        slidesPerView: 1.3,
-        speed: 6000,
-        spaceBetween: 23,
-        allowTouchMove: false,
-        autoplay: {
-            delay: 0
+
+
+
+
+const topAboutSwiper = new Swiper(".top-about__swiper", {
+    loop: true,
+    speed: 500,
+    spaceBetween: 16,
+    slidesPerView: 1.36,
+    centeredSlides: true,
+    allowTouchMove: false,
+    freeMode: true,
+    freeModeMomentum: false,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+
+    breakpoints: {
+        767: {
+            spaceBetween: 24
         },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        // 前後の矢印
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            767: {
-                slidesPerView: 2.6,
-                spaceBetween: 33
-            },
-            1024: {
-                slidesPerView: 3.55,
-                spaceBetween: 43
-            }
+        1024: {
+            spaceBetween: 34,
+            slidesPerView: 2.7,
         }
-    });
+    }
 });
 
+// Swiper 初期化
+const staffSwiper = new Swiper(".staff__swiper", {
+    loop: true,
+    slidesPerView: 1.33,
+    speed: 500,
+    spaceBetween: 23,
+    allowTouchMove: false,
+    freeMode: true,
+    freeModeMomentum: false,
+    autoplay: {
 
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    // 前後の矢印
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        767: {
+            slidesPerView: 2.6,
+            spaceBetween: 33
+        },
+        1024: {
+            slidesPerView: 3.55,
+            spaceBetween: 43
+        }
+    }
+});
+
+});
