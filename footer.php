@@ -19,7 +19,6 @@
             <?php else: ?>
                 <p class="footer__logo">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="home-link">
-                        <?php bloginfo('name'); ?>
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-b.svg" alt="<?php bloginfo('name'); ?>" class="footer__img">
                     </a>
                 </p>

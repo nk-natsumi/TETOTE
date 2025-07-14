@@ -21,7 +21,7 @@
 }
 
 .footer__entry-box {
-    max-width: calc((956/1440)*100%);
+    max-width: clamp(21.438rem, 7.947rem + 57.56vw, 59.75rem);
     width: 100%;
     background-color: #fff;
     position: absolute;
@@ -33,6 +33,8 @@
     border-radius: 20px;
     z-index: 5;
     font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
+
+
 }
 
 .footer__entry-text {

@@ -5,7 +5,7 @@
 **************************/
 .top-staff {
     margin-top: clamp(4.438rem, -1.118rem + 11.57vw, 7.563rem);
-    
+
 
     .top-title {
         max-width: clamp(19.875rem, -4.792rem + 51.39vw, 33.75rem);
@@ -18,10 +18,14 @@
     }
 
     .swiper {
-        height: 505px;
+        height: 507px;
+
+        @include tab {
+            height: clamp(31.25rem, 24.028rem + 15.05vw, 35.313rem);
+        }
 
         @include sp {
-            height: 413px;
+            height: clamp(25.813rem, 4.861rem + 95.9vw, 49.875rem);
         }
     }
 
@@ -33,6 +37,8 @@
         @include sp {
             margin-top: 25px;
         }
+
+
     }
 
     .top-staff__controls {
@@ -60,7 +66,7 @@
                 display: none;
             }
 
-            @include sp{
+            @include sp {
                 display: none;
             }
         }
@@ -105,7 +111,7 @@
 
             left: calc(((1155/1440)*100%));
 
-            @include tab{
+            @include tab {
                 left: 85%;
             }
 
@@ -159,14 +165,9 @@
 .top-staff__img {
     display: block;
     width: 100%;
-    height: calc((379/505)*100%);
+    height: auto;
     transition: margin-top 0.3s ease;
     border-radius: 30px;
-
-    @include sp {
-        height: calc((311/413)*100%);
-    }
-
 }
 
 .staff__swiper {
@@ -179,33 +180,52 @@
 }
 
 .top-staff__message {
-    position: absolute;
-    top: clamp(16.438rem, 8.882rem + 15.74vw, 20.688rem);
+
+    .msg1 {
+        position: absolute;
+        bottom: 18px;
+    }
+
+    .msg2 {
+        position: absolute;
+        bottom: -18px;
+    }
 
     p {
         display: inline-block;
-        font-size: clamp(1rem, 0.556rem + 0.93vw, 1.25rem);
+        font-size: 1.25rem;
         font-weight: bold;
         background-color: $btn-color;
-        padding: 5px 7px;
+        padding: 5.5px 7px;
         margin-top: 6px;
+        text-wrap-mode: nowrap;
 
-        @include sp{
-            padding: 5px;
+        @include sp {
+            padding: 7px;
+            font-size: clamp(1rem, 1.25rem, 1.5rem);
         }
     }
 }
 
 .top-staff__meta {
     position: absolute;
-    top: clamp(21.375rem, 13.486rem + 16.44vw, 25.813rem);
+    bottom: -90px;
 
     p {
         font-weight: bold;
     }
+
+    @include sp {
+        bottom: -87px;
+    }
 }
+
 
 .top-staff__name {
     margin-top: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
-    font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
+    font-size: 1.5rem;
+
+    @include tab {
+        font-size: 1.25rem;
+    }
 }

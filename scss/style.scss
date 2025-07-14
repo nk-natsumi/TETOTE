@@ -12,4 +12,9 @@
 @use './pages/top/_top-blog';
 @use './pages/top/_top-recruit';
 
+@use './pages/staff/archive-staff';
+@use './pages/staff/single-staff';
+@use'./pages/home';
+@use'./pages/single';
+
 @use './pages/_footer';

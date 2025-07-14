@@ -4,21 +4,25 @@
     parts-fv
 **************************/
 .fv {
-    margin-top: clamp(3.438rem, -3.451rem + 14.35vw, 7.313rem);
     position: relative;
-
-    img{
+    
+    img {
         height: clamp(12.5rem, -2.944rem + 32.18vw, 21.188rem);
     }
 
     .section__wrapper {
         position: absolute;
-        top:clamp(1.25rem, -4.861rem + 12.73vw, 4.688rem);
+        top: clamp(1.25rem, -4.861rem + 12.73vw, 4.688rem);
         left: clamp(0rem, -25.778rem + 53.7vw, 14.5rem);
         color: $main-color;
         font-weight: bold;
-        flex-direction: column;
         max-width: clamp(15.625rem, 4.514rem + 23.15vw, 21.875rem);
+        padding: 0;
+
+
+    @include tab{
+        padding: 0 20px ;
+    }
 
     }
 }
@@ -46,4 +50,18 @@
     background-color: #fff;
     display: inline-block;
     font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
+    text-wrap-mode: nowrap;
+}
+
+.c-breadcrumbs {
+    background-color: #f0f0f0;
+    color: $main-color;
+    padding-left: clamp(1.25rem, -22.306rem + 49.07vw, 14.5rem);
+    padding: 20px 0 20px calc((224/1440)*100%);
+
+
+    @include tab{
+        padding-left: calc((20/375)*100%);
+    }
+
 }

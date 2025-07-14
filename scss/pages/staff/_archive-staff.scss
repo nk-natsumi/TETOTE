@@ -1,0 +1,33 @@
+@use '../../base/_setting' as *;
+
+/************************
+    archive-staff
+**************************/
+
+.staff__wrapper {
+    margin: 130px auto 0;
+    padding: 0 19px 139px;
+
+    @include sp {
+        padding-bottom: 150px;
+    }
+}
+
+.staff__inner {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    gap: 48px 43px;
+    /* 縦 横 */
+    padding: 0 19px 90px;
+}
+
+.staff__item {
+    position: relative;
+    padding-bottom: 90px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+}

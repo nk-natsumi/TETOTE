@@ -238,6 +238,8 @@
                                         </div>
                                         <div class="top-blog__text">
                                             <span class="top-blog__category">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/category.png" alt="カテゴリーアイコン" class="category-icon">
+    
                                                 <?php
                                                 $category = get_the_category();
                                                 if (!empty($category)) {

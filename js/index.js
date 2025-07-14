@@ -66,7 +66,7 @@ const topAboutSwiper = new Swiper(".top-about__swiper", {
 // Swiper 初期化
 const staffSwiper = new Swiper(".staff__swiper", {
     loop: true,
-    slidesPerView: 1.33,
+    slidesPerView: 1.38,
     speed: 500,
     spaceBetween: 23,
     allowTouchMove: false,
@@ -87,8 +87,8 @@ const staffSwiper = new Swiper(".staff__swiper", {
             slidesPerView: 2.6,
             spaceBetween: 33
         },
-        1024: {
-            slidesPerView: 3.55,
+        1199: {
+            slidesPerView: 3.61,
             spaceBetween: 43
         }
     }
