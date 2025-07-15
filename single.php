@@ -37,10 +37,38 @@
             <nav class="blog-navigation">
                 <div class="blog-navigation__inner flex-box">
                     <div class="blog-navigation__prev">
-                        <?php previous_post_link('%link', '%title'); ?>
+                        <?php
+                        $prev_post = get_previous_post();
+                        if ($prev_post) {
+                            $url = get_permalink($prev_post->ID);
+                            $title = get_the_title($prev_post->ID);
+                            $date = get_the_time('Y.m.d', $prev_post->ID);
+                        ?>
+                            <a href="<?php echo esc_url($url); ?>">
+                                <div class="arrow">
+                                </div>
+                                <span class="nav-label">前の記事</span>
+                                <span class="post-title"><?php echo esc_html($title); ?></span>
+                                <span class="post-date"><?php echo esc_html($date); ?></span>
+                            </a>
+                        <?php } ?>
                     </div>
                     <div class="blog-navigation__next">
-                        <?php next_post_link('%link', '%title'); ?>
+                        <?php
+                        $next_post = get_next_post();
+                        if ($next_post) {
+                            $url = get_permalink($next_post->ID);
+                            $title = get_the_title($next_post->ID);
+                            $date = get_the_time('Y.m.d', $next_post->ID);
+                        ?>
+                            <a href="<?php echo esc_url($url); ?>">
+                                <span class="nav-label">次の記事</span>
+                                <span class="post-title"><?php echo esc_html($title); ?></span>
+                                <span class="post-date"><?php echo esc_html($date); ?></span>
+                                <div class="arrow">
+                                </div>
+                            </a>
+                        <?php } ?>
                     </div>
                 </div>
             </nav>

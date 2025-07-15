@@ -4,7 +4,6 @@
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-            <!-- FV部分 -->
             <section class="staff-fv">
                 <article class="staff-detail flex-box  section__wrapper">
                     <div class="staff-detail__info">
@@ -15,7 +14,7 @@
 
                         <p class="staff-detail__job"><?php the_field('staff_job'); ?></p>
                         <div class="flex-box">
-                            <p class="staff-detail__name"><?php the_title(); ?></p>
+                            <p class="staff-detail__name"><?php the_field('staff_name'); ?></p>
                             <p class="staff-detail__day"><?php the_field('staff_year'); ?>年入社</p>
                         </div>
 
@@ -72,7 +71,7 @@
 
                                 <div class="top-staff__meta">
                                     <p class="top-staff__job"><?php the_field('staff_job'); ?>　<?php the_field('staff_year'); ?>年入社</p>
-                                    <p class="top-staff__name"><?php the_title(); ?></p>
+                                    <p class="top-staff__name"><?php the_field('staff_name'); ?></p>
                                 </div>
                             </div>
                         </a>

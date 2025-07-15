@@ -13,18 +13,22 @@ function register_staff_post_type()
 {
     register_post_type('staff', [
         'labels' => [
-            'name' => 'スタッフ',
-            'singular_name' => 'スタッフ',
+            'name' => 'STAFF',
+            'singular_name' => 'STAFF',
         ],
         'public' => true,
-        'has_archive' => true, // ← 一覧表示に必須！
+        'has_archive' => true,
         'menu_position' => 5,
         'supports' => ['title', 'editor', 'thumbnail'],
-        'rewrite' => ['slug' => 'staff'], // 表示URLを /staff/ に
-        'show_in_rest' => true, // ブロックエディタ対応
+        'rewrite' => [
+            'slug' => 'staff',           // 表示URLを /staff/ に
+            'with_front' => false        // ← /blog/ などの親スラッグを防ぐ！
+        ],
+        'show_in_rest' => true,
     ]);
 }
 add_action('init', 'register_staff_post_type');
+
 
 function my_theme_widgets_init()
 {

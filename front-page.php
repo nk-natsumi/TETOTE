@@ -2,7 +2,7 @@
 
 <main class="main">
     <section class="top-fv">
-        <div class="swiper top-fv__swiper">
+        <div class="swiper top-fv__swipe">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv01.jpg" alt="" class="top-fv__img">
@@ -13,9 +13,9 @@
             </div>
         </div>
 
-        <div class="top-fv__textarea">
-            <h2 class="top-fv__title">BECOME A<br>CHALLENGER.</h2>
-            <p class="top-fv__text">君の挑戦が、意思が、未来を変える</p>
+        <div class="top-fv__textarea fade-in-up">
+            <h2 class="top-fv__title text-delay delay-1">BECOME A<br>CHALLENGER.</h2>
+            <p class="top-fv__text text-delay delay-2">君の挑戦が、意思が、未来を変える</p>
         </div>
 
         <?php
@@ -76,20 +76,20 @@
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide03 1.jpg" alt="取り組みイメージ" class="top-about__img">
                     </div>
                 </div>
-                <h2 class="top-about__slogan">
-                    <p>後悔しないキャリアを作る、</p>
-                    <p class="slogan_02">それこそが、我々の使命だ</p>
+                <h2 class="top-about__slogan fade-in-up">
+                    <p class="text-delay delay-1">後悔しないキャリアを作る、</p>
+                    <p class="slogan_02 text-delay delay-2">それこそが、我々の使命だ</p>
                 </h2>
             </div>
 
         </div>
         <div class="top-about__textarea content__wrapper">
-            <div class="top-about__text">
-                <p>「人手不足」<br>
+            <div class="top-about__text fade-in-up">
+                <p class="text-delay delay-1">「人手不足」<br>
                     今の日本が抱えるこの社会課題に挑み、<br>
                     企業と個人の可能性を最大限に引き出す。<br>
                     それが私達の役目。</p>
-                <p>単につなぐだけじゃない。<br>
+                <p class="text-delay delay-2">単につなぐだけじゃない。<br>
                     「手と手」を取り合っていけるような、<br>
                     持続可能な社会を、一緒に作りませんか？</p>
             </div>
@@ -100,7 +100,7 @@
     </section>
 
     <section id="top-staff" class="top-staff">
-        <div class="top-title">
+        <div class="top-title fade-in-up">
             <h2 data-title="staff" class="main-title"><span>人</span>を知る</h2>
         </div>
         <div class="section__wrapper section__title">
@@ -129,8 +129,8 @@
                                 </div>
 
                                 <div class="top-staff__meta">
-                                    <p class="top-staff__job"><?php the_field('staff_job'); ?>　<?php the_field('staff_year'); ?>年入社</p>
-                                    <p class="top-staff__name"><?php the_title(); ?></p>
+                                    <p class="top-staff__job"><?php the_field('staff_job'); ?> <?php the_field('staff_year'); ?>年入社</p>
+                                    <p class="top-staff__name"><?php the_field('staff_name'); ?></p>
                                 </div>
 
                             </div>
@@ -161,13 +161,13 @@
     <section id="top-benefits" class="top-benefits">
         <div class="section__wrapper">
             <div class="section__title">
-                <div class="top-title">
+                <div class="top-title fade-in-up">
                     <h2 class="main-title"><span>制度・環境</span>を知る</h2>
                 </div>
                 <p class="sabtitle">当社では働く従業員とそのご家族が健やかに過ごせるよう、多様な研修、福利厚生を提供しています。</p>
             </div>
-            <div class="top-benefits__link grid-box">
-                <a class="top-benefits__item" href="<?php echo home_url('/career/'); ?>">
+            <div class="top-benefits__link grid-box fade-in-up">
+                <a class="top-benefits__item text-delay delay-1" href="<?php echo home_url('/career/'); ?>">
                     <div class="top-benefits__img benefits__img01">
                         <p class="link-name-e">Traning And Career</p>
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/career.png" alt="" class="top-benefits__img">
@@ -180,7 +180,7 @@
                         <span></span>
                     </div>
                 </a>
-                <a class="top-benefits__item" href="<?php echo home_url('/benefits/'); ?>">
+                <a class="top-benefits__item text-delay delay-2"  href="<?php echo home_url('/benefits/'); ?>">
                     <div class="top-benefits__img benefits__img02">
                         <p class="link-name-e">Employee Benefits</p>
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/welfare.png" alt="" class="top-benefits__img">
@@ -201,7 +201,7 @@
         <div class="section__wrapper">
             <div class="section__title">
                 <div class="flex-box">
-                    <div class="top-title">
+                    <div class="top-title fade-in-up">
                         <h2 class="main-title">採用ブログ</h2>
                     </div>
                     <div class="top-blog__btn">
@@ -213,7 +213,7 @@
                 </div>
                 <p class="sabtitle">採用情報やイベント情報、社員の紹介など、<br>日々の現場の様子をご紹介します。</p>
             </div>
-            <ul class="top-blog__content grid-box">
+            <ul class="top-blog__content grid-box fade-in-up">
                 <?php
                 $args = array(
                     'post_type' => 'post',
@@ -224,7 +224,7 @@
                 if ($blog_query->have_posts()) :
                     while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
                         <li class="top-blog__item">
-                            <article class="top-blog__link">
+                            <article class="top-blog__link text-delay delay-1">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="top-blog__inner flex-box">
                                         <div class="top-blog__img">
@@ -263,7 +263,7 @@
     </section>
 
     <section id="top-recruit" class="top-recruit">
-        <div class="top-title">
+        <div class="top-title fade-in-up">
             <h2 class="main-title">採用情報</h2>
         </div>
         <div class="recruit__wrapper section-title">

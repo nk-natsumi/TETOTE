@@ -14,7 +14,7 @@
     }
 
     .sabtitle {
-        margin-left: clamp(0rem, -1.889rem + 3.94vw, 1.063rem);
+        margin-left: clamp(0rem, -0.748rem + 3.19vw, 2.125rem);
     }
 
     .swiper {
@@ -43,10 +43,11 @@
 
     .top-staff__controls {
         position: relative;
-        margin-top: clamp(4rem, 2.222rem + 3.7vw, 5rem);
+        margin-top: clamp(2.5rem, -1.928rem + 9.24vw, 5rem);
         justify-content: center;
         padding-bottom: clamp(3.875rem, 1.875rem + 4.17vw, 5rem);
 
+        
         .swiper-button-prev,
         .swiper-button-next {
             position: absolute;
@@ -193,7 +194,7 @@
 
     p {
         display: inline-block;
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 0.912rem + 0.38vw, 1.25rem);
         font-weight: bold;
         background-color: $btn-color;
         padding: 5.5px 7px;
@@ -202,7 +203,6 @@
 
         @include sp {
             padding: 7px;
-            font-size: clamp(1rem, 1.25rem, 1.5rem);
         }
     }
 }
@@ -210,22 +210,19 @@
 .top-staff__meta {
     position: absolute;
     bottom: -90px;
+    font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
 
     p {
         font-weight: bold;
     }
 
     @include sp {
-        bottom: -87px;
+        bottom: -77px;
     }
 }
 
 
 .top-staff__name {
     margin-top: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
-    font-size: 1.5rem;
-
-    @include tab {
-        font-size: 1.25rem;
-    }
+    font-size: clamp(1.25rem, 1.162rem + 0.38vw, 1.5rem);
 }

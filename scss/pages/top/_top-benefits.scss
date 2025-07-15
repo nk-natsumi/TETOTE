@@ -35,16 +35,17 @@
     }
 
     .sabtitle {
-        margin-left: clamp(0rem, -16.556rem + 34.49vw, 9.313rem);
-        line-height: 1.0;
+        margin-left: clamp(0rem, -3.719rem + 15.87vw, 10.563rem);
+        margin-top: 5px;
 
         @include sp {
+            line-height: 1.5;
             margin-top: 19px;
         }
     }
 
     .grid-box {
-        margin-top: 114px;
+        margin-top: clamp(3.188rem, 1.801rem + 5.92vw, 7.125rem);
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: calc((94/990)*100%);
@@ -52,9 +53,10 @@
 
         @include tab {
             grid-template-columns: 1fr;
-            gap: 129px;
+            gap: 144px;
             padding: 0;
         }
+
 
 
     }
@@ -83,7 +85,7 @@
         writing-mode: vertical-rl;
         font-family: $sab-font;
         font-weight: bold;
-        letter-spacing: 0.22rem;
+        letter-spacing: clamp(0.131rem, 0.098rem + 0.14vw, 0.225rem);
         position: absolute;
         top: 0;
         right: clamp(0.813rem, 0.035rem + 1.62vw, 1.25rem);
@@ -120,11 +122,15 @@
 
 .link-text {
     position: absolute;
-    left: clamp(-2.813rem, -7.813rem + 24.42vw, 0rem);
+    left: 0;
     bottom: clamp(-6.75rem, -10.417rem + 7.64vw, -4.688rem);
     line-height: 1.5;
     width: clamp(21.313rem, 11.424rem + 24.6vw, 26.875rem);
     margin: 0 auto;
+
+    @include sp{
+        left: -45px;
+    }
 }
 
 .top-benefits__link {

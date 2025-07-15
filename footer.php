@@ -43,7 +43,7 @@
         </div>
 
         <div class="footer__sns-box flex-box">
-            <small class="copyright">&copy;2024 TETOTE All Right Reserved.</small>
+            <small class="copyright">&copy; 2024 TETOTE All Right Reserved.</small>
             <ul class="sns-list flex-box">
                 <li class="sns-item">
                     <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">

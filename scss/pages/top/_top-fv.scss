@@ -20,7 +20,7 @@
     z-index: 4;
     width: 100%;
 
-    @include sp{
+    @include sp {
         top: calc((414/667)*100%)
     }
 }
@@ -45,10 +45,10 @@
     padding: 15px 0 15px 66px;
     z-index: 1;
 
-    @include sp{
+    @include sp {
         font-size: 0.75rem;
         max-width: 208px;
-        padding: 9px 0;
+        padding: 9px 12px;
         margin-top: 134px;
     }
 
@@ -63,10 +63,10 @@
         border-top: 54px solid $main-color;
         z-index: -1; // 台形を文字の背面に
 
-        @include sp{
+        @include sp {
             height: 30px;
             border-right: 15px solid transparent;
-             border-top: 30px solid $main-color;
+            border-top: 30px solid $main-color;
         }
     }
 }
@@ -86,9 +86,9 @@
         color: $main-color;
         gap: calc((90/1263)*100%);
 
-        @include sp{
+        @include sp {
             width: calc((351/375)*100%)
-        }   
+        }
     }
 }
 
@@ -106,11 +106,11 @@
 
 .fv__blog-title {
     font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
-    padding:clamp(0.625rem, -0.819rem + 3.01vw, 1.438rem) 0;
+    padding: clamp(0.625rem, -0.819rem + 3.01vw, 1.438rem) 0;
     margin-right: 186px;
 
 
-    @include sp{
+    @include sp {
         margin-right: 0;
     }
 }
@@ -144,7 +144,7 @@
         transform: rotate(-45deg);
     }
 
-    @include sp{
+    @include sp {
         display: none;
     }
 }

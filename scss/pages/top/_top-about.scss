@@ -4,13 +4,14 @@
     about
 **************************/
 
-.top-about{
+.top-about {
     margin-top: calc(100vh - 14px);
 
-    .swiper{
+
+    .swiper {
         height: 429px;
 
-        @include sp{
+        @include sp {
             height: 261px;
         }
     }
@@ -20,9 +21,10 @@
     position: relative;
     z-index: 1;
     margin-top: 36px;
-    @include sp{
-            margin-top: 27px;
-        }
+
+    @include sp {
+        margin-top: 27px;
+    }
 }
 
 
@@ -32,11 +34,11 @@
     height: calc((393/429)*100%);
     transition: margin-top 0.3s ease;
     border-radius: 60px;
-    
 
-    @include sp{
+
+    @include sp {
         max-height: 210px;
-        }
+    }
 
 }
 
@@ -49,7 +51,7 @@
     text-align: center;
     line-height: 1.2;
 
-    @include sp{
+    @include sp {
         bottom: 0;
     }
 
@@ -61,13 +63,17 @@
         display: inline-block;
         text-wrap-mode: nowrap;
 
-        @include sp{
-            padding: 7px 11px;
+        @include sp {
+            padding: 12px 11px 4px;
         }
     }
 
     .slogan_02 {
         margin-top: 7px;
+
+        @include sp {
+            margin-top: 8px;
+        }
     }
 }
 
@@ -77,18 +83,26 @@
     line-height: 1.8;
     font-weight: bold;
     text-align: center;
-    padding: 0 17px;
+    padding: 0 16px;
 
-    @include sp{
+    @include sp {
         line-height: 2.5;
+        margin-top: 52px;
     }
 }
 
 .top-about__text {
-        padding-bottom: 52px;
+    padding-bottom: clamp(2.438rem, 2.151rem + 1.22vw, 3.25rem);
     background: url("./img/map.png") center / contain no-repeat;
+
 
     p {
         margin-top: 52px;
+
+        @include sp {
+            margin-top: 39px;
+        }
+
+
     }
 }
