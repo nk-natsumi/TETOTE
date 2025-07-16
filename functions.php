@@ -55,3 +55,4 @@ function add_id_to_h2($content)
     return $content;
 }
 add_filter('the_content', 'add_id_to_h2');
+

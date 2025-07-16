@@ -86,9 +86,11 @@
 .staff-main {
     margin-top: 101px;
     gap: 56px;
+    align-items: start;
 
-    @include sp{
+    @include tab {
         max-width: 100%;
+        box-sizing: border-box;
     }
 
     .staff-content {
@@ -96,8 +98,8 @@
         padding: 0 7px 0 24px;
         width: 100%;
 
-        @include sp{
-            max-width: 733px;
+        @include tab {
+            max-width: 100%;
             padding: 0;
         }
 
@@ -115,11 +117,17 @@
             &::before {
                 content: "";
                 max-width: 216px;
+                width: 100%;
                 height: 1px;
                 position: absolute;
-                left: -16px;
+                background-color: $main-color;
+                left: -234px;
                 top: 50%;
                 transform: translateY(-50%);
+
+                @include sp{
+                    display: none;
+                }
             }
         }
 
@@ -161,9 +169,17 @@
     font-size: 0.875rem;
     font-weight: bold;
     line-height: 1.5;
+    position: sticky;
+    top: 118px;
 
     h2 {
         padding-left: 8px;
+        position: relative;
+    }
+
+    h2[id] {
+        scroll-margin-top: 118px; // ヘッダーの高さに合わせて調整！
+        padding-top: 0.1px; // Safari対策
     }
 
     li {
@@ -174,29 +190,35 @@
             margin-top: 16px;
         }
 
-        a {
-            display: inline-block;
-            position: relative;
-            padding-left: 20px;
-            color: #999999;
-            transition: all 0.3s;
 
-            &::before {
-                content: "・";
-                font-size: 0.875rem;
-                position: absolute;
-                left: 8px;
-            }
+    }
 
-            &:hover {
-                color: $main-color;
-            }
+    @include tab {
+        display: none;
+    }
+}
+
+.sidebar-toc {
+    a {
+        display: inline-block;
+        position: relative;
+        padding-left: 20px;
+        color: #999999;
+        transition: all 0.3s;
+
+        &::before {
+            content: "・";
+            font-size: 0.875rem;
+            position: absolute;
+            left: 8px;
+        }
+
+        &.active {
+            color: $main-color;
+
         }
     }
 
-    @include sp{
-        display: none;
-    }
 }
 
 .other-staff {

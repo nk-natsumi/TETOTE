@@ -22,8 +22,7 @@
 }
 
 .header {
-    &.scrolled {
-
+    &.top-scrolled {
         z-index: 99;
         position: fixed;
         top: 0;
@@ -62,7 +61,7 @@
             }
         }
 
-        .main-logo{
+        .main-logo {
             display: none;
         }
 
@@ -104,6 +103,23 @@
 
         @include sp {
             max-width: 150px;
+        }
+    }
+}
+
+.header {
+    &.scrolled {
+        .header__bar{
+            padding: 28px 30px;
+        }
+        
+        .menu-trigger{
+            span{
+                background-color: $main-color;
+            }
+            &::after {
+                color: $main-color;
+            }
         }
     }
 }

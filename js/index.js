@@ -19,20 +19,6 @@ $(document).ready(function () {
     addEventListener('resize', switchViewport, false);
     switchViewport();
 
-    (function () {
-        if ($('body').hasClass('home')) { // トップページのみ対象
-            const $header = $('.header__bar');
-            const fvHeight = $('.top-fv').outerHeight(); // ファーストビューの高さ取得
-
-            $(window).on('scroll', function () {
-                if ($(this).scrollTop() > fvHeight) {
-                    $header.addClass('scrolled');
-                } else {
-                    $header.removeClass('scrolled');
-                }
-            });
-        }
-    })();
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -49,6 +35,8 @@ $(document).ready(function () {
         observer.observe(el);
     });
 
+    //header追走
+
     const header = document.querySelector('.header');
     const initialHeaderHeight = header.offsetHeight;
 
@@ -57,13 +45,24 @@ $(document).ready(function () {
         const viewportHeight = window.innerHeight; // 100vh 相当
 
         if (scrollY >= viewportHeight) {
-            header.classList.add('scrolled'); // ← ここで 'scrolled' を追加
+            header.classList.add('top-scrolled');
             document.body.style.marginTop = initialHeaderHeight + 'px';
         } else {
-            header.classList.remove('scrolled'); // ← ここで削除
+            header.classList.remove('top-scrolled');
             document.body.style.marginTop = '0';
         }
     });
+
+    const $imgs = $('.fv-img');
+    let current = 0;
+
+    $imgs.eq(current).addClass('active');
+
+    setInterval(() => {
+        $imgs.eq(current).removeClass('active');
+        current = (current + 1) % $imgs.length;
+        $imgs.eq(current).addClass('active');
+    }, 5000);
 
 
 
@@ -124,6 +123,53 @@ $(document).ready(function () {
             }
         }
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const tocLinks = document.querySelectorAll('.sidebar-toc a');
+        const offset = 118; // ヘッダー高さ（必要に応じて調整）
+
+        // スムーズスクロール（クリック時）
+        tocLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+
+                if (target) {
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: top,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // アクティブ表示（スクロール連動）
+        const headings = Array.from(tocLinks).map(link => {
+            const id = link.getAttribute('href').substring(1);
+            return document.getElementById(id);
+        });
+
+        window.addEventListener('scroll', () => {
+            let currentId = '';
+            const scrollY = window.pageYOffset;
+
+            headings.forEach((heading) => {
+                if (!heading) return;
+                const sectionTop = heading.offsetTop - offset - 10;
+                if (scrollY >= sectionTop) {
+                    currentId = heading.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+            });
+        });
+    });
+
 
 });
 

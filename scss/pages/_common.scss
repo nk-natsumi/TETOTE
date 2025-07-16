@@ -175,10 +175,21 @@ a {
     }
 }
 
+
 .c-breadcrumbs {
-    @include sp {
+    background-color: #f0f0f0;
+    color: $main-color;
+    padding-left: clamp(1.25rem, -22.306rem + 49.07vw, 14.5rem);
+    padding: 20px 0 20px calc((232/1440)*100%);
+    font-size: 0.875rem;
+
+
+
+    @include tab {
+        padding-left: calc((20/375)*100%);
         line-height: 1.5;
     }
+
 }
 
 .fade-in-up {
@@ -202,6 +213,14 @@ a {
             &.delay-2 {
                 transition-delay: 0.6s;
             }
+
+            &.delay-3 {
+                transition-delay: 1.0s;
+            }
+
+            &.delay-4 {
+                transition-delay: 1.4s;
+            }
         }
     }
 
@@ -210,5 +229,3 @@ a {
         transform: translateY(20px);
     }
 }
-
-.slide-in-up{}

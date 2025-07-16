@@ -46,7 +46,7 @@
     position: absolute;
     bottom: calc((9/429)*100%);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%)!important;
     z-index: 5;
     text-align: center;
     line-height: 1.2;

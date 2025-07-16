@@ -2,16 +2,15 @@
 
 <main class="main">
     <section class="top-fv">
-        <div class="swiper top-fv__swipe">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv01.jpg" alt="" class="top-fv__img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv02.jpg" alt="" class="top-fv__img">
-                </div>
+        <div class="fv__img-wrapper">
+            <div class="fv-img">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv01.jpg" alt="" class="top-fv__img">
+            </div>
+            <div class="fv-img">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv02.jpg" alt="" class="top-fv__img">
             </div>
         </div>
+
 
         <div class="top-fv__textarea fade-in-up">
             <h2 class="top-fv__title text-delay delay-1">BECOME A<br>CHALLENGER.</h2>
@@ -180,7 +179,7 @@
                         <span></span>
                     </div>
                 </a>
-                <a class="top-benefits__item text-delay delay-2"  href="<?php echo home_url('/benefits/'); ?>">
+                <a class="top-benefits__item text-delay delay-2" href="<?php echo home_url('/benefits/'); ?>">
                     <div class="top-benefits__img benefits__img02">
                         <p class="link-name-e">Employee Benefits</p>
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/welfare.png" alt="" class="top-benefits__img">
@@ -222,9 +221,13 @@
                 $blog_query = new WP_Query($args);
 
                 if ($blog_query->have_posts()) :
-                    while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
+                    $index = 0;
+                    while ($blog_query->have_posts()) : $blog_query->the_post();
+                        $index++;
+                        $delay_class = 'text-delay delay-' . $index;
+                ?>
                         <li class="top-blog__item">
-                            <article class="top-blog__link text-delay delay-1">
+                            <article class="top-blog__link <?php echo $delay_class; ?>">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="top-blog__inner flex-box">
                                         <div class="top-blog__img">
@@ -239,7 +242,6 @@
                                         <div class="top-blog__text">
                                             <span class="top-blog__category">
                                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/category.png" alt="カテゴリーアイコン" class="category-icon">
-    
                                                 <?php
                                                 $category = get_the_category();
                                                 if (!empty($category)) {
@@ -254,7 +256,8 @@
                                 </a>
                             </article>
                         </li>
-                <?php endwhile;
+                <?php
+                    endwhile;
                     wp_reset_postdata();
                 endif;
                 ?>

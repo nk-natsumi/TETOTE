@@ -6,6 +6,7 @@
 .fv {
     position: relative;
     
+    
     img {
         height: clamp(12.5rem, -2.944rem + 32.18vw, 21.188rem);
     }
@@ -53,15 +54,3 @@
     text-wrap-mode: nowrap;
 }
 
-.c-breadcrumbs {
-    background-color: #f0f0f0;
-    color: $main-color;
-    padding-left: clamp(1.25rem, -22.306rem + 49.07vw, 14.5rem);
-    padding: 20px 0 20px calc((224/1440)*100%);
-
-
-    @include tab{
-        padding-left: calc((20/375)*100%);
-    }
-
-}
