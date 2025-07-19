@@ -150,7 +150,7 @@
             margin-top: 30px;
 
             &+li {
-                margin-top: 35px; // ← 2番目以降の li にだけ適用
+                margin-top: 35px; 
             }
 
             p {
@@ -177,10 +177,6 @@
         position: relative;
     }
 
-    h2[id] {
-        scroll-margin-top: 118px; // ヘッダーの高さに合わせて調整！
-        padding-top: 0.1px; // Safari対策
-    }
 
     li {
         margin-top: 13px;

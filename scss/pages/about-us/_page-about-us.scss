@@ -1,0 +1,299 @@
+@use '../../base/_setting' as *;
+
+/************************
+    about-us
+**************************/
+
+
+.company-policy {
+    counter-reset: sectionNumber; // カウンターを初期化
+}
+
+.policy__title {
+    margin-top: 66px;
+    text-align: center;
+}
+
+.policy__content {
+    margin-top: 86px;
+}
+
+.policy__item {
+    max-width: 980px;
+    width: 100%;
+    margin: 35px auto 0;
+    padding: clamp(2.063rem, 1.82rem + 1.03vw, 2.75rem) clamp(0.938rem, -0.493rem + 6.1vw, 5rem) clamp(1.25rem, 1.03rem + 0.94vw, 1.875rem);
+    background-color: $bg-color;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    h3 {
+        font-size: clamp(1.125rem, 1.081rem + 0.19vw, 1.25rem);
+        position: relative;
+        padding-left: 69px;
+        counter-increment: sectionNumber; // カウンターを1つ進める
+
+        @include sp {
+            line-height: 1.5;
+            padding-left: 40px;
+        }
+
+        &::before {
+            content: counter(sectionNumber) " ";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid $main-color;
+            border-radius: 50%;
+            padding: 15px 19px;
+            color: $main-color;
+            font-size: 1.125rem;
+            font-weight: normal;
+
+            @include sp {
+                padding: 6px 12px;
+                font-size: 0.875rem;
+            }
+        }
+    }
+
+    p {
+        font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+        margin-top: clamp(1.25rem, 0.92rem + 1.41vw, 2.188rem);
+        line-height: 1.5;
+
+        @include sp {
+            line-height: 1.8;
+        }
+    }
+}
+
+.message__title {
+    margin-top: 125px;
+    text-align: center;
+}
+
+.ceo-wrapper {
+    margin-top: 109px;
+    justify-content: center;
+    gap: 17px;
+
+    @include sp {
+        display: block;
+    }
+}
+
+.ceo-img {
+    max-width: 484px;
+    width: 100%;
+
+    @include sp {
+        max-width: 100%;
+    }
+}
+
+.ceo-textarea {
+    max-width: 479px;
+    width: 100%;
+    position: relative;
+
+    @include sp {
+        max-width: 100%;
+    }
+}
+
+.ceo-title {
+    font-size: clamp(1rem, 1.324rem + 0.75vw, 2rem);
+    font-weight: bold;
+    line-height: 1.5;
+    position: absolute;
+    top: 18px;
+    left: -80px;
+
+    @include sp {
+        font-size: clamp(1.5rem, 1.023rem + 2.04vw, 2rem);
+        position: static;
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+.ceo-text {
+    margin-top: clamp(11.25rem, 9.393rem + 3.87vw, 12.875rem);
+    line-height: 2.0;
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+
+    @include sp {
+        margin-top: 50px;
+    }
+
+    .spacer {
+        display: block;
+        height: 31px;
+    }
+}
+
+.ceo-name {
+    margin-top: 21px;
+    max-width: 185px;
+    width: 100%;
+
+    @include sp {
+        float: right;
+    }
+}
+
+.business__title {
+    margin-top: 111px;
+    padding-left: 22px;
+
+    @include tab{
+        padding-left: 0;
+    }
+}
+
+.business__sabtitle {
+    margin-top: 44px;
+    max-width: 681px;
+    width: 100%;
+    padding-left: 22px;
+
+    @include tab{
+        padding-left: 0;
+    }
+}
+
+.business__content {
+    margin-top: 33px;
+
+    @include sp {
+        margin-top: 0;
+    }
+}
+
+.business__item {
+    padding: 49px 42px 49px 22px;
+    gap: 42px;
+    border-bottom: 1px solid $btn-color;
+    
+    @include tab{
+        align-items: center;
+    }
+
+    @include sp {
+        display: block;
+        padding: 60px 0;
+    }
+}
+
+.business__item:nth-child(3){
+    border-bottom: none;
+}
+
+.business__img {
+    max-width: 462px;
+    width: 100%;
+    border-radius: 20px;
+
+    @include sp {
+        max-width: 100%;
+    }
+}
+
+.business__textarea {
+    margin-top: 22px;
+
+    @include sp {      
+        margin-top: 40px;
+    }
+}
+
+.content__title {
+    font-size: clamp(1.5rem, 1.324rem + 0.75vw, 2rem);
+    color: $accent-color;
+    
+}
+
+.content__sabtitle {
+    font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: clamp(1.875rem, 1.655rem + 0.94vw, 2.5rem);
+}
+
+.content__text {
+    margin-top: clamp(1.875rem, 1.655rem + 0.94vw, 2.5rem);
+    line-height: 1.5;
+    max-width: 430px;
+    width: 100%;
+
+    @include sp {
+        line-height: 1.8;
+    }
+}
+
+.content__sabtitle1 ,
+.content__sabtitle3{
+    max-width: 432px;
+    width: 100%;
+}
+
+.content__sabtitle2{
+    max-width: 456px;
+    width: 100%;
+} 
+
+
+.company__info {
+    padding: 0 22px;
+    box-sizing: border-box;
+    margin: 101px 0 139px;
+
+    @include sp {
+        padding: 0;
+    }
+}
+
+.company__title {
+    @include sp {
+        text-align: center;
+    }
+}
+
+.company__content {
+    margin-top: clamp(3.438rem, 2.953rem + 2.07vw, 4.7rem);
+
+    .flex-box {
+        padding: 35.5px 0;
+        gap: clamp(1.25rem, -0.555rem + 7.7vw, 6.375rem);
+        border-bottom: 1px $main-color dotted;
+
+        @include sp {
+            display: block;
+        }
+
+        dt {
+            max-width: 129px;
+            width: 100%;
+        }
+
+        dd {
+            @include sp {
+                line-height: 1.5;
+                margin: 30px 0 0 0px;
+
+            }
+        }
+    }
+
+}
+
+.company__service {
+    line-height: 1.5;
+    padding-left: 0.4rem;
+
+    @include sp{
+        padding-left: 0;
+    }
+}

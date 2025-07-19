@@ -43,6 +43,7 @@ function my_theme_widgets_init()
     ));
 }
 add_action('widgets_init', 'my_theme_widgets_init');
+
 function add_id_to_h2($content)
 {
     if (is_singular('staff')) { // スタッフ詳細ページだけに限定
@@ -55,4 +56,5 @@ function add_id_to_h2($content)
     return $content;
 }
 add_filter('the_content', 'add_id_to_h2');
+
 

@@ -9,12 +9,11 @@
     margin-top: clamp(4.875rem, 1.653rem + 6.71vw, 6.688rem);
 
     .section__wrapper {
-
         box-sizing: content-box;
 
-        @include sp {
+        @include tab {
             margin: 0;
-            max-width: 734px;
+            max-width: 100%;
             box-sizing: border-box;
         }
     }
@@ -32,7 +31,7 @@
         background: url("./img/blog.png") center / 100% no-repeat;
         margin-left: -13px;
 
-        @include sp {
+        @include tab {
             margin-left: 17px;
         }
 
@@ -52,7 +51,7 @@
         }
     }
 
-    .section__title {
+    .top-section__title {
 
         .flex-box {
             justify-content: space-between;
@@ -64,7 +63,7 @@
 
 .top-blog__btn {
     font-weight: bold;
-    bottom: 66px;
+   
 
     @include sp {
         position: absolute;

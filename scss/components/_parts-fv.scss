@@ -5,28 +5,29 @@
 **************************/
 .fv {
     position: relative;
-    
-    
+
+
     img {
         height: clamp(12.5rem, -2.944rem + 32.18vw, 21.188rem);
     }
-
-    .section__wrapper {
-        position: absolute;
-        top: clamp(1.25rem, -4.861rem + 12.73vw, 4.688rem);
-        left: clamp(0rem, -25.778rem + 53.7vw, 14.5rem);
-        color: $main-color;
-        font-weight: bold;
-        max-width: clamp(15.625rem, 4.514rem + 23.15vw, 21.875rem);
-        padding: 0;
-
-
-    @include tab{
-        padding: 0 20px ;
-    }
-
-    }
 }
+
+.fv__wrapper {
+    position: absolute;
+    top: clamp(2.5rem, 1.73rem + 3.29vw, 4.688rem);
+    left: clamp(0rem, -25.778rem + 53.7vw, 14.5rem);
+    color: $main-color;
+    font-weight: bold;
+    max-width: clamp(15.625rem, 4.514rem + 23.15vw, 21.875rem);
+    padding: 0;
+
+
+    @include tab {
+        padding: 0 20px;
+    }
+
+}
+
 
 .fv__title-en {
     font-size: clamp(2.25rem, -0.861rem + 6.48vw, 4rem);
@@ -37,8 +38,8 @@
 }
 
 .fv__title-ja {
-    margin-top: 21px;
-    font-size: clamp(1.25rem, 0.806rem + 0.93vw, 1.5rem);
+    margin-top: 18px;
+    font-size: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
     background-color: #fff;
     display: inline-block;
     padding: 3px 10px;
@@ -53,4 +54,3 @@
     font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
     text-wrap-mode: nowrap;
 }
-

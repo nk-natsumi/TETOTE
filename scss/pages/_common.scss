@@ -32,9 +32,21 @@ a {
     margin: 0 auto;
     padding: 0 17px;
 
-    @include sp {
+    @include tab {
         margin: 0;
         box-sizing: border-box;
+    }
+}
+
+.subpage__wrapper {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 22px;
+    box-sizing: border-box;
+
+    @include sp {
+        margin: 0;
     }
 }
 
@@ -76,6 +88,15 @@ a {
 
     @include sp {
         margin-top: 19px;
+    }
+}
+
+.section__title {
+    font-size: clamp(1.5rem, 1.324rem + 0.75vw, 2rem);
+    font-weight: bold;
+
+    @include sp{
+        line-height: 1.5;
     }
 }
 
@@ -191,6 +212,9 @@ a {
     }
 
 }
+
+
+/* フェードイン */
 
 .fade-in-up {
     opacity: 0;

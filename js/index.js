@@ -67,109 +67,109 @@ $(document).ready(function () {
 
 
 
+    const swiperElement = document.querySelector('.top-about__swiper');
 
-    const topAboutSwiper = new Swiper(".top-about__swiper", {
-        loop: true,
-        speed: 500,
-        spaceBetween: 16,
-        slidesPerView: 1.36,
-        centeredSlides: true,
-        allowTouchMove: false,
-        freeMode: true,
-        freeModeMomentum: false,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-
-        breakpoints: {
-            767: {
-                spaceBetween: 24
+    if (swiperElement) {
+        const topAboutSwiper = new Swiper(".top-about__swiper", {
+            loop: true,
+            speed: 500,
+            spaceBetween: 16,
+            slidesPerView: 1.36,
+            centeredSlides: true,
+            allowTouchMove: false,
+            freeMode: true,
+            freeModeMomentum: false,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
             },
-            1024: {
-                spaceBetween: 34,
-                slidesPerView: 2.7,
+            breakpoints: {
+                767: {
+                    spaceBetween: 24
+                },
+                1024: {
+                    spaceBetween: 34,
+                    slidesPerView: 2.7,
+                }
             }
-        }
+        });
+    }
+    const staffSwiperElement = document.querySelector('.staff__swiper');
+
+    if (staffSwiperElement) {
+        const staffSwiper = new Swiper(".staff__swiper", {
+            loop: true,
+            slidesPerView: 1.38,
+            speed: 500,
+            spaceBetween: 23,
+            allowTouchMove: false,
+            freeMode: true,
+            freeModeMomentum: false,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                767: {
+                    slidesPerView: 2.6,
+                    spaceBetween: 33
+                },
+                1199: {
+                    slidesPerView: 3.61,
+                    spaceBetween: 43
+                }
+            }
+        });
+    }
+
+
+    const tocLinks = document.querySelectorAll('.sidebar-toc a');
+    const offset = 150; // ヘッダー高さ（必要に応じて調整）
+
+    // スムーズスクロール（クリック時）
+    tocLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+
+            if (target) {
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: top,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 
-    // Swiper 初期化
-    const staffSwiper = new Swiper(".staff__swiper", {
-        loop: true,
-        slidesPerView: 1.38,
-        speed: 500,
-        spaceBetween: 23,
-        allowTouchMove: false,
-        freeMode: true,
-        freeModeMomentum: false,
-        autoplay: {
-
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        // 前後の矢印
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            767: {
-                slidesPerView: 2.6,
-                spaceBetween: 33
-            },
-            1199: {
-                slidesPerView: 3.61,
-                spaceBetween: 43
-            }
-        }
+    // アクティブ表示（スクロール連動）
+    const headings = Array.from(tocLinks).map(link => {
+        const id = link.getAttribute('href').substring(1);
+        return document.getElementById(id);
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const tocLinks = document.querySelectorAll('.sidebar-toc a');
-        const offset = 118; // ヘッダー高さ（必要に応じて調整）
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        const scrollY = window.pageYOffset;
 
-        // スムーズスクロール（クリック時）
+        headings.forEach((heading) => {
+            if (!heading) return;
+            const sectionTop = heading.offsetTop - offset - 10;
+            if (scrollY >= sectionTop) {
+                currentId = heading.getAttribute('id');
+            }
+        });
+
         tocLinks.forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const target = document.getElementById(targetId);
-
-                if (target) {
-                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-                    window.scrollTo({
-                        top: top,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // アクティブ表示（スクロール連動）
-        const headings = Array.from(tocLinks).map(link => {
-            const id = link.getAttribute('href').substring(1);
-            return document.getElementById(id);
-        });
-
-        window.addEventListener('scroll', () => {
-            let currentId = '';
-            const scrollY = window.pageYOffset;
-
-            headings.forEach((heading) => {
-                if (!heading) return;
-                const sectionTop = heading.offsetTop - offset - 10;
-                if (scrollY >= sectionTop) {
-                    currentId = heading.getAttribute('id');
-                }
-            });
-
-            tocLinks.forEach(link => {
-                link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
-            });
+            link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
         });
     });
-
-
 });
+
 

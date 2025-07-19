@@ -1,12 +1,12 @@
 <footer class="footer">
     <div class="footer__upper">
-    <div class="footer__entry-box">
-        <p class="footer__entry-text">わたしたちと一緒に働く仲間を募集中です。<br>
-            少数精鋭のチームで、<br>あなたも会社も一緒に成長していきましょう。</p>
-        <div class=" more-btn footer__entry-btn">
-            <a href="<?php echo home_url('/entry/'); ?>">ENTRY</a>
+        <div class="footer__entry-box">
+            <p class="footer__entry-text">わたしたちと一緒に働く仲間を募集中です。<br>
+                少数精鋭のチームで、<br>あなたも会社も一緒に成長していきましょう。</p>
+            <div class=" more-btn footer__entry-btn">
+                <a href="<?php echo home_url('/entry/'); ?>">ENTRY</a>
+            </div>
         </div>
-    </div>
     </div>
     <div class="footer__main">
         <div class="footer__inner flex-box">
@@ -29,14 +29,15 @@
                     <li class="footer__item footer__item-upper"><a href="<?php echo esc_url(home_url('/')); ?>/">ホーム</a>
                         <a href="<?php echo esc_url(home_url('/')); ?>/about.us/">TETOTEについて</a>
                         <a href="<?php echo esc_url(home_url('/')); ?>/staff/">人を知る</a>
-                        <a href="<?php echo esc_url(home_url('/')); ?>/company/" <?php if (is_page('company')) echo ' class="current"'; ?>>研修制度とキャリアパス</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/career/" <?php if (is_page('company')) echo ' class="current"'; ?>>研修制度とキャリアパス</a>
                         <a href="<?php echo esc_url(home_url('/')); ?>/benefits/" <?php if (is_single() || is_archive() || is_home()) echo ' class="current"'; ?>>福利厚生</a>
                     </li>
 
-                    <li class="footer__item footer__item-lower"><a href="<?php echo esc_url(home_url('/')); ?>/blog/" <?php if (is_page('contact')) echo ' class="current"'; ?>>採用ブログ</a>
+                    <li class="footer__item footer__item-lower">
+                        <a href="<?php echo esc_url(home_url('/')); ?>/blog/" <?php if (is_page('contact')) echo ' class="current"'; ?>>採用ブログ</a>
                         <a href="<?php echo esc_url(home_url('/')); ?>/details/">募集要項</a>
                         <a href="<?php echo esc_url(home_url('/')); ?>/faq/">よくある質問</a>
-                        <a href="<?php echo esc_url(home_url('/')); ?>/about.us/#company">会社概要</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>/about.us/">会社概要</a>
                     </li>
                 </ul>
             </nav>

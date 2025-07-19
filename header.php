@@ -63,14 +63,14 @@
                 <nav class="hamburger__nav">
                     <ul class="hamburger__list flex-box">
                         <li class="hamburger-item">
-                            <a href="<?php echo esc_url(home_url('/')); ?>/about/">ABOUT US<br><span>TETOTEについて</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/about-us/">ABOUT US<br><span>TETOTEについて</span></a>
                             <a href="<?php echo esc_url(home_url('/')); ?>/staff/">STAFF<br><span>社員について</span></a>
                             <a href="<?php echo esc_url(home_url('/')); ?>/blog/">BLOG<br><span>採用ブログ</span></a>
                         </li>
                         <li class="hamburger-item">
-                            <a href="<?php echo esc_url(home_url('/')); ?>/company/" <?php if (is_page('company')) echo ' class="current"'; ?>>BENEFITS<br><span>福利厚生について</span></a>
-                            <a href="<?php echo esc_url(home_url('/')); ?>/news/" <?php if (is_single() || is_archive() || is_home()) echo ' class="current"'; ?>>CARRER<br><span>研修制度とキャリアパス</span></a>
-                            <a href="<?php echo esc_url(home_url('/')); ?>/contact/" <?php if (is_page('contact')) echo ' class="current"'; ?>>FAQ<br><span>よくある質問</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/benefits/">BENEFITS<br><span>福利厚生について</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/career/">CARRER<br><span>研修制度とキャリアパス</span></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>/faq/">FAQ<br><span>よくある質問</span></a>
                         </li>
                     </ul>
 

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="blog-main">
+<main class="blog__main">
     <?php get_template_part('template-parts/parts', 'fv'); ?>
 
     <div id=" top-blog blog" class="top-blog blog">

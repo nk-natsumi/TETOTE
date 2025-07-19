@@ -102,7 +102,7 @@
         <div class="top-title fade-in-up">
             <h2 data-title="staff" class="main-title"><span>人</span>を知る</h2>
         </div>
-        <div class="section__wrapper section__title">
+        <div class="section__wrapper top-section__title">
             <p class="sabtitle">TETOTEの社員がどういった信念を持って働いているのか、<br>一日のスケジュールや仕事内容などを紹介します。</p>
         </div>
         <div class="swiper staff__swiper">
@@ -159,7 +159,7 @@
 
     <section id="top-benefits" class="top-benefits">
         <div class="section__wrapper">
-            <div class="section__title">
+            <div class="top-section__title">
                 <div class="top-title fade-in-up">
                     <h2 class="main-title"><span>制度・環境</span>を知る</h2>
                 </div>
@@ -198,7 +198,7 @@
 
     <section id="top-blog" class="top-blog">
         <div class="section__wrapper">
-            <div class="section__title">
+            <div class="top-section__title">
                 <div class="flex-box">
                     <div class="top-title fade-in-up">
                         <h2 class="main-title">採用ブログ</h2>

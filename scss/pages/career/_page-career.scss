@@ -1,0 +1,46 @@
+@use '../../base/_setting' as *;
+
+/************************
+    career
+**************************/
+
+.career{
+    margin-top: 145px;
+}
+
+.career__sabtitle{
+    margin-top: 113px;
+}
+
+.career__img{
+    margin-top: 48px;
+}
+
+.career__text{
+    margin-top: 37px;
+}
+
+.training__content{
+    margin: 89px 0 176px;
+}
+
+.training__title{
+    padding: 12px 21px;
+    background-color: $btn-color;
+    border-radius: 10px;
+    margin-top: 37px;
+    font-size: clamp(1.25rem, 1.162rem + 0.38vw, 1.5rem);
+
+    @include sp{
+        margin-top: 55px;
+    }
+}
+
+.training__text{
+    margin-top: 50px;
+    line-height: 1.8;
+
+    @include sp{
+        margin-top: 20px;
+    }
+}

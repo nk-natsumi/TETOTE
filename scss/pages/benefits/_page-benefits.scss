@@ -1,0 +1,92 @@
+@use '../../base/_setting' as *;
+
+/************************
+    benefits
+**************************/
+
+
+
+.systems {
+    max-width: 980px;
+    width: 100%;
+    margin: 145px auto 0;
+}
+
+.systems__content {
+    margin-top: 77px;
+}
+
+.systems__item {
+    padding: 36px 0;
+    gap: calc(151/980)*100%;
+    border-bottom: 1px $main-color dotted;
+
+    @include sp{
+        display: block;
+    }
+
+    dt {
+        max-width: 80px;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .line-height {
+        line-height: 1.5;
+
+        @include sp{
+            line-height: 1.8;
+        }
+    }
+
+    dd {
+        font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+
+        @include sp {
+            margin: 30px 0 0 0px;
+        }
+    }
+
+}
+
+.facility{
+    padding-left: 0.4rem;
+}
+
+.voice {
+    margin-top: 128px;
+}
+
+.voice__content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 46px;
+    margin-top: 23px;
+
+    @include sp {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+}
+
+.staff__job {
+    color: $accent-color;
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+    font-weight: bold;
+}
+
+.staff__name {
+    font-size: clamp(1.25rem, 1.162rem + 0.38vw, 1.5rem);
+    font-weight: bold;
+    margin-top: 13px;
+}
+
+.staff__text {
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+    margin-top: 25px;
+    line-height: 1.8;
+}
+
+.voice__img {
+    margin: 36px 0 139px;
+}
