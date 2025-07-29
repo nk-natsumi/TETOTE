@@ -1,0 +1,135 @@
+@use '../../base/_setting' as *;
+
+/************************
+    faq
+**************************/
+
+.faq__wrapper {
+    margin: 145px auto 139px;
+    box-sizing: border-box;
+    padding: 0 22px;
+
+    @include sp {
+        margin-top: 80px;
+        padding: 0 17px;
+    }
+}
+
+.nav-application{
+    span {
+        right: 27px;
+    }
+}
+
+.nav-about-career,
+.nav-about-benefits {
+    span {
+        right: 37px;
+    }
+}
+
+.application {
+    padding-top: 8px;
+}
+
+.faq__content {
+    margin-top: 88px;
+}
+
+.faq__accordion {
+    margin-top: clamp(2.5rem, 0.893rem + 6.85vw, 7.063rem);
+}
+
+.faq__summary {
+    padding: 32px 20px 32px 0;
+    border-bottom: 1px solid $btn-color;
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.625rem, 0.405rem + 0.94vw, 1.25rem);
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+    }
+
+    &::after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        background:
+            linear-gradient(to right, $accent-color 0 100%) center / 100% 2px no-repeat,
+            linear-gradient(to bottom, $accent-color 0 100%) center / 2px 100% no-repeat;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+
+        @include sp {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+
+.faq__item:nth-of-type(1) .faq__summary {
+    border-top: 1px solid $btn-color;
+}
+
+.faq__item:nth-of-type(n+3) .faq__summary {
+    padding-top: 36px;
+}
+
+
+.faq__mark {
+    font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
+    font-family: $sab-font;
+    color: $accent-color;
+}
+
+.faq__question {
+    @include sp {
+        line-height: 1.5;
+    }
+}
+
+.faq__answer {
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+
+    a {
+        color: $accent-color;
+        transition: all 0.3s;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.faq__item[open] {
+    .faq__summary {
+        padding-bottom: 18px;
+        border-bottom: none;
+
+        &::after {
+            margin-top: 6px;
+            background:
+                linear-gradient(to right, $accent-color 0 100%) center / 100% 2px no-repeat;
+        }
+    }
+
+    .faq__answer {
+        border-bottom: 1px solid $btn-color;
+        padding: 0 36px 36px 36px;
+        line-height: 1.0;
+
+        @include tab{
+            line-height: 1.5;
+        }
+        
+        @include sp{
+            padding: 0 20px 36px ;
+        }
+    }
+}

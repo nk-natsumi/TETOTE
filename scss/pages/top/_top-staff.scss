@@ -18,7 +18,7 @@
     }
 
     .swiper {
-        height: 507px;
+        height: clamp(31.688rem, -4.5rem + 40.21vw, 43.75rem);
 
         @include tab {
             height: clamp(31.25rem, 24.028rem + 15.05vw, 35.313rem);

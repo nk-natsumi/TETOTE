@@ -18,7 +18,7 @@ if ( is_post_type_archive('staff') ) {
 
 // ここで ACFを取得
 $fv_url = get_field('fv_image', $page_id);
-$fv_title = get_field('fv_title_ja', $page_id);
+$fv_title = get_field('fv_title_en', $page_id);
 $fv_subtitle = get_field('fv_subtitle', $page_id);
 
 // そのページのタイトルを取得
@@ -28,10 +28,10 @@ $fv_page_title = get_the_title($page_id);
 <section class="fv">
     <img src="<?php echo esc_url($fv_url); ?>" alt="FV画像">
     <div class="fv__wrapper ">
-        <h2 class="fv__title-en"><?php echo esc_html($fv_page_title); ?></h2>
+        <h2 class="fv__title-en"><?php echo esc_html($fv_title); ?></h2>
 
         <?php if (!empty($fv_title)) : ?>
-            <h3 class="fv__title-ja"><?php echo esc_html($fv_title); ?></h3>
+            <h3 class="fv__title-ja"><?php echo esc_html($fv_page_title); ?></h3>
         <?php endif; ?>
 
         <?php if (!empty($fv_subtitle)) : ?>

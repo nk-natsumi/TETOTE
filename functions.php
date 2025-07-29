@@ -57,4 +57,39 @@ function add_id_to_h2($content)
 }
 add_filter('the_content', 'add_id_to_h2');
 
+/* パンクズのタイトル部分をカスタムフィールドに変更*/
+add_filter('bcn_breadcrumb_title', 'custom_breadcrumb_title_meta', 10, 3);
+function custom_breadcrumb_title_meta($title, $type, $id)
+{
+    // 投稿や固定ページ、カスタム投稿タイプ（staff）などに限定
+    if (get_post_type($id)) {
+        $custom_title = get_post_meta($id, 'fv_title_en', true);
+        if (!empty($custom_title)) {
+            return esc_html($custom_title); // カスタムフィールドに置き換え
+        }
+    }
+    return $title;
+}
 
+function my_enqueue_scripts()
+{
+    // jQueryが必要ならWordPressから読み込み
+    wp_enqueue_script('jquery');
+
+    // あなたのテーマの form-validation.js を読み込む
+    wp_enqueue_script(
+        'form-validation',
+        get_template_directory_uri() . '/js/index.js', // jsディレクトリ内に配置した場合
+        ['jquery'],
+        null,
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+
+
+// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+  return false;
+} 

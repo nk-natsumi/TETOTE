@@ -18,7 +18,9 @@
                         }
                         ?>
                     </span>
-                    <p class="blog__date"><?php the_time('Y.m.d'); ?></p>
+                    <time class="blog__date" datetime="<?php the_time('Y-m-d'); ?>">
+                        <?php the_time('Y.m.d'); ?>
+                    </time>
                 </div>
                 <h2><?php the_title(); ?></h2>
                 <div class="blog__img">
@@ -44,9 +46,7 @@
                             $title = get_the_title($prev_post->ID);
                             $date = get_the_time('Y.m.d', $prev_post->ID);
                         ?>
-                            <a href="<?php echo esc_url($url); ?>">
-                                <div class="arrow">
-                                </div>
+                            <a class="navigation__prev-box" href="<?php echo esc_url($url); ?>">
                                 <span class="nav-label">前の記事</span>
                                 <span class="post-title"><?php echo esc_html($title); ?></span>
                                 <span class="post-date"><?php echo esc_html($date); ?></span>
@@ -61,12 +61,10 @@
                             $title = get_the_title($next_post->ID);
                             $date = get_the_time('Y.m.d', $next_post->ID);
                         ?>
-                            <a href="<?php echo esc_url($url); ?>">
+                            <a class="navigation__next-box" href="<?php echo esc_url($url); ?>">
                                 <span class="nav-label">次の記事</span>
                                 <span class="post-title"><?php echo esc_html($title); ?></span>
                                 <span class="post-date"><?php echo esc_html($date); ?></span>
-                                <div class="arrow">
-                                </div>
                             </a>
                         <?php } ?>
                     </div>

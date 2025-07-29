@@ -1,0 +1,77 @@
+@use '../../base/_setting' as *;
+
+/************************
+    details
+**************************/
+
+.details__wrapper {
+    margin: 145px auto 139px;
+    box-sizing: border-box;
+    padding: 0 22px;
+
+    @include sp {
+        margin-top: 80px;
+        padding: 0 17px;
+    }
+}
+
+.details__sabtitle {
+    margin-top: clamp(3.75rem, 2.584rem + 4.98vw, 7.063rem);
+    line-height: inherit;
+}
+
+.nav-consultant {
+    span {
+        right: 47px;
+    }
+}
+
+.nav-solution-sales,
+.nav-engineer {
+    span {
+        right: 27px;
+    }
+}
+
+.details__inner {
+    margin-top: 97px;
+}
+
+.details__content {
+    margin-top: 88px;
+}
+
+.details__item {
+    margin-top: clamp(2.5rem, 1.686rem + 3.47vw, 4.813rem);
+
+    .flex-box {
+        gap: calc((135/980)*100%);
+        padding: 36px 0;
+        background-image: url("./../img/line b.svg");
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: bottom;
+
+        @include sp {
+            display: block;
+        }
+    }
+
+    .details__value-top{
+        line-height: 1.5;
+    }
+}
+
+.details__label {
+    max-width: 96px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.details__value {
+
+    @include sp {
+        line-height: 1.5;
+        margin: 30px 0 0 0px;
+    }
+}

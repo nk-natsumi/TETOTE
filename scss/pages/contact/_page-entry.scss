@@ -1,0 +1,351 @@
+@use '../../base/_setting' as *;
+
+/************************
+    entry
+**************************/
+.entry__wrapper {
+    background-color: $bg-color;
+    padding: 33px 17px 57px;
+    margin-bottom: 139px;
+}
+
+.entry__inner {
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 58px 71px 81px;
+    box-sizing: border-box;
+}
+
+.entry__textarea {
+    text-align: center;
+    padding-bottom: 95px;
+    background-image: url("./../img/line g.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: bottom;
+    box-sizing: border-box;
+}
+
+.entry__sabtitle {
+    font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
+}
+
+.entry__title {
+    font-size: clamp(1.5rem, 1.324rem + 0.75vw, 2rem);
+    margin-top: 29px;
+
+    span {
+        color: $accent-color;
+    }
+}
+
+.entry__text {
+    margin: 51px auto 0;
+    max-width: 495px;
+    width: 100%;
+    text-align: left;
+    line-height: 1.5;
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+
+    span {
+        color: $accent-color;
+    }
+}
+
+.form {
+    margin-top: 97px;
+}
+
+.form-item {
+    gap: 35px;
+    margin-top: 27px;
+    align-items: center;
+}
+
+.form-item-label {
+    max-width: 128px;
+    width: 100%;
+
+    span {
+        color: $accent-color;
+    }
+}
+
+.wpcf7-form-control-wrap {
+    width: 100%;
+}
+
+.wpcf7-text {
+    padding: 20px;
+    max-width: 575px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $btn-color;
+    border-radius: 10px;
+    background-color: $bg-color;
+
+    &::placeholder {
+        color: #757575;
+        font-size: 1rem;
+        line-height: 1;
+
+    }
+}
+
+.form-birth {
+    align-items: normal;
+
+    .form-item-label {
+        margin-top: 16px;
+    }
+
+    input,
+    select {
+        padding: 20px;
+        max-width: 168px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: 10px;
+        border: 1px solid $btn-color;
+        border-radius: 10px;
+        background-color: $bg-color;
+
+        &::placeholder {
+            color: #757575;
+        }
+    }
+
+    input {
+        font-size: 1rem;
+    }
+
+    select {
+        padding: 22px 20px;
+        font-size: 0.75rem;
+    }
+
+    .wpcf7-select {
+        appearance: none; // ブラウザ標準の矢印を消す
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("./../img/arrow.svg");
+        background-repeat: no-repeat;
+        background-size: 11px 6px;
+        background-position: right 15px center; // ←ここを調整！右の余白を詰めたいなら数値を小さく
+
+
+        &:focus {
+            outline: 2px solid $accent-color; // わかりやすい色
+        }
+    }
+}
+
+
+.custom-radio {
+    cursor: pointer;
+
+    input[type="radio"] {
+        @extend .visually-hidden;
+
+        &:checked+.fake-radio::after {
+            display: block;
+        }
+
+        &:focus+.fake-radio {
+            outline: 2px solid $accent-color;
+            outline-offset: 4px;
+        }
+    }
+}
+
+.birth-month {
+    margin-right: 17px;
+    max-width: 194px;
+}
+
+
+
+.wpcf7-radio,
+.birth-inner {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-radio1,
+.form-radio2 {
+    margin-top: 43px;
+    align-items: baseline;
+
+    .form-item-label {
+        line-height: 1.5;
+    }
+}
+
+.wpcf7-list-item {
+    margin-left: 0 !important;
+}
+
+input,
+select {
+    vertical-align: baseline;
+}
+
+.form-radio1 {
+    .fake-radio {
+        border-radius: 50%;
+
+        &::after {
+            border-radius: 50%;
+        }
+    }
+}
+
+.form-radio2 {
+    .wpcf7-radio {
+        gap: 21px;
+    }
+}
+
+
+/* 外枠 */
+.fake-radio {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $btn-color;
+    background-color: $bg-color;
+    margin-right: 13px;
+    vertical-align: middle;
+    box-sizing: border-box;
+
+    /* 中の塗りつぶし（選択時） */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background-color: $main-color;
+        display: none;
+    }
+}
+
+
+
+.form-pr {
+    align-items: normal;
+
+    .isMsg {
+        margin-top: 16px;
+    }
+
+    .wpcf7-textarea {
+        width: 100%;
+        padding: 20px 20px 53px;
+        box-sizing: border-box;
+        border: 1px solid $btn-color;
+        border-radius: 10px;
+        background-color: $bg-color;
+        font-size: 1rem;
+
+        &::placeholder {
+            color: #757575;
+        }
+    }
+
+}
+
+
+.form-check {
+    text-align: center;
+    margin-top: 98px;
+}
+
+
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        @extend .visually-hidden;
+
+        &:checked+.fake-checkbox::after {
+            display: block;
+        }
+
+        &:focus+.fake-checkbox {
+            outline: 2px solid $accent-color;
+            outline-offset: 4px;
+        }
+    }
+}
+
+
+
+
+
+.fake-checkbox {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $btn-color;
+    background-color: $bg-color;
+    margin-right: 6px;
+    box-sizing: border-box;
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 50%;
+        width: 4px;
+        height: 8px;
+        border: solid #333;
+        border-width: 0 2px 2px 0;
+        transform: translateX(-50%) rotate(45deg);
+        display: none;
+    }
+}
+
+.checkbox-text {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.wpcf7-submit {
+    display: block;
+    max-width: 256px;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    margin: 61px auto 0;
+    background-color: #fff;
+    border: 1px solid $main-color;
+    cursor: pointer;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    border: 0;
+    white-space: nowrap;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+    display: none;
+}

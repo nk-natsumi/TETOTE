@@ -10,13 +10,10 @@
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv02.jpg" alt="" class="top-fv__img">
             </div>
         </div>
-
-
         <div class="top-fv__textarea fade-in-up">
             <h2 class="top-fv__title text-delay delay-1">BECOME A<br>CHALLENGER.</h2>
             <p class="top-fv__text text-delay delay-2">君の挑戦が、意思が、未来を変える</p>
         </div>
-
         <?php
         $args = array(
             'post_type'      => 'post',
@@ -80,7 +77,6 @@
                     <p class="slogan_02 text-delay delay-2">それこそが、我々の使命だ</p>
                 </h2>
             </div>
-
         </div>
         <div class="top-about__textarea content__wrapper">
             <div class="top-about__text fade-in-up">
@@ -121,17 +117,14 @@
                         <div class="swiper-slide top-staff__slide">
                             <div class="top-staff__img-wrap">
                                 <img src="<?php the_field('staff_img'); ?>" alt="<?php the_title(); ?>" class="top-staff__img">
-
                                 <div class="top-staff__message">
                                     <p class="msg1"><?php the_field('staff_message_1'); ?></p>
                                     <p class="msg2"><?php the_field('staff_message_2'); ?></p>
                                 </div>
-
                                 <div class="top-staff__meta">
                                     <p class="top-staff__job"><?php the_field('staff_job'); ?> <?php the_field('staff_year'); ?>年入社</p>
                                     <p class="top-staff__name"><?php the_field('staff_name'); ?></p>
                                 </div>
-
                             </div>
                         </div>
                 <?php
@@ -145,7 +138,6 @@
             <div class="top-staff__btn more-btn">
                 <a href="<?php echo home_url('/staff/'); ?>">VIEW MORE</a>
             </div>
-
             <div class="swiper-button-prev">
                 <span></span>
             </div>
@@ -153,8 +145,6 @@
                 <span></span>
             </div>
         </div>
-
-
     </section>
 
     <section id="top-benefits" class="top-benefits">
@@ -219,7 +209,6 @@
                     'posts_per_page' => 4
                 );
                 $blog_query = new WP_Query($args);
-
                 if ($blog_query->have_posts()) :
                     $index = 0;
                     while ($blog_query->have_posts()) : $blog_query->the_post();
@@ -250,7 +239,9 @@
                                                 ?>
                                             </span>
                                             <h3 class="top-blog__title"><?php the_title(); ?></h3>
-                                            <p class="top-blog__date"><?php the_time('Y.m.d'); ?></p>
+                                            <time class="top-blog__date" datetime="<?php the_time('Y-m-d'); ?>">
+                                                <?php the_time('Y.m.d'); ?>
+                                            </time>
                                         </div>
                                     </div>
                                 </a>
@@ -272,7 +263,6 @@
         <div class="recruit__wrapper section-title">
             <p class="sabtitle">募集要項（職種、業務内容、応募条件、選考フロー）とよくある質問・会社概要などをまとめています。</p>
         </div>
-
         <div class="more-btn top-recruit__btn">
             <div class="flex-box">
                 <a class="top-recruit-btn recruit-item1 " href="<?php echo home_url('/details/'); ?>">募集要項</a>
@@ -282,11 +272,7 @@
                 <a class="top-recruit-btn recruit-item3" href="<?php echo home_url('/about-us/'); ?>">会社概要</a>
             </div>
         </div>
-
-
     </section>
-
-
 </main>
 
 

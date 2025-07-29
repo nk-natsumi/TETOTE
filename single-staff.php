@@ -7,10 +7,10 @@
             <section class="staff-fv">
                 <article class="staff-detail flex-box  section__wrapper">
                     <div class="staff-detail__info">
-                        <h2 class="staff-detail__messages">
+                        <h1 class="staff-detail__messages">
                             <p class="msg_1"><?php the_field('staff_message_1'); ?></p>
                             <p class="msg_2"><?php the_field('staff_message_2'); ?></p>
-                        </h2>
+                        </h1>
 
                         <p class="staff-detail__job"><?php the_field('staff_job'); ?></p>
                         <div class="flex-box">

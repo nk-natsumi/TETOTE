@@ -1,23 +1,18 @@
 <?php get_header(); ?>
-
 <main class="blog__main">
     <?php get_template_part('template-parts/parts', 'fv'); ?>
 
     <div id=" top-blog blog" class="top-blog blog">
         <div class="section__wrapper">
-           
             <ul class="top-blog__content blog__content grid-box">
                 <?php
                 $paged = max(1, get_query_var('paged'));
-
                 $args = array(
                     'post_type' => 'post',
                     'posts_per_page' => 8,
                     'paged' => $paged
                 );
                 $blog_query = new WP_Query($args);
-
-
                 if ($blog_query->have_posts()) :
                     while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
                         <li class="top-blog__item blog__item">
@@ -36,7 +31,6 @@
                                         <div class="top-blog__text">
                                             <span class="top-blog__category">
                                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/category.png" alt="カテゴリーアイコン" class="category-icon">
-
                                                 <?php
                                                 $category = get_the_category();
                                                 if (!empty($category)) {
@@ -45,12 +39,13 @@
                                                 ?>
                                             </span>
                                             <h3 class="top-blog__title"><?php the_title(); ?></h3>
-                                            <p class="top-blog__date"><?php the_time('Y.m.d'); ?></p>
+                                            <time class="top-blog__date" datetime="<?php the_time('Y-m-d'); ?>">
+                                                <?php the_time('Y.m.d'); ?>
+                                            </time>
                                         </div>
                                     </div>
                                 </a>
                             </article>
-
                         </li>
                 <?php endwhile;
                     wp_reset_postdata();
@@ -62,7 +57,7 @@
                 echo paginate_links(array(
                     'total' => $blog_query->max_num_pages,
                     'current' => $paged, // ←これが正しくないと2重になる
-                    'mid_size' => 1,
+                    'mid_size' => 3,
                     'prev_text' => '1',
                     'next_text' => '2',
                 ));
@@ -70,6 +65,5 @@
             </div>
         </div>
     </div>
-
 </main>
 <?php get_footer(); ?>

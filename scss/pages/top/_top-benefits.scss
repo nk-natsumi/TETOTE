@@ -77,6 +77,12 @@
         padding-bottom: clamp(15.688rem, 8.614rem + 30.18vw, 31.25rem);
     }
 
+    &:hover {
+        .arrow {
+            transform: scale(1.2) translateX(15px); // 拡大しつつ右に5px移動
+        }
+    }
+
 }
 
 .top-benefits__img {
@@ -128,7 +134,7 @@
     width: clamp(21.313rem, 11.424rem + 24.6vw, 26.875rem);
     margin: 0 auto;
 
-    @include sp{
+    @include sp {
         left: -45px;
     }
 }
@@ -139,6 +145,7 @@
         top: clamp(10.625rem, 6.761rem + 16.48vw, 19.125rem);
         left: clamp(12.25rem, 7.818rem + 18.91vw, 22rem);
         padding: clamp(1.313rem, 0.646rem + 1.39vw, 1.688rem) clamp(0.813rem, -0.076rem + 1.85vw, 1.313rem);
+        transition: all 0.3s;
 
 
         span {
@@ -148,10 +155,6 @@
             &::after {
                 background: #fff;
             }
-        }
-
-        &:hover {
-            transform: scale(1.2) translateX(15px); // 拡大しつつ右に5px移動
         }
     }
 }

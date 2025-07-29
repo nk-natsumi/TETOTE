@@ -63,7 +63,7 @@
 
 .top-blog__btn {
     font-weight: bold;
-   
+
 
     @include sp {
         position: absolute;
@@ -78,6 +78,22 @@
         position: relative;
         color: $main-color;
 
+    }
+
+    &:hover {
+        .arrow {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.top-blog__link {
+    a {
+        transition: all 0.3s;
+
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }
 
@@ -113,7 +129,7 @@
     height: clamp(7.563rem, 1.007rem + 13.66vw, 11.25rem);
     border-radius: 10px 0 0 10px;
 
-    @include sp{
+    @include sp {
         width: 121px;
     }
 }

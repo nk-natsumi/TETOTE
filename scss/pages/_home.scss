@@ -48,6 +48,11 @@
         margin: 0 15px;
         transition: all 0.3s;
 
+        @include sp {
+            padding: 11px 13.5px;
+            font-size: 0.75rem;
+        }
+
         &.current {
             background: $main-color;
             color: #fff;
@@ -56,6 +61,11 @@
         // 「.next」と「.prev」以外を非表示に
         &:not(.next):not(.prev):not(.current) {
             display: none;
+        }
+
+        &:hover{
+            background-color: $main-color;
+            color: #fff;
         }
     }
 }

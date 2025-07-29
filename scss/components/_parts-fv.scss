@@ -35,13 +35,15 @@
     background-color: #fff;
     display: inline-block;
     padding: 3px 10px;
+    font-weight: normal;
 }
 
 .fv__title-ja {
     margin-top: 18px;
     font-size: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
     background-color: #fff;
-    display: inline-block;
+    display: block;
+    width: fit-content;
     padding: 3px 10px;
 }
 

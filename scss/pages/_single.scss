@@ -17,7 +17,7 @@
     padding: 41px 40px 23px;
     box-sizing: border-box;
 
-    @include sp{
+    @include sp {
         margin-top: 50px;
         padding: 40px 17px;
     }
@@ -34,7 +34,7 @@
         margin-top: 25px;
         font-size: clamp(1.5rem, 1.324rem + 0.75vw, 2rem);
 
-        @include sp{
+        @include sp {
             line-height: 1.5;
         }
     }
@@ -45,7 +45,6 @@
 }
 
 .blog__text {
-
     h2 {
         font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
     }
@@ -109,8 +108,6 @@
 
 .blog-navigation__prev,
 .blog-navigation__next {
-
-
     a {
         font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
         position: relative;
@@ -155,23 +152,6 @@
         text-align: left;
     }
 
-    .arrow {
-        left: 50px;
-
-        &::before,
-        &::after {
-            left: 40%;
-        }
-
-        &::before {
-            transform: rotate(45deg);
-        }
-
-        &::after {
-            transform: rotate(-45deg);
-        }
-    }
-
 }
 
 
@@ -179,40 +159,75 @@
     a {
         padding: 31px 95px 31px 15px;
         text-align: right;
-
-
-    }
-
-    .arrow {
-        right: 50px;
-        left: revert;
-
-        &::before,
-        &::after {
-            right: 40%;
-        }
-
-        &::before {
-
-            transform: rotate(-45deg);
-        }
-
-        &::after {
-
-            transform: rotate(45deg);
-        }
     }
 }
 
-.nav-label{
+.navigation__prev-box,
+.navigation__next-box {
+
+    &::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border: 0;
+        border-top: solid 2px $main-color;
+        border-right: solid 2px $main-color;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        margin: auto;
+        transition: all 0.3s;
+
+    }
+
+    &::after {
+        content: '';
+        border: 1px solid $main-color;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        transition: all 0.3s;
+    }
+
+
+}
+
+.navigation__prev-box {
+    &::before {
+        left: 60px;
+        transform: rotate(-135deg);
+    }
+
+    &::after {
+        left: 50px;
+    }
+}
+
+.navigation__next-box {
+    &::before {
+        right: 60px;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        right: 50px;
+    }
+}
+
+.nav-label {
     display: none;
 
-    @include sp{
+    @include sp {
         display: block;
     }
 }
 
 .post-title {
+    line-height: 1.4;
+
     @include sp {
         display: none;
     }

@@ -55,7 +55,8 @@
 .top-fv__title {
     font-family: $sab-font;
     font-size: clamp(3rem, -2.333rem + 11.11vw, 6rem);
-    font-weight: bold;
+    font-weight: normal;
+    text-shadow: 0px 4px 4px #00000040;
     line-height: 1.2;
     color: #fff;
     position: absolute;
@@ -71,6 +72,10 @@
     max-width: 419px;
     padding: 15px 0 15px 66px;
     z-index: 1;
+
+    @include tab {
+        margin-top: 240px;
+    }
 
     @include sp {
         font-size: 0.75rem;

@@ -16,7 +16,7 @@
 
 .footer__upper {
     position: relative;
-    background: url(./img/cta\ 1.jpg) center / cover no-repeat;
+    background: url("./../img/cta 1.jpg") center / cover no-repeat;
     padding-bottom: clamp(15.625rem, -10.855rem + 55.17vw, 30.52rem);
 }
 
@@ -33,12 +33,11 @@
     border-radius: 20px;
     z-index: 5;
     font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
-
-
 }
 
 .footer__entry-text {
     line-height: 1.5;
+    font-weight: bold;
 
     @include sp{
         line-height: 2.5;
@@ -68,12 +67,12 @@
     padding: 0 20px 61px;
 
     @include sp{
-        padding-bottom: 85px;
+        padding:0 0 85px;
     }
 
 
     a {
-        transition: transform 0.3s ease;
+        transition: all 0.3s ease;
         font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
     
 

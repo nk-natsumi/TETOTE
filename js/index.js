@@ -38,13 +38,14 @@ $(document).ready(function () {
     //header追走
 
     const header = document.querySelector('.header');
+    const fv = document.querySelector('.top-fv') || document.querySelector('.fv'); // どちらか取得
     const initialHeaderHeight = header.offsetHeight;
 
     window.addEventListener('scroll', function () {
         const scrollY = window.pageYOffset;
-        const viewportHeight = window.innerHeight; // 100vh 相当
+        const fvHeight = fv ? fv.offsetHeight : 0;
 
-        if (scrollY >= viewportHeight) {
+        if (scrollY >= fvHeight) {
             header.classList.add('top-scrolled');
             document.body.style.marginTop = initialHeaderHeight + 'px';
         } else {
@@ -52,6 +53,8 @@ $(document).ready(function () {
             document.body.style.marginTop = '0';
         }
     });
+
+    //トップ画像のスライド
 
     const $imgs = $('.fv-img');
     let current = 0;
@@ -121,7 +124,8 @@ $(document).ready(function () {
                 1199: {
                     slidesPerView: 3.61,
                     spaceBetween: 43
-                }
+                },
+
             }
         });
     }
@@ -170,6 +174,64 @@ $(document).ready(function () {
             link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
         });
     });
+
+    //ページ内なびスクロール
+
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        const headerHeight = $('.header').outerHeight(); // ヘッダーの高さを取得
+        const target = $(this.hash);
+        if (target.length) {
+            const targetPosition = target.offset().top - headerHeight;
+
+            $('html, body').animate({
+                scrollTop: targetPosition
+            }, 500); // スクロール速度（ミリ秒）
+        }
+    });
+
+    //送信ボタン制御
+
+    function checkRequiredFields() {
+        let isValid = true;
+
+        $('.wpcf7-form input[required], .wpcf7-form textarea[required], .wpcf7-form select[required]').each(function () {
+            if (!$(this).val()) {
+                isValid = false;
+            }
+        });
+
+        if (isValid) {
+            $('.wpcf7-submit').prop('disabled', false);
+        } else {
+            $('.wpcf7-submit').prop('disabled', true);
+        }
+    }
+
+    $(document).on('input change', '.wpcf7-form input, .wpcf7-form textarea, .wpcf7-form select', checkRequiredFields);
+    $(document).ready(checkRequiredFields);
+
+
 });
 
 
+$(document).ready(function () {
+    $('.faq__item summary').on('click', function (e) {
+        e.preventDefault();
+
+        const $clickedDetails = $(this).parent();
+
+        // すでに開いてる場合は閉じるだけ
+        if ($clickedDetails.attr('open')) {
+            $clickedDetails.removeAttr('open');
+            return;
+        }
+
+        // 他を閉じる
+        $('.faq__item').not($clickedDetails).removeAttr('open');
+
+        // 自分を開く
+        $clickedDetails.attr('open', true);
+    });
+});

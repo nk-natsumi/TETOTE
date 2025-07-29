@@ -23,7 +23,6 @@
                     </a>
                 </p>
             <?php endif; ?>
-
             <nav id="footer__nav" class="footer__nav">
                 <ul class="footer__list">
                     <li class="footer__item footer__item-upper"><a href="<?php echo esc_url(home_url('/')); ?>/">ホーム</a>
@@ -32,7 +31,6 @@
                         <a href="<?php echo esc_url(home_url('/')); ?>/career/" <?php if (is_page('company')) echo ' class="current"'; ?>>研修制度とキャリアパス</a>
                         <a href="<?php echo esc_url(home_url('/')); ?>/benefits/" <?php if (is_single() || is_archive() || is_home()) echo ' class="current"'; ?>>福利厚生</a>
                     </li>
-
                     <li class="footer__item footer__item-lower">
                         <a href="<?php echo esc_url(home_url('/')); ?>/blog/" <?php if (is_page('contact')) echo ' class="current"'; ?>>採用ブログ</a>
                         <a href="<?php echo esc_url(home_url('/')); ?>/details/">募集要項</a>
@@ -64,7 +62,6 @@
             </ul>
         </div>
     </div>
-
 </footer>
 
 

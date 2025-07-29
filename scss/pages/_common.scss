@@ -3,6 +3,14 @@
     common
 **************************/
 
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 2px solid $accent-color;
+    outline-offset: 3px;
+}
 
 body {
     font-family: $main-font , sans-serif;
@@ -33,7 +41,7 @@ a {
     padding: 0 17px;
 
     @include tab {
-        margin: 0;
+        margin: 0 auto;
         box-sizing: border-box;
     }
 }
@@ -86,6 +94,7 @@ a {
     line-height: 1.5;
     margin-top: 10px;
 
+
     @include sp {
         margin-top: 19px;
     }
@@ -95,7 +104,7 @@ a {
     font-size: clamp(1.5rem, 1.324rem + 0.75vw, 2rem);
     font-weight: bold;
 
-    @include sp{
+    @include sp {
         line-height: 1.5;
     }
 }
@@ -142,6 +151,11 @@ a {
             bottom: 50%;
             margin: auto;
             transition: all 0.3s;
+
+            @include sp {
+                width: 6px;
+                height: 6px;
+            }
         }
     }
 }
@@ -154,7 +168,7 @@ a {
     border: $main-color solid 1px;
     padding: 27px 20px;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 
     @include sp {
         top: -18px;
@@ -204,10 +218,12 @@ a {
     padding: 20px 0 20px calc((232/1440)*100%);
     font-size: 0.875rem;
 
-
+    .home {
+        margin-right: 2px;
+    }
 
     @include tab {
-        padding-left: calc((20/375)*100%);
+        padding: 10px 0 10px calc((20/375)*100%);
         line-height: 1.5;
     }
 
@@ -253,3 +269,86 @@ a {
         transform: translateY(20px);
     }
 }
+
+/* ページ内ナビ */
+
+.page__nav-list {
+    margin-top: 70px;
+    display: flex;
+    gap: 20px calc((49/1024)*100%);
+
+    @include sp {
+        flex-direction: column;
+    }
+}
+
+.nav-item {
+    flex: 1;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center; // ← 横も中央にする
+        font-size: clamp(1.125rem, 1.081rem + 0.19vw, 1.25rem);
+        max-width: 298px;
+        width: 100%;
+        padding: 18px 0;
+        background-color: $bg-color;
+        border: 1px $main-color solid;
+        border-radius: 40px;
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+        transition: all 0.3s;
+
+        @include sp {
+            max-width: 100%;
+        }
+
+        &:hover {
+            background-color: $main-color;
+            color: #fff;
+
+            span {
+                background-color: #fff;
+
+                &::before,
+                &::after {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        span {
+            position: absolute; 
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            width: 20px;
+            height: 2px;
+            background: $main-color;
+            transition: all 0.3s;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                right: 1px;
+                width: 2px;
+                height: 10px;
+                background: $main-color;
+                border-radius: 4px;
+            }
+
+            &::before {
+                top: -1px;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                bottom: -1px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+

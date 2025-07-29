@@ -14,14 +14,21 @@
 
 .systems__content {
     margin-top: 77px;
+
+    @include sp {
+        margin-top: 40px;
+    }
 }
 
 .systems__item {
     padding: 36px 0;
     gap: calc(151/980)*100%;
-    border-bottom: 1px $main-color dotted;
+    background-image: url("./../img/line b.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: bottom;
 
-    @include sp{
+    @include sp {
         display: block;
     }
 
@@ -34,7 +41,7 @@
     .line-height {
         line-height: 1.5;
 
-        @include sp{
+        @include sp {
             line-height: 1.8;
         }
     }
@@ -49,7 +56,7 @@
 
 }
 
-.facility{
+.facility {
     padding-left: 0.4rem;
 }
 

@@ -109,14 +109,19 @@
 
 .header {
     &.scrolled {
-        .header__bar{
+        .header__bar {
             padding: 28px 30px;
+
+            @include sp {
+                padding: 8px 12px;
+            }
         }
-        
-        .menu-trigger{
-            span{
+
+        .menu-trigger {
+            span {
                 background-color: $main-color;
             }
+
             &::after {
                 color: $main-color;
             }
@@ -313,6 +318,7 @@ body.active {
 
 /* menu open */
 
+
 .hamburger__menu {
     display: none;
     margin-top: 0;
@@ -392,11 +398,11 @@ body.active {
     }
 
     .flex-box {
-        gap: 30px;
+        flex-wrap: wrap;
+        gap: 0 30px;
 
-        @include sp {
+        @include tab {
             display: block;
-            border-bottom: 1px $btn-color solid;
         }
     }
 }
@@ -442,10 +448,14 @@ body.active {
 
 }
 
-.hamburger-item a:nth-of-type(3) {
+.hamburger-item:nth-of-type(5),
+.hamburger-item:nth-of-type(6)  {
     border-bottom: 1px solid $btn-color;
+}
 
-    @include sp {
+.hamburger-item:nth-of-type(5){
+    
+    @include tab {
         border-bottom: none;
     }
 }
@@ -453,9 +463,11 @@ body.active {
 
 .hamburger__link {
     margin-top: 45px;
-    gap: 30px;
+    gap:calc((30/528)*100%);
 
-    @include sp {
+    
+
+    @include tab{
         margin-top: 50px;
         flex-direction: column;
         gap: 13px;
