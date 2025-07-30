@@ -26,7 +26,7 @@
 
                 $custom_title = get_field('blog_custom_title');
         ?>
-                <section class="fv__blog">
+                <div class="fv__blog">
                     <a href="<?php echo esc_url(get_permalink()); ?>" class="fv__blog-link flex-box">
                         <p class="fv__blog-left">NEWS</p>
                         <p class="fv__blog-title">
@@ -41,12 +41,13 @@
                         </p>
                         <p class="fv__blog-btn">VIEW MORE</p>
                     </a>
-                </section>
+                </div>
         <?php
             endwhile;
             wp_reset_postdata();
         endif;
         ?>
+
     </section>
 
     <section id="top-about" class="top-about">

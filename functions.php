@@ -71,21 +71,6 @@ function custom_breadcrumb_title_meta($title, $type, $id)
     return $title;
 }
 
-function my_enqueue_scripts()
-{
-    // jQueryが必要ならWordPressから読み込み
-    wp_enqueue_script('jquery');
-
-    // あなたのテーマの form-validation.js を読み込む
-    wp_enqueue_script(
-        'form-validation',
-        get_template_directory_uri() . '/js/index.js', // jsディレクトリ内に配置した場合
-        ['jquery'],
-        null,
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
@@ -93,3 +78,44 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
 } 
+
+
+function my_enqueue_scripts() {
+    // jQuery（WordPressに元々入ってるバージョンを使用）
+    wp_enqueue_script('jquery');
+
+    // 共通JS（index.js）
+    wp_enqueue_script(
+        'my-index-js',
+        get_stylesheet_directory_uri() . '/js/index.js',
+        ['jquery'], // jQueryに依存
+        null,
+        true // フッターで読み込む
+    );
+
+    // トップページのみ読み込むJS
+    if (is_front_page()) {
+        wp_enqueue_script(
+            'lightbox',
+            'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js',
+            [],
+            null,
+            true
+        );
+        wp_enqueue_script(
+            'swiper',
+            'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js',
+            [],
+            null,
+            true
+        );
+        wp_enqueue_script(
+            'inview',
+            'https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js',
+            ['jquery'],
+            null,
+            true
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');

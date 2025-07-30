@@ -761,7 +761,8 @@ body.active {
   display: none;
   margin-top: 0;
   background-color: #FAF7F1;
-  height: 100vh;
+  overflow-y: auto;
+  height: 100dvh;
   align-items: center;
   position: relative;
   top: 0px;
@@ -774,6 +775,7 @@ body.active {
   display: flex;
   width: 100%;
   padding-top: 90px;
+  max-height: 100%;
 }
 @media screen and (max-width: 768px) {
   .hamburger__inner {
@@ -979,7 +981,10 @@ body.active {
 }
 @media screen and (max-width: 1200px) {
   .top-fv__text {
-    margin-top: 240px;
+    margin-top: 260px;
+    font-size: 1.275rem;
+    padding: 11px 0 11px 45px;
+    max-width: 350px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1001,6 +1006,13 @@ body.active {
   border-top: 54px solid #222222;
   z-index: -1;
 }
+@media screen and (max-width: 1200px) {
+  .top-fv__text::before {
+    height: 45px;
+    border-right: 25px solid transparent;
+    border-top: 45px solid #222222;
+  }
+}
 @media screen and (max-width: 768px) {
   .top-fv__text::before {
     height: 30px;
@@ -1012,7 +1024,7 @@ body.active {
 .fv__blog a {
   align-items: center;
   position: absolute;
-  bottom: clamp(0.625rem, -2.486rem + 6.48vw, 2.375rem);
+  top: 87.8%;
   left: clamp(0.75rem, -5.806rem + 13.66vw, 4.438rem);
   z-index: 4;
   width: 87.7083333333%;
@@ -1022,10 +1034,15 @@ body.active {
   background-color: #fff;
   color: #222222;
   gap: 7.1258907363%;
+  transition: transform 0.3s ease;
+}
+.fv__blog a:hover {
+  transform: scale(1.05);
 }
 @media screen and (max-width: 768px) {
   .fv__blog a {
     width: 93.6%;
+    top: 91.3%;
   }
 }
 
@@ -1175,7 +1192,7 @@ body.active {
 
 .top-about__text {
   padding-bottom: clamp(2.438rem, 2.151rem + 1.22vw, 3.25rem);
-  background: url("./img/map.png") center/contain no-repeat;
+  background: url("./../img/map.png") center/contain no-repeat;
 }
 .top-about__text p {
   margin-top: 52px;
@@ -1194,7 +1211,7 @@ body.active {
 }
 .top-staff .top-title {
   max-width: clamp(19.875rem, -4.792rem + 51.39vw, 33.75rem);
-  background: url("./img/member.png") center/100% no-repeat;
+  background: url("./../img/member.png") center/100% no-repeat;
   margin-left: clamp(1.063rem, -5.493rem + 13.66vw, 4.75rem);
 }
 .top-staff .sabtitle {
@@ -1394,7 +1411,7 @@ body.active {
 }
 .top-benefits .top-title {
   max-width: clamp(21.125rem, -5.097rem + 54.63vw, 35.875rem);
-  background: url("./img/benefits.png") center/100% no-repeat;
+  background: url("./../img/benefits.png") center/100% no-repeat;
   margin: 108px auto 0px;
 }
 @media screen and (max-width: 768px) {
@@ -1546,7 +1563,7 @@ body.active {
 .top-blog .top-title {
   max-width: clamp(13.063rem, -3.16rem + 33.8vw, 22.188rem);
   width: 100%;
-  background: url("./img/blog.png") center/100% no-repeat;
+  background: url("./../img/blog.png") center/100% no-repeat;
   margin-left: -13px;
 }
 @media screen and (max-width: 1200px) {
@@ -1684,7 +1701,7 @@ body.active {
 }
 .top-recruit .top-title {
   max-width: 896px;
-  background: url("./img/recruitment.png") center/100% no-repeat;
+  background: url("./../img/recruitment.png") center/100% no-repeat;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
@@ -2061,6 +2078,7 @@ body.active {
 .company__content .flex-box dt {
   max-width: 129px;
   width: 100%;
+  font-weight: bold;
 }
 @media screen and (max-width: 768px) {
   .company__content .flex-box dd {
@@ -2206,6 +2224,11 @@ body.active {
   position: relative;
   margin-top: 25px;
   font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
+}
+@media screen and (max-width: 1200px) {
+  .staff-main .staff-content h2 {
+    margin-top: 75px;
+  }
 }
 .staff-main .staff-content h2:first-of-type {
   margin-top: 0;
@@ -2930,6 +2953,11 @@ body.active {
   padding: 33px 17px 57px;
   margin-bottom: 139px;
 }
+@media screen and (max-width: 768px) {
+  .entry__wrapper {
+    padding: 75px 0;
+  }
+}
 
 .entry__inner {
   max-width: 880px;
@@ -2939,6 +2967,11 @@ body.active {
   border-radius: 10px;
   padding: 58px 71px 81px;
   box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .entry__inner {
+    padding: 58px 17px 81px;
+  }
 }
 
 .entry__textarea {
@@ -2950,17 +2983,35 @@ body.active {
   background-position: bottom;
   box-sizing: border-box;
 }
+@media screen and (max-width: 768px) {
+  .entry__textarea {
+    padding-bottom: 60px;
+  }
+}
 
 .entry__sabtitle {
-  font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
+  font-size: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
 }
 
 .entry__title {
   font-size: clamp(1.5rem, 1.324rem + 0.75vw, 2rem);
   margin-top: 29px;
 }
+@media screen and (max-width: 768px) {
+  .entry__title {
+    line-height: 1.4;
+  }
+}
 .entry__title span {
   color: #988C2C;
+}
+.entry__title br {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .entry__title br {
+    display: block;
+  }
 }
 
 .entry__text {
@@ -2974,6 +3025,12 @@ body.active {
 .entry__text span {
   color: #988C2C;
 }
+@media screen and (max-width: 768px) {
+  .entry__text {
+    margin-top: 30px;
+    max-width: 100%;
+  }
+}
 
 .form {
   margin-top: 97px;
@@ -2984,6 +3041,11 @@ body.active {
   margin-top: 27px;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .form-item {
+    display: block;
+  }
+}
 
 .form-item-label {
   max-width: 128px;
@@ -2992,6 +3054,11 @@ body.active {
 .form-item-label span {
   color: #988C2C;
 }
+@media screen and (max-width: 768px) {
+  .form-item-label {
+    max-width: 100%;
+  }
+}
 
 .wpcf7-form-control-wrap {
   width: 100%;
@@ -2999,17 +3066,22 @@ body.active {
 
 .wpcf7-text {
   padding: 20px;
-  max-width: 575px;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #AFA86F;
   border-radius: 10px;
   background-color: #FAF7F1;
+  max-height: 56px;
 }
 .wpcf7-text::placeholder {
   color: #757575;
   font-size: 1rem;
   line-height: 1;
+}
+@media screen and (max-width: 768px) {
+  .wpcf7-text {
+    margin-top: 20px;
+  }
 }
 
 .form-birth {
@@ -3033,12 +3105,23 @@ body.active {
 .form-birth select::placeholder {
   color: #757575;
 }
+@media screen and (max-width: 768px) {
+  .form-birth input,
+  .form-birth select {
+    max-width: 130px;
+  }
+}
 .form-birth input {
   font-size: 1rem;
 }
 .form-birth select {
   padding: 22px 20px;
   font-size: 0.75rem;
+}
+@media screen and (max-width: 768px) {
+  .form-birth select {
+    padding: 22px 7px;
+  }
 }
 .form-birth .wpcf7-select {
   appearance: none;
@@ -3051,6 +3134,12 @@ body.active {
 }
 .form-birth .wpcf7-select:focus {
   outline: 2px solid #988C2C;
+}
+@media screen and (max-width: 768px) {
+  .form-birth .wpcf7-select {
+    background-size: 8px 4px;
+    background-position: right 7px center;
+  }
 }
 
 .custom-radio {
@@ -3065,8 +3154,12 @@ body.active {
 }
 
 .birth-month {
-  margin-right: 17px;
+  margin-right: 25px;
   max-width: 194px;
+}
+
+.birth-month-inner {
+  max-height: 56px;
 }
 
 .wpcf7-radio,
@@ -3074,6 +3167,12 @@ body.active {
   flex-direction: column;
   gap: 15px;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .wpcf7-radio {
+    margin-top: 20px;
+  }
 }
 
 .form-radio1,
@@ -3084,6 +3183,12 @@ body.active {
 .form-radio1 .form-item-label,
 .form-radio2 .form-item-label {
   line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .form-radio1,
+  .form-radio2 {
+    margin-top: 27px;
+  }
 }
 
 .wpcf7-list-item {
@@ -3114,10 +3219,9 @@ select {
   height: 24px;
   border: 1px solid #AFA86F;
   background-color: #FAF7F1;
-  margin-right: 13px;
+  margin-right: 12px;
   vertical-align: middle;
   box-sizing: border-box;
-  /* 中の塗りつぶし（選択時） */
 }
 .fake-radio::after {
   content: "";
@@ -3149,10 +3253,20 @@ select {
 .form-pr .wpcf7-textarea::placeholder {
   color: #757575;
 }
+@media screen and (max-width: 768px) {
+  .form-pr .wpcf7-textarea {
+    margin-top: 20px;
+  }
+}
 
 .form-check {
   text-align: center;
-  margin-top: 98px;
+  margin-top: 100px;
+}
+@media screen and (max-width: 768px) {
+  .form-check {
+    margin-top: 60px;
+  }
 }
 
 .custom-checkbox {
@@ -3192,7 +3306,6 @@ select {
 
 .checkbox-text {
   font-size: 14px;
-  line-height: 1.5;
 }
 
 .wpcf7-submit {
@@ -3205,6 +3318,8 @@ select {
   background-color: #fff;
   border: 1px solid #222222;
   cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .visually-hidden, .custom-radio input[type=radio], .custom-checkbox input[type=checkbox] {
@@ -3224,10 +3339,14 @@ select {
   display: none;
 }
 
+.wpcf7-response-output {
+  display: none;
+}
+
 /************************
     entry-thanks
 **************************/
-.entry__inner {
+.entry-thanks .entry__inner {
   padding-bottom: 95px;
 }
 

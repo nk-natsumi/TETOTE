@@ -7,6 +7,10 @@
     background-color: $bg-color;
     padding: 33px 17px 57px;
     margin-bottom: 139px;
+
+    @include sp {
+        padding: 75px 0;
+    }
 }
 
 .entry__inner {
@@ -17,6 +21,10 @@
     border-radius: 10px;
     padding: 58px 71px 81px;
     box-sizing: border-box;
+
+    @include sp {
+        padding: 58px 17px 81px;
+    }
 }
 
 .entry__textarea {
@@ -27,18 +35,34 @@
     background-size: auto;
     background-position: bottom;
     box-sizing: border-box;
+
+    @include sp {
+        padding-bottom: 60px;
+    }
 }
 
 .entry__sabtitle {
-    font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
+    font-size: clamp(1rem, 0.824rem + 0.75vw, 1.5rem)
 }
 
 .entry__title {
     font-size: clamp(1.5rem, 1.324rem + 0.75vw, 2rem);
     margin-top: 29px;
 
+    @include sp {
+        line-height: 1.4;
+    }
+
     span {
         color: $accent-color;
+    }
+
+    br {
+        display: none;
+
+        @include sp {
+            display: block;
+        }
     }
 }
 
@@ -53,6 +77,11 @@
     span {
         color: $accent-color;
     }
+
+    @include sp {
+        margin-top: 30px;
+        max-width: 100%;
+    }
 }
 
 .form {
@@ -63,6 +92,10 @@
     gap: 35px;
     margin-top: 27px;
     align-items: center;
+
+    @include sp {
+        display: block;
+    }
 }
 
 .form-item-label {
@@ -72,6 +105,10 @@
     span {
         color: $accent-color;
     }
+
+    @include sp {
+        max-width: 100%;
+    }
 }
 
 .wpcf7-form-control-wrap {
@@ -80,18 +117,21 @@
 
 .wpcf7-text {
     padding: 20px;
-    max-width: 575px;
     width: 100%;
     box-sizing: border-box;
     border: 1px solid $btn-color;
     border-radius: 10px;
     background-color: $bg-color;
+    max-height: 56px;
 
     &::placeholder {
         color: #757575;
         font-size: 1rem;
         line-height: 1;
+    }
 
+    @include sp {
+        margin-top: 20px;
     }
 }
 
@@ -116,6 +156,10 @@
         &::placeholder {
             color: #757575;
         }
+
+        @include sp {
+            max-width: 130px;
+        }
     }
 
     input {
@@ -125,6 +169,10 @@
     select {
         padding: 22px 20px;
         font-size: 0.75rem;
+
+        @include sp {
+            padding: 22px 7px;
+        }
     }
 
     .wpcf7-select {
@@ -136,13 +184,16 @@
         background-size: 11px 6px;
         background-position: right 15px center; // ←ここを調整！右の余白を詰めたいなら数値を小さく
 
-
         &:focus {
-            outline: 2px solid $accent-color; // わかりやすい色
+            outline: 2px solid $accent-color;
+        }
+
+        @include sp {
+            background-size: 8px 4px;
+            background-position: right 7px center;
         }
     }
 }
-
 
 .custom-radio {
     cursor: pointer;
@@ -162,17 +213,25 @@
 }
 
 .birth-month {
-    margin-right: 17px;
+    margin-right: 25px;
     max-width: 194px;
 }
 
-
+.birth-month-inner {
+    max-height: 56px;
+}
 
 .wpcf7-radio,
 .birth-inner {
     flex-direction: column;
     gap: 15px;
     width: 100%;
+}
+
+.wpcf7-radio {
+    @include sp {
+        margin-top: 20px;
+    }
 }
 
 .form-radio1,
@@ -182,6 +241,10 @@
 
     .form-item-label {
         line-height: 1.5;
+    }
+
+    @include sp {
+        margin-top: 27px;
     }
 }
 
@@ -210,7 +273,6 @@ select {
     }
 }
 
-
 /* 外枠 */
 .fake-radio {
     position: relative;
@@ -219,11 +281,10 @@ select {
     height: 24px;
     border: 1px solid $btn-color;
     background-color: $bg-color;
-    margin-right: 13px;
+    margin-right: 12px;
     vertical-align: middle;
     box-sizing: border-box;
 
-    /* 中の塗りつぶし（選択時） */
     &::after {
         content: '';
         position: absolute;
@@ -236,8 +297,6 @@ select {
         display: none;
     }
 }
-
-
 
 .form-pr {
     align-items: normal;
@@ -258,16 +317,21 @@ select {
         &::placeholder {
             color: #757575;
         }
+
+        @include sp {
+            margin-top: 20px;
+        }
     }
-
 }
-
 
 .form-check {
     text-align: center;
-    margin-top: 98px;
-}
+    margin-top: 100px;
 
+    @include sp {
+        margin-top: 60px;
+    }
+}
 
 .custom-checkbox {
     display: inline-flex;
@@ -288,10 +352,6 @@ select {
     }
 }
 
-
-
-
-
 .fake-checkbox {
     position: relative;
     width: 16px;
@@ -300,7 +360,6 @@ select {
     background-color: $bg-color;
     margin-right: 6px;
     box-sizing: border-box;
-
 
     &::after {
         content: "";
@@ -318,7 +377,6 @@ select {
 
 .checkbox-text {
     font-size: 14px;
-    line-height: 1.5;
 }
 
 .wpcf7-submit {
@@ -331,6 +389,8 @@ select {
     background-color: #fff;
     border: 1px solid $main-color;
     cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.0;
 }
 
 .visually-hidden {
@@ -347,5 +407,9 @@ select {
 }
 
 .wpcf7 form.sent .wpcf7-response-output {
+    display: none;
+}
+
+.wpcf7-response-output {
     display: none;
 }

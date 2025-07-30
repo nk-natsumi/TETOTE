@@ -75,20 +75,14 @@
     0% {
         transform: translateY(-100%);
     }
-
     100% {
         transform: translateY(0%);
     }
 }
 
-
-
-
 .header__bar.active {
-
     background-color: $bg-color;
     padding: 28px 30px;
-
 
     @include sp {
         padding: 8px 12px;
@@ -129,7 +123,6 @@
     }
 }
 
-
 .scrolled-logo {
     display: none;
 }
@@ -151,7 +144,6 @@
     }
 }
 
-
 .header__link {
     display: flex;
 
@@ -163,7 +155,6 @@
         font-size: 0.875rem;
         text-align: center;
         font-weight: bold;
-
     }
 
     .details-btn {
@@ -199,7 +190,6 @@
     }
 }
 
-
 .menu-trigger {
     -webkit-appearance: none;
     appearance: none;
@@ -231,7 +221,6 @@
         @include sp {
             font-size: 0.625rem;
         }
-
     }
 
     span {
@@ -273,7 +262,6 @@
             top: 20px;
         }
     }
-
 }
 
 .menu-trigger.active {
@@ -308,29 +296,22 @@
     }
 }
 
-
 body.active {
-    overflow: hidden;
+    overflow : hidden;
 }
 
-
-
-
 /* menu open */
-
-
 .hamburger__menu {
     display: none;
     margin-top: 0;
     background-color: $bg-color;
-    height: 100vh;
+    overflow-y: auto;
+    height: 100dvh;
     align-items: center;
     position: relative;
     top: 0px;
     z-index: 5;
     padding: 0 20px;
-
-
 }
 
 .hamburger__inner {
@@ -338,12 +319,12 @@ body.active {
     display: flex;
     width: 100%;
     padding-top: 90px;
+    max-height: 100%;
 
     @include sp {
         display: block;
         padding-top: 35px;
     }
-
 }
 
 .hamburger__menu.active {
@@ -390,7 +371,6 @@ body.active {
     @include sp {
         padding-left: 0;
         width: 100%;
-
     }
 
     a {
@@ -406,7 +386,6 @@ body.active {
         }
     }
 }
-
 
 .hamburger-item {
     max-width: 248px;
@@ -431,8 +410,6 @@ body.active {
             opacity: 0.6;
         }
 
-
-
         @include sp {
             padding: 12px 0;
             font-size: 1.125rem;
@@ -445,7 +422,6 @@ body.active {
             display: inline-block;
         }
     }
-
 }
 
 .hamburger-item:nth-of-type(5),
@@ -454,18 +430,14 @@ body.active {
 }
 
 .hamburger-item:nth-of-type(5){
-    
     @include tab {
         border-bottom: none;
     }
 }
 
-
 .hamburger__link {
     margin-top: 45px;
     gap:calc((30/528)*100%);
-
-    
 
     @include tab{
         margin-top: 50px;
