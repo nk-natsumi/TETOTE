@@ -10,13 +10,10 @@
         padding-bottom: 108px;
     }
 
-
-
     .top-title {
         max-width: clamp(21.125rem, -5.097rem + 54.63vw, 35.875rem);
         background: url("./../img/benefits.png") center / 100% no-repeat;
         margin: 108px auto 0px;
-
 
         @include sp {
             margin: 71px 0 0;
@@ -37,6 +34,7 @@
     .sabtitle {
         margin-left: clamp(0rem, -3.719rem + 15.87vw, 10.563rem);
         margin-top: 5px;
+        line-height: 1.0;
 
         @include sp {
             line-height: 1.5;
@@ -56,11 +54,7 @@
             gap: 144px;
             padding: 0;
         }
-
-
-
     }
-
 }
 
 .top-benefits__item {
@@ -79,14 +73,12 @@
 
     &:hover {
         .arrow {
-            transform: scale(1.2) translateX(15px); // 拡大しつつ右に5px移動
+            transform: scale(1.2) translateX(15px);
         }
     }
-
 }
 
 .top-benefits__img {
-
     .link-name-e {
         writing-mode: vertical-rl;
         font-family: $sab-font;
@@ -112,7 +104,6 @@
         max-width: clamp(12.625rem, -3.153rem + 32.87vw, 21.5rem);
     }
 }
-
 
 .link-name-j {
     position: absolute;
@@ -146,7 +137,6 @@
         left: clamp(12.25rem, 7.818rem + 18.91vw, 22rem);
         padding: clamp(1.313rem, 0.646rem + 1.39vw, 1.688rem) clamp(0.813rem, -0.076rem + 1.85vw, 1.313rem);
         transition: all 0.3s;
-
 
         span {
             background: #fff;

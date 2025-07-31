@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-
-
 <main class="entry">
     <section class="fv">
         <ol class="c-breadcrumbs">

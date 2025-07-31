@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <main class="blog__post">
-
     <ol class="c-breadcrumbs">
         <?php if (function_exists('bcn_display')) bcn_display(); ?>
     </ol>
@@ -10,7 +9,6 @@
                 <div class="blog__meta flex-box">
                     <span class="top-blog__category">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/category.png" alt="カテゴリーアイコン" class="category-icon">
-
                         <?php
                         $category = get_the_category();
                         if (!empty($category)) {
@@ -22,7 +20,7 @@
                         <?php the_time('Y.m.d'); ?>
                     </time>
                 </div>
-                <h2><?php the_title(); ?></h2>
+                <h1><?php the_title(); ?></h1>
                 <div class="blog__img">
                     <?php
                     if (has_post_thumbnail()) {
@@ -47,7 +45,7 @@
                             $date = get_the_time('Y.m.d', $prev_post->ID);
                         ?>
                             <a class="navigation__prev-box" href="<?php echo esc_url($url); ?>">
-                                <span class="nav-label">前の記事</span>
+
                                 <span class="post-title"><?php echo esc_html($title); ?></span>
                                 <span class="post-date"><?php echo esc_html($date); ?></span>
                             </a>
@@ -62,7 +60,7 @@
                             $date = get_the_time('Y.m.d', $next_post->ID);
                         ?>
                             <a class="navigation__next-box" href="<?php echo esc_url($url); ?>">
-                                <span class="nav-label">次の記事</span>
+
                                 <span class="post-title"><?php echo esc_html($title); ?></span>
                                 <span class="post-date"><?php echo esc_html($date); ?></span>
                             </a>

@@ -28,12 +28,13 @@
             <div class="faq__accordion">
                 <details class="faq__item">
                     <summary class="faq__summary">
-                            <span class="faq__mark">Q</span>
-                            <span class="faq__question">応募資格はありますか？</span>
+                        <span class="faq__mark">Q</span>
+                        <span class="faq__question">応募資格はありますか？</span>
                     </summary>
                     <div class="faq__answer">
                         <p>応募にあたって、特別な資格は必要ありません。
-                            <br>IT業界未経験の方も歓迎しています。意欲と向上心をお持ちの方であれば、どなたでもチャレンジしていただけます。</p>
+                            <br>IT業界未経験の方も歓迎しています。意欲と向上心をお持ちの方であれば、どなたでもチャレンジしていただけます。
+                        </p>
                     </div>
                 </details>
                 <details class="faq__item">
@@ -87,6 +88,7 @@
                 </details>
             </div>
         </div>
+
         <div id="about-career" class="faq__content">
             <h2 class="faq__title section__title">キャリアについて</h2>
             <div class="faq__accordion">
@@ -150,6 +152,7 @@
                 </details>
             </div>
         </div>
+        
         <div id="about-benefits" class="faq__content">
             <h2 class="faq__title section__title">福利厚生について</h2>
             <div class="faq__accordion">

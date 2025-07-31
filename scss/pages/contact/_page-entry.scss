@@ -236,7 +236,7 @@
 
 .form-radio1,
 .form-radio2 {
-    margin-top: 43px;
+    margin-top: 42px;
     align-items: baseline;
 
     .form-item-label {
@@ -391,6 +391,26 @@ select {
     cursor: pointer;
     font-size: 1rem;
     line-height: 1.0;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: $main-color;
+        color: #fff;
+    }
+
+    &:disabled {
+        background-color: #ccc;
+        pointer-events: none;
+        cursor: not-allowed;
+        color: #999;
+        border-color: #ccc;
+        opacity: 0.6;
+
+        &:hover {
+            background-color: #ccc;
+            color: #999;
+        }
+    }
 }
 
 .visually-hidden {
@@ -412,4 +432,8 @@ select {
 
 .wpcf7-response-output {
     display: none;
+}
+
+.wpcf7-spinner {
+    position: absolute !important;
 }

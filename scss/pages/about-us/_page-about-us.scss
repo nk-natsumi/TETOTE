@@ -4,9 +4,8 @@
     about-us
 **************************/
 
-
 .company-policy {
-    counter-reset: sectionNumber; // カウンターを初期化
+    counter-reset: sectionNumber;
 }
 
 .policy__title {
@@ -31,7 +30,7 @@
         font-size: clamp(1.125rem, 1.081rem + 0.19vw, 1.25rem);
         position: relative;
         padding-left: 69px;
-        counter-increment: sectionNumber; // カウンターを1つ進める
+        counter-increment: sectionNumber;
 
         @include sp {
             line-height: 1.5;
@@ -266,7 +265,6 @@
     }
 }
 
-
 .company__info {
     padding: 0 22px;
     box-sizing: border-box;
@@ -311,7 +309,6 @@
             }
         }
     }
-
 }
 
 .company__service {

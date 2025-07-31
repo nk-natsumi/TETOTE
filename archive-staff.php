@@ -3,15 +3,14 @@
 <main class="archive-staff-main">
     <?php get_template_part('template-parts/parts', 'fv'); ?>
 
-
     <div class="staff__wrapper section__wrapper">
         <div class="staff__inner grid-box">
             <?php
             $args = array(
                 'post_type' => 'staff',
                 'posts_per_page' => 6,
-                'orderby'        => 'date',    // 投稿日時で並べ替え（デフォルト）
-                'order'          => 'ASC',   // 昇順 → 古い順
+                'orderby'        => 'date',    
+                'order'          => 'ASC',  
             );
             $staff_query = new WP_Query($args);
             if ($staff_query->have_posts()):
@@ -30,7 +29,6 @@
                                 <p class="top-staff__job"><?php the_field('staff_job'); ?>　<?php the_field('staff_year'); ?>年入社</p>
                                 <p class="top-staff__name"><?php the_field('staff_name'); ?></p>
                             </div>
-
                         </div>
                     </a>
             <?php
@@ -40,7 +38,6 @@
             ?>
         </div>
     </div>
-
 </main>
 
 <?php get_footer(); ?>

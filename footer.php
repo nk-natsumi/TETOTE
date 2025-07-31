@@ -4,7 +4,7 @@
             <p class="footer__entry-text">わたしたちと一緒に働く仲間を募集中です。<br>
                 少数精鋭のチームで、<br>あなたも会社も一緒に成長していきましょう。</p>
             <div class=" more-btn footer__entry-btn">
-                <a href="<?php echo home_url('/entry/'); ?>">ENTRY</a>
+                <a href="<?php echo esc_url(home_url('/entry/')) ?>">ENTRY</a>
             </div>
         </div>
     </div>
@@ -40,7 +40,6 @@
                 </ul>
             </nav>
         </div>
-
         <div class="footer__sns-box flex-box">
             <small class="copyright">&copy; 2024 TETOTE All Right Reserved.</small>
             <ul class="sns-list flex-box">
@@ -63,12 +62,7 @@
         </div>
     </div>
 </footer>
-
-
-
 <?php wp_footer(); ?>
-
 </body>
-
 
 </html>

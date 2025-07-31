@@ -75,6 +75,7 @@
     0% {
         transform: translateY(-100%);
     }
+
     100% {
         transform: translateY(0%);
     }
@@ -297,7 +298,7 @@
 }
 
 body.active {
-    overflow : hidden;
+    overflow: hidden;
 }
 
 /* menu open */
@@ -315,15 +316,15 @@ body.active {
 }
 
 .hamburger__inner {
-    overflow-y: auto;
     display: flex;
     width: 100%;
     padding-top: 90px;
-    max-height: 100%;
+    margin-bottom: 200px;
 
     @include sp {
         display: block;
         padding-top: 35px;
+        margin-bottom: 100px;
     }
 }
 
@@ -425,11 +426,11 @@ body.active {
 }
 
 .hamburger-item:nth-of-type(5),
-.hamburger-item:nth-of-type(6)  {
+.hamburger-item:nth-of-type(6) {
     border-bottom: 1px solid $btn-color;
 }
 
-.hamburger-item:nth-of-type(5){
+.hamburger-item:nth-of-type(5) {
     @include tab {
         border-bottom: none;
     }
@@ -437,9 +438,9 @@ body.active {
 
 .hamburger__link {
     margin-top: 45px;
-    gap:calc((30/528)*100%);
+    gap: calc((30/528)*100%);
 
-    @include tab{
+    @include tab {
         margin-top: 50px;
         flex-direction: column;
         gap: 13px;

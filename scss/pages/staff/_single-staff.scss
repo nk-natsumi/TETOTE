@@ -37,7 +37,6 @@
         font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
         margin-top: 18px;
     }
-
 }
 
 .staff-detail__info {
@@ -107,12 +106,12 @@
             margin-top: 25px;
             font-size: clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem);
 
-            @include tab{
+            @include tab {
                 margin-top: 75px;
             }
 
             &:first-of-type {
-                margin-top: 0; // 最初のだけ消す
+                margin-top: 0;
             }
 
             &::before {
@@ -173,7 +172,6 @@
         position: relative;
     }
 
-
     li {
         margin-top: 13px;
 
@@ -181,8 +179,6 @@
         &+li {
             margin-top: 16px;
         }
-
-
     }
 
     @include tab {
@@ -210,11 +206,9 @@
 
         }
     }
-
 }
 
 .other-staff {
-
     margin-top: 107px;
 
     h2 {
@@ -231,9 +225,7 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-auto-rows: auto;
         gap: 48px 43px;
-        /* 縦 横 */
         padding: 0 19px 139px;
         box-sizing: border-box;
     }
-
 }

@@ -47,7 +47,6 @@
             wp_reset_postdata();
         endif;
         ?>
-
     </section>
 
     <section id="top-about" class="top-about">
@@ -108,8 +107,8 @@
                 $args = array(
                     'post_type' => 'staff',
                     'posts_per_page' => 6,
-                    'orderby'        => 'date',    // 投稿日時で並べ替え（デフォルト）
-                    'order'          => 'ASC',   // 昇順 → 古い順
+                    'orderby'        => 'date',    
+                    'order'          => 'ASC',   
                 );
                 $staff_query = new WP_Query($args);
                 if ($staff_query->have_posts()):
@@ -275,7 +274,5 @@
         </div>
     </section>
 </main>
-
-
 
 <?php get_footer(); ?>

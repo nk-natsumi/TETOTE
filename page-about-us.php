@@ -97,12 +97,10 @@
                     <dt>会社名</dt>
                     <dd>TETOTE株式会社</dd>
                 </div>
-
                 <div class="flex-box">
                     <dt>所在地</dt>
                     <dd>〒100-0001 東京都千代田区千代田 1-1-1</dd>
                 </div>
-
                 <div class="flex-box">
                     <dt>代表者名</dt>
                     <dd>田中 浩二郎 (代表取締役)</dd>
@@ -131,7 +129,6 @@
             </dl>
         </section>
     </div>
-
 </main>
 
 <?php get_footer(); ?>

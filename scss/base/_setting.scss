@@ -7,16 +7,11 @@ $accent-color: #988C2C;
 $btn-color: #AFA86F;
 $bg-color: #FAF7F1;
 
-
 $main-font: 'Noto Sans JP';
 $sab-font: 'Viga';
 
-
-
-// ブレイクポイント
 $tab: 1200px;
 $sp: 768px;
-
 
 @mixin tab {
     @media screen and (max-width: ($tab)) {

@@ -70,17 +70,14 @@
         padding:0 0 85px;
     }
 
-
     a {
         transition: all 0.3s ease;
         font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
     
-
         &:hover {
             opacity: 0.6;
         }
     }
-
 }
 
 .footer__inner {
@@ -93,7 +90,6 @@
         flex-direction: column-reverse;
         gap: 108px;
     }
-
 }
 
 .footer__logo {
@@ -145,7 +141,6 @@
         left: 50%;
         transform: translateX(-50%);
     }
-
 }
 
 .copyright {

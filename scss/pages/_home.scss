@@ -22,7 +22,6 @@
     @include sp {
         margin: 90px 0 55px;
     }
-
 }
 
 .blog__item {
@@ -58,12 +57,12 @@
             color: #fff;
         }
 
-        // 「.next」と「.prev」以外を非表示に
+        // 「.next」と「.prev」以外を非表示
         &:not(.next):not(.prev):not(.current) {
             display: none;
         }
 
-        &:hover{
+        &:hover {
             background-color: $main-color;
             color: #fff;
         }

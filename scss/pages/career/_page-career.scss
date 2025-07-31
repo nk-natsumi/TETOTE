@@ -4,46 +4,45 @@
     career
 **************************/
 
-.career{
+.career {
     margin-top: 145px;
 }
 
-.career__sabtitle{
+.career__sabtitle {
     margin-top: 113px;
     line-height: inherit;
 }
 
-.career__img{
+.career__img {
     margin-top: 48px;
 }
 
-.career__text{
+.career__text {
     margin-top: 37px;
     line-height: inherit;
-
 }
 
-.training__content{
+.training__content {
     margin: 89px 0 176px;
 }
 
-.training__title{
+.training__title {
     padding: 12px 21px;
     background-color: $btn-color;
     border-radius: 10px;
     margin-top: 37px;
     font-size: clamp(1.25rem, 1.162rem + 0.38vw, 1.5rem);
 
-    @include sp{
+    @include sp {
         margin-top: 55px;
     }
 }
 
-.training__text{
+.training__text {
     margin-top: 50px;
     line-height: 1.8;
 
-    @include sp{
+    @include sp {
         margin-top: 20px;
     }
 }

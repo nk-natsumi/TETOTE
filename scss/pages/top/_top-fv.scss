@@ -40,7 +40,6 @@
     object-fit: cover;
 }
 
-
 .top-fv__textarea {
     position: absolute;
     top: calc((286/823)*100%);
@@ -134,7 +133,7 @@
 
         @include sp {
             width: calc((351/375)*100%);
-            top:91.3%;
+            top: 91.3%;
         }
     }
 }
@@ -155,7 +154,6 @@
     font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
     padding: clamp(0.625rem, -0.819rem + 3.01vw, 1.438rem) 0;
     margin-right: 186px;
-
 
     @include sp {
         margin-right: 0;

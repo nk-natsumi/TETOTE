@@ -6,7 +6,6 @@
 .fv {
     position: relative;
 
-
     img {
         height: clamp(12.5rem, -2.944rem + 32.18vw, 21.188rem);
     }
@@ -21,13 +20,10 @@
     max-width: clamp(15.625rem, 4.514rem + 23.15vw, 21.875rem);
     padding: 0;
 
-
     @include tab {
         padding: 0 20px;
     }
-
 }
-
 
 .fv__title-en {
     font-size: clamp(2.25rem, -0.861rem + 6.48vw, 4rem);

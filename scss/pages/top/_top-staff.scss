@@ -6,7 +6,6 @@
 .top-staff {
     margin-top: clamp(4.438rem, -1.118rem + 11.57vw, 7.563rem);
 
-
     .top-title {
         max-width: clamp(19.875rem, -4.792rem + 51.39vw, 33.75rem);
         background: url("./../img/member.png") center / 100% no-repeat;
@@ -37,8 +36,6 @@
         @include sp {
             margin-top: 25px;
         }
-
-
     }
 
     .top-staff__controls {
@@ -47,7 +44,6 @@
         justify-content: center;
         padding-bottom: clamp(3.875rem, 1.875rem + 4.17vw, 5rem);
 
-        
         .swiper-button-prev,
         .swiper-button-next {
             position: absolute;
@@ -82,7 +78,6 @@
                 background: $main-color;
                 position: relative;
 
-
                 &::before,
                 &::after {
                     position: absolute;
@@ -104,12 +99,10 @@
                     bottom: -1px;
                     transform: rotate(45deg);
                 }
-
             }
         }
 
         .swiper-button-next {
-
             left: calc(((1155/1440)*100%));
 
             @include tab {
@@ -122,7 +115,6 @@
                 height: 2px;
                 background: $main-color;
                 position: relative;
-
 
                 &::before,
                 &::after {
@@ -148,7 +140,6 @@
             }
         }
 
-
         .top-staff__btn {
             a {
                 position: absolute;
@@ -158,10 +149,7 @@
             }
         }
     }
-
 }
-
-
 
 .top-staff__img {
     display: block;
@@ -181,7 +169,6 @@
 }
 
 .top-staff__message {
-
     .msg1 {
         position: absolute;
         bottom: 18px;
@@ -220,7 +207,6 @@
         bottom: -77px;
     }
 }
-
 
 .top-staff__name {
     margin-top: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);

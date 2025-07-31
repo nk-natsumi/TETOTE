@@ -155,11 +155,17 @@ jQuery(function ($) {
     });
 
     // Contact Form 7：送信ボタン無効制御
+
+    checkRequiredFields();
+    $('.wpcf7-form input[required], .wpcf7-form textarea[required], .wpcf7-form select[required]').on('input change', function () {
+        checkRequiredFields();
+    });
     function checkRequiredFields() {
         let isValid = true;
         $('.wpcf7-form input[required], .wpcf7-form textarea[required], .wpcf7-form select[required]').each(function () {
             if (!$(this).val()) isValid = false;
         });
+        
         $('.wpcf7-submit').prop('disabled', !isValid);
     }
 

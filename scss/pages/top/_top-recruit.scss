@@ -8,7 +8,6 @@
     padding: 0 17px clamp(5.5rem, 4.378rem + 4.79vw, 8.688rem);
     overflow-x: hidden;
 
-
     .top-title {
         max-width: 896px;
         background: url("./../img/recruitment.png") center / 100% no-repeat;
@@ -25,23 +24,26 @@
         text-align: center;
         line-height: 1;
 
-        @include tab{
+        @include tab {
             line-height: 1.5;
         }
 
         @include sp {
             text-align: left;
         }
-
     }
 
     .top-recruit__btn {
         max-width: 956px;
         margin: clamp(1.75rem, 0.958rem + 3.38vw, 4rem) auto 0;
 
-
         .flex-box {
             gap: calc((16/1024)*100%);
+
+            @include sp {
+                flex-direction: column;
+                gap: 19px;
+            }
 
             a {
                 max-width: 470px;
@@ -49,11 +51,6 @@
                 @include sp {
                     max-width: 734px;
                 }
-            }
-
-            @include sp {
-                flex-direction: column;
-                gap: 19px;
             }
         }
 

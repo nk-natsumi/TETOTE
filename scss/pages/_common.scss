@@ -77,7 +77,6 @@ a {
         transform: translate(-50%, -50%);
         font-size: clamp(2rem, -0.222rem + 4.63vw, 3.25rem);
 
-
         @include sp {
             left: 67px;
         }
@@ -93,7 +92,6 @@ a {
 .sabtitle {
     line-height: 1.5;
     margin-top: 10px;
-
 
     @include sp {
         margin-top: 19px;
@@ -125,7 +123,6 @@ a {
         transition: all 0.3s;
         line-height: 1;
 
-
         &:hover {
             background-color: $main-color;
             color: #FFF;
@@ -135,7 +132,6 @@ a {
                 border-right: solid 4px #fff;
             }
         }
-
 
         &::after {
             content: '';
@@ -185,7 +181,6 @@ a {
         background: $main-color;
         position: relative;
 
-
         &::before,
         &::after {
             position: absolute;
@@ -210,7 +205,6 @@ a {
     }
 }
 
-
 .c-breadcrumbs {
     background-color: #f0f0f0;
     color: $main-color;
@@ -226,12 +220,10 @@ a {
         padding: 10px 0 10px calc((20/375)*100%);
         line-height: 1.5;
     }
-
 }
 
 
 /* フェードイン */
-
 .fade-in-up {
     opacity: 0;
     transform: translateY(20px);
@@ -271,7 +263,6 @@ a {
 }
 
 /* ページ内ナビ */
-
 .page__nav-list {
     margin-top: 70px;
     display: flex;
@@ -320,7 +311,7 @@ a {
         }
 
         span {
-            position: absolute; 
+            position: absolute;
             top: 50%;
             transform: translateY(-50%) rotate(90deg);
             width: 20px;
@@ -351,4 +342,3 @@ a {
         }
     }
 }
-

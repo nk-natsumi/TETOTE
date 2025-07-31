@@ -7,7 +7,6 @@
 .top-about {
     margin-top: calc(100vh - 14px);
 
-
     .swiper {
         height: 429px;
 
@@ -27,7 +26,6 @@
     }
 }
 
-
 .top-about__img {
     display: block;
     width: 100%;
@@ -35,18 +33,16 @@
     transition: margin-top 0.3s ease;
     border-radius: 60px;
 
-
     @include sp {
         max-height: 210px;
     }
-
 }
 
 .top-about__slogan {
     position: absolute;
     bottom: calc((9/429)*100%);
     left: 50%;
-    transform: translateX(-50%)!important;
+    transform: translateX(-50%) !important;
     z-index: 5;
     text-align: center;
     line-height: 1.2;
@@ -95,14 +91,11 @@
     padding-bottom: clamp(2.438rem, 2.151rem + 1.22vw, 3.25rem);
     background: url("./../img/map.png") center / contain no-repeat;
 
-
     p {
         margin-top: 52px;
 
         @include sp {
             margin-top: 39px;
         }
-
-
     }
 }
