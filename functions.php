@@ -60,14 +60,17 @@ add_filter('the_content', 'add_id_to_h2');
 add_filter('bcn_breadcrumb_title', 'custom_breadcrumb_title_meta', 10, 3);
 function custom_breadcrumb_title_meta($title, $type, $id)
 {
+
     if (get_post_type($id)) {
         $custom_title = get_post_meta($id, 'fv_title_en', true);
         if (!empty($custom_title)) {
-            return esc_html($custom_title); 
+            return esc_html($custom_title); // カスタムフィールドに置き換え
         }
     }
     return $title;
 }
+
+
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
@@ -75,6 +78,7 @@ function wpcf7_autop_return_false()
 {
     return false;
 }
+
 
 function my_enqueue_scripts()
 {

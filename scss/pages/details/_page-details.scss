@@ -23,6 +23,14 @@
 .nav-consultant {
     span {
         right: 47px;
+
+        @include tab {
+            right: 15px;
+        }
+
+        @include sp {
+            right: 27px;
+        }
     }
 }
 
@@ -30,6 +38,14 @@
 .nav-engineer {
     span {
         right: 27px;
+
+        @include tab {
+            right: 10px;
+        }
+
+        @include sp {
+            right: 27px;
+        }
     }
 }
 

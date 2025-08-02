@@ -7,7 +7,7 @@
     padding-bottom: 506px;
     position: relative;
 
-    @include sp{
+    @include sp {
         padding-bottom: 709px;
         text-align: center;
         background-color: $bg-color;
@@ -39,7 +39,7 @@
     line-height: 1.5;
     font-weight: bold;
 
-    @include sp{
+    @include sp {
         line-height: 2.5;
     }
 }
@@ -66,14 +66,14 @@
     border-radius: 0 0 20px 20px;
     padding: 0 20px 61px;
 
-    @include sp{
-        padding:0 0 85px;
+    @include sp {
+        padding: 0 0 85px;
     }
 
     a {
         transition: all 0.3s ease;
         font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
-    
+
         &:hover {
             opacity: 0.6;
         }
@@ -85,7 +85,7 @@
     max-width: 956px;
     gap: calc((109/956))*100%;
 
-    @include sp{
+    @include sp {
         max-width: 768px;
         flex-direction: column-reverse;
         gap: 108px;
@@ -108,7 +108,7 @@
     font-weight: bold;
     flex-wrap: wrap;
 
-    @include sp{
+    @include sp {
         flex-direction: column;
         gap: 20px;
     }
@@ -121,7 +121,7 @@
 .footer__item-lower {
     margin-top: 41px;
 
-    @include sp{
+    @include sp {
         margin-top: 20px;
     }
 }
@@ -133,7 +133,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @include sp{
+    @include sp {
         flex-direction: column-reverse;
         gap: 139px;
         position: absolute;

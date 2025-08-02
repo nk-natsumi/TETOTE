@@ -142,7 +142,6 @@
         &::after {
             bottom: 5px;
         }
-
     }
 }
 
@@ -150,21 +149,30 @@
     a {
         padding: 31px 15px 31px 95px;
         text-align: left;
+        transition: all 0.3s;
 
         @include sp {
             padding-left: 40px;
         }
+
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }
-
 
 .blog-navigation__next {
     a {
         padding: 31px 95px 31px 15px;
         text-align: right;
+        transition: all 0.3s;
 
         @include sp {
             padding-right: 40px;
+        }
+
+        &:hover {
+            opacity: 0.6;
         }
     }
 }

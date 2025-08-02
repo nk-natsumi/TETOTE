@@ -4,10 +4,10 @@
     <section class="top-fv">
         <div class="fv__img-wrapper">
             <div class="fv-img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv01.jpg" alt="" class="top-fv__img">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv01.jpg" alt="" class="top-fv__img top-fv__img01">
             </div>
             <div class="fv-img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv02.jpg" alt="" class="top-fv__img">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/fv02.jpg" alt="" class="top-fv__img top-fv__img02">
             </div>
         </div>
         <div class="top-fv__textarea fade-in-up">
@@ -202,7 +202,7 @@
                 </div>
                 <p class="sabtitle">採用情報やイベント情報、社員の紹介など、<br>日々の現場の様子をご紹介します。</p>
             </div>
-            <ul class="top-blog__content grid-box fade-in-up">
+            <ul class="top-blog__content grid-box fade-in-up" >
                 <?php
                 $args = array(
                     'post_type' => 'post',

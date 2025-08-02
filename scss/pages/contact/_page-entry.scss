@@ -199,22 +199,76 @@
     cursor: pointer;
 
     input[type="radio"] {
-        @extend .visually-hidden;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+        white-space: nowrap;
+    }
 
-        &:checked+.fake-radio::after {
-            display: block;
+    input[type="radio"]:checked+span.wpcf7-list-item-label::after {
+        display: block;
+    }
+
+    input[type="radio"]:checked+.fake-radio::after {
+        display: block;
+    }
+
+
+    .wpcf7-list-item.first {
+        margin-left: 0;
+    }
+
+    span.wpcf7-list-item-label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &::before {
+            position: relative;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 1px solid $btn-color;
+            background-color: $bg-color;
+            margin-right: 12px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border-radius: 50%;
         }
 
-        &:focus+.fake-radio {
-            outline: 2px solid $accent-color;
-            outline-offset: 4px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: $main-color;
+            display: none;
+            border-radius: 50%;
         }
+    }
+
+    input[type="radio"]:focus-visible+span.wpcf7-list-item-label::before {
+        outline: 2px solid $accent-color;
+        outline-offset: 3px;
     }
 }
 
 .birth-month {
     margin-right: 25px;
     max-width: 194px;
+
+    @include sp {
+        margin-right: 0px;
+    }
 }
 
 .birth-month-inner {
@@ -223,6 +277,7 @@
 
 .wpcf7-radio,
 .birth-inner {
+    display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
@@ -257,23 +312,18 @@ select {
     vertical-align: baseline;
 }
 
-.form-radio1 {
-    .fake-radio {
-        border-radius: 50%;
-
-        &::after {
-            border-radius: 50%;
-        }
-    }
-}
-
 .form-radio2 {
     .wpcf7-radio {
         gap: 21px;
     }
 }
 
-/* 外枠 */
+input[type="radio"]:focus-visible+.fake-radio {
+    outline: 2px solid $accent-color;
+    outline-offset: 3px;
+}
+
+/* radio2外枠 */
 .fake-radio {
     position: relative;
     display: inline-block;
@@ -327,6 +377,7 @@ select {
 .form-check {
     text-align: center;
     margin-top: 100px;
+    font-size: 0.875rem;
 
     @include sp {
         margin-top: 60px;
@@ -334,49 +385,60 @@ select {
 }
 
 .custom-checkbox {
-    display: inline-flex;
-    align-items: center;
     cursor: pointer;
 
     input[type="checkbox"] {
-        @extend .visually-hidden;
-
-        &:checked+.fake-checkbox::after {
-            display: block;
-        }
-
-        &:focus+.fake-checkbox {
-            outline: 2px solid $accent-color;
-            outline-offset: 4px;
-        }
-    }
-}
-
-.fake-checkbox {
-    position: relative;
-    width: 16px;
-    height: 16px;
-    border: 1px solid $btn-color;
-    background-color: $bg-color;
-    margin-right: 6px;
-    box-sizing: border-box;
-
-    &::after {
-        content: "";
         position: absolute;
-        top: 1px;
-        left: 50%;
-        width: 4px;
-        height: 8px;
-        border: solid #333;
-        border-width: 0 2px 2px 0;
-        transform: translateX(-50%) rotate(45deg);
-        display: none;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+        white-space: nowrap;
     }
-}
 
-.checkbox-text {
-    font-size: 14px;
+    input[type="checkbox"]:checked+span.wpcf7-list-item-label::after {
+        display: block;
+    }
+
+    span.wpcf7-list-item-label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &::before {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid $btn-color;
+            background-color: $bg-color;
+            margin-right: 12px;
+            vertical-align: middle;
+            box-sizing: border-box;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 7px;
+            left: 5px;
+            width: 4px;
+            height: 8px;
+            border: solid #333;
+            border-width: 0 2px 2px 0;
+            transform: translateY(-50%) rotate(45deg);
+            display: none;
+        }
+    }
+
+    input[type="checkbox"]:focus-visible+span.wpcf7-list-item-label::before {
+        outline: 2px solid $accent-color;
+        outline-offset: 3px;
+    }
 }
 
 .wpcf7-submit {
@@ -399,16 +461,15 @@ select {
     }
 
     &:disabled {
-        background-color: #ccc;
+        background-color: $bg-color;
         pointer-events: none;
         cursor: not-allowed;
-        color: #999;
-        border-color: #ccc;
-        opacity: 0.6;
+        border-color: $bg-color;
+        opacity: 0.5;
 
         &:hover {
-            background-color: #ccc;
-            color: #999;
+            background-color: #fff;
+            color: $main-color;
         }
     }
 }

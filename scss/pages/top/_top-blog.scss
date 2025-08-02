@@ -82,9 +82,14 @@
     }
 }
 
+
 .top-blog__link {
     a {
         transition: all 0.3s;
+
+        &:focus {
+            outline: none;
+        }
 
         &:hover {
             opacity: 0.6;

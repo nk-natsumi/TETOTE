@@ -18,6 +18,14 @@
 .nav-application {
     span {
         right: 27px;
+
+        @include tab {
+            right: 10px;
+        }
+
+        @include sp {
+            right: 27px;
+        }
     }
 }
 
@@ -25,6 +33,14 @@
 .nav-about-benefits {
     span {
         right: 37px;
+
+        @include tab {
+            right: 15px;
+        }
+
+        @include sp {
+            right: 27px;
+        }
     }
 }
 
