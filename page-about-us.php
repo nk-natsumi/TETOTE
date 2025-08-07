@@ -32,11 +32,11 @@
 
         <section class="message">
             <h2 class="message__title section__title">代表メッセージ</h2>
-            <div class="ceo-wrapper flex-box">
-                <div class="ceo-img">
+            <div class="message__ceo flex-box">
+                <div class="message__ceo-img">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/about-us/ceo 1.jpg" alt="田中浩二郎の画像">
                 </div>
-                <div class="ceo-textarea">
+                <div class="message__ceo-textarea">
                     <h3 class="ceo-title">あなたがやりたいこと<br>
                         それを全力でサポートできる、<br>
                         それがTETOTEの強みです。

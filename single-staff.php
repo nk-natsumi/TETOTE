@@ -25,9 +25,11 @@
                         <img src="<?php the_field('staff_img'); ?>" alt="<?php the_title(); ?>">
                     </div>
                 </article>
-                <ol class="c-breadcrumbs">
-                    <?php if (function_exists('bcn_display')) bcn_display(); ?>
-                </ol>
+                <div class="c-breadcrumbs__wrapper">
+                    <ol class="c-breadcrumbs">
+                        <?php if (function_exists('bcn_display')) bcn_display(); ?>
+                    </ol>
+                </div>
             </section>
 
             <section class="staff-main section__wrapper flex-box">

@@ -239,7 +239,6 @@
             margin-right: 12px;
             vertical-align: middle;
             box-sizing: border-box;
-            border-radius: 50%;
         }
 
         &::after {
@@ -252,7 +251,6 @@
             height: 10px;
             background-color: $main-color;
             display: none;
-            border-radius: 50%;
         }
     }
 
@@ -289,6 +287,15 @@
     }
 }
 
+.form-radio1 {
+    span.wpcf7-list-item-label {
+        &::before,
+        &::after{
+            border-radius: 50%;
+        }
+    }
+}
+
 .form-radio1,
 .form-radio2 {
     margin-top: 42px;
@@ -299,7 +306,7 @@
     }
 
     @include sp {
-        margin-top: 27px;
+        margin-top: 45px;
     }
 }
 
@@ -316,36 +323,15 @@ select {
     .wpcf7-radio {
         gap: 21px;
     }
+
+    .wpcf7-list-item:nth-child(7) {
+        display: none;
+    }
 }
 
 input[type="radio"]:focus-visible+.fake-radio {
     outline: 2px solid $accent-color;
     outline-offset: 3px;
-}
-
-/* radio2外枠 */
-.fake-radio {
-    position: relative;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    border: 1px solid $btn-color;
-    background-color: $bg-color;
-    margin-right: 12px;
-    vertical-align: middle;
-    box-sizing: border-box;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 10px;
-        height: 10px;
-        background-color: $main-color;
-        display: none;
-    }
 }
 
 .form-pr {
@@ -386,6 +372,7 @@ input[type="radio"]:focus-visible+.fake-radio {
 
 .custom-checkbox {
     cursor: pointer;
+    font-size: 0.875rem;
 
     input[type="checkbox"] {
         position: absolute;
@@ -416,7 +403,8 @@ input[type="radio"]:focus-visible+.fake-radio {
             height: 16px;
             border: 1px solid $btn-color;
             background-color: $bg-color;
-            margin-right: 12px;
+            margin-top: 2px;
+            margin-right: 6px;
             vertical-align: middle;
             box-sizing: border-box;
         }
@@ -439,6 +427,10 @@ input[type="radio"]:focus-visible+.fake-radio {
         outline: 2px solid $accent-color;
         outline-offset: 3px;
     }
+}
+
+.button-wrap {
+    position: relative;
 }
 
 .wpcf7-submit {
@@ -497,4 +489,16 @@ input[type="radio"]:focus-visible+.fake-radio {
 
 .wpcf7-spinner {
     position: absolute !important;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+
+    @include sp {
+        right: 5%;
+    }
+}
+
+.wpcf7-not-valid-tip {
+    font-size: 0.75rem !important;
+    margin-top: 3px;
 }

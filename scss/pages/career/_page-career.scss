@@ -6,6 +6,10 @@
 
 .career {
     margin-top: 145px;
+
+    @include sp{
+        margin-top: 80px;
+    }
 }
 
 .career__sabtitle {

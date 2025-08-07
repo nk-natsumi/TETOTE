@@ -116,24 +116,22 @@ img {
     parts-fv
 **************************/
 .fv {
-  position: relative;
-}
-.fv img {
-  height: clamp(12.5rem, -2.944rem + 32.18vw, 21.188rem);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .fv__wrapper {
-  position: absolute;
-  top: clamp(2.5rem, 1.73rem + 3.29vw, 4.688rem);
-  left: clamp(0rem, -25.778rem + 53.7vw, 14.5rem);
-  color: #222222;
-  font-weight: bold;
-  max-width: clamp(15.625rem, 4.514rem + 23.15vw, 21.875rem);
-  padding: 0;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 75px 25px 98px;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 1200px) {
   .fv__wrapper {
-    padding: 0 20px;
+    padding: 50px 20px;
+    margin: 0 auto;
   }
 }
 
@@ -163,6 +161,7 @@ img {
   display: inline-block;
   font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
   text-wrap-mode: nowrap;
+  font-weight: bold;
 }
 
 /************************
@@ -295,29 +294,27 @@ a:focus-visible {
   background-color: #222222;
   color: #FFF;
 }
-.more-btn a:hover::after {
-  border-top: solid 4px #fff;
-  border-right: solid 4px #fff;
+.more-btn a:hover::before {
+  background-color: #fff;
 }
-.more-btn a::after {
+.more-btn a::before {
   content: "";
-  width: 10px;
-  height: 10px;
-  border: 0;
-  border-top: solid 4px #222222;
-  border-right: solid 4px #222222;
-  transform: rotate(45deg);
+  display: block;
+  width: 24px;
+  height: 24px;
   position: absolute;
   top: 50%;
   right: 24px;
-  bottom: 50%;
-  margin: auto;
+  transform: translateY(-50%);
+  mask: url("./../img/arrow 4.svg") no-repeat center/cover;
+  background-color: #000;
   transition: all 0.3s;
 }
 @media screen and (max-width: 768px) {
-  .more-btn a::after {
-    width: 6px;
-    height: 6px;
+  .more-btn a::before {
+    width: 16px;
+    height: 16px;
+    right: 17px;
   }
 }
 
@@ -365,11 +362,18 @@ a:focus-visible {
   transform: rotate(-45deg);
 }
 
-.c-breadcrumbs {
+.c-breadcrumbs__wrapper {
   background-color: #f0f0f0;
+}
+
+.c-breadcrumbs {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 17px;
   color: #222222;
   padding-left: clamp(1.25rem, -22.306rem + 49.07vw, 14.5rem);
-  padding: 20px 0 20px 16.1111111111%;
+  padding: 20px 25px;
   font-size: 0.875rem;
 }
 .c-breadcrumbs .home {
@@ -377,7 +381,7 @@ a:focus-visible {
 }
 @media screen and (max-width: 1200px) {
   .c-breadcrumbs {
-    padding: 10px 0 10px 5.3333333333%;
+    padding: 10px 20px;
     line-height: 1.5;
   }
 }
@@ -483,6 +487,7 @@ a:focus-visible {
   height: 10px;
   background: #222222;
   border-radius: 4px;
+  transition: all 0.3s;
 }
 .nav-item a span::before {
   top: -1px;
@@ -1848,34 +1853,34 @@ body.active {
   text-align: center;
 }
 
-.ceo-wrapper {
+.message__ceo {
   margin-top: 109px;
   justify-content: center;
   gap: 17px;
 }
 @media screen and (max-width: 768px) {
-  .ceo-wrapper {
+  .message__ceo {
     display: block;
   }
 }
 
-.ceo-img {
+.message__ceo-img {
   max-width: 484px;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .ceo-img {
+  .message__ceo-img {
     max-width: 100%;
   }
 }
 
-.ceo-textarea {
+.message__ceo-textarea {
   max-width: 479px;
   width: 100%;
   position: relative;
 }
 @media screen and (max-width: 768px) {
-  .ceo-textarea {
+  .message__ceo-textarea {
     max-width: 100%;
   }
 }
@@ -2545,6 +2550,9 @@ body.active {
   bottom: 5px;
 }
 
+.blog-navigation__prev {
+  max-width: 50%;
+}
 .blog-navigation__prev a {
   padding: 31px 15px 31px 95px;
   text-align: left;
@@ -2559,6 +2567,9 @@ body.active {
   opacity: 0.6;
 }
 
+.blog-navigation__next {
+  max-width: 50%;
+}
 .blog-navigation__next a {
   padding: 31px 95px 31px 15px;
   text-align: right;
@@ -2668,6 +2679,11 @@ body.active {
   width: 100%;
   margin: 145px auto 0;
 }
+@media screen and (max-width: 768px) {
+  .systems {
+    margin-top: 80px;
+  }
+}
 
 .systems__content {
   margin-top: 77px;
@@ -2761,6 +2777,11 @@ body.active {
 **************************/
 .career {
   margin-top: 145px;
+}
+@media screen and (max-width: 768px) {
+  .career {
+    margin-top: 80px;
+  }
 }
 
 .career__sabtitle {
@@ -3026,12 +3047,7 @@ body.active {
 .faq__item[open] .faq__answer {
   border-bottom: 1px solid #AFA86F;
   padding: 0 36px 36px 36px;
-  line-height: 1;
-}
-@media screen and (max-width: 1200px) {
-  .faq__item[open] .faq__answer {
-    line-height: 1.5;
-  }
+  line-height: 1.5;
 }
 @media screen and (max-width: 768px) {
   .faq__item[open] .faq__answer {
@@ -3275,7 +3291,6 @@ body.active {
   margin-right: 12px;
   vertical-align: middle;
   box-sizing: border-box;
-  border-radius: 50%;
 }
 .custom-radio span.wpcf7-list-item-label::after {
   content: "";
@@ -3287,7 +3302,6 @@ body.active {
   height: 10px;
   background-color: #222222;
   display: none;
-  border-radius: 50%;
 }
 .custom-radio input[type=radio]:focus-visible + span.wpcf7-list-item-label::before {
   outline: 2px solid #988C2C;
@@ -3322,6 +3336,10 @@ body.active {
   }
 }
 
+.form-radio1 span.wpcf7-list-item-label::before, .form-radio1 span.wpcf7-list-item-label::after {
+  border-radius: 50%;
+}
+
 .form-radio1,
 .form-radio2 {
   margin-top: 42px;
@@ -3334,7 +3352,7 @@ body.active {
 @media screen and (max-width: 768px) {
   .form-radio1,
   .form-radio2 {
-    margin-top: 27px;
+    margin-top: 45px;
   }
 }
 
@@ -3350,34 +3368,13 @@ select {
 .form-radio2 .wpcf7-radio {
   gap: 21px;
 }
+.form-radio2 .wpcf7-list-item:nth-child(7) {
+  display: none;
+}
 
 input[type=radio]:focus-visible + .fake-radio {
   outline: 2px solid #988C2C;
   outline-offset: 3px;
-}
-
-/* radio2外枠 */
-.fake-radio {
-  position: relative;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border: 1px solid #AFA86F;
-  background-color: #FAF7F1;
-  margin-right: 12px;
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-.fake-radio::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  background-color: #222222;
-  display: none;
 }
 
 .form-pr {
@@ -3417,6 +3414,7 @@ input[type=radio]:focus-visible + .fake-radio {
 
 .custom-checkbox {
   cursor: pointer;
+  font-size: 0.875rem;
 }
 .custom-checkbox input[type=checkbox] {
   position: absolute;
@@ -3445,7 +3443,8 @@ input[type=radio]:focus-visible + .fake-radio {
   height: 16px;
   border: 1px solid #AFA86F;
   background-color: #FAF7F1;
-  margin-right: 12px;
+  margin-top: 2px;
+  margin-right: 6px;
   vertical-align: middle;
   box-sizing: border-box;
 }
@@ -3464,6 +3463,10 @@ input[type=radio]:focus-visible + .fake-radio {
 .custom-checkbox input[type=checkbox]:focus-visible + span.wpcf7-list-item-label::before {
   outline: 2px solid #988C2C;
   outline-offset: 3px;
+}
+
+.button-wrap {
+  position: relative;
 }
 
 .wpcf7-submit {
@@ -3519,6 +3522,19 @@ input[type=radio]:focus-visible + .fake-radio {
 
 .wpcf7-spinner {
   position: absolute !important;
+  top: 50%;
+  right: 120px;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 768px) {
+  .wpcf7-spinner {
+    right: 5%;
+  }
+}
+
+.wpcf7-not-valid-tip {
+  font-size: 0.75rem !important;
+  margin-top: 3px;
 }
 
 /************************

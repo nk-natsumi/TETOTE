@@ -2,9 +2,11 @@
 
 <main class="entry">
     <section class="fv">
-        <ol class="c-breadcrumbs">
-            <?php if (function_exists('bcn_display')) bcn_display(); ?>
-        </ol>
+        <div class="c-breadcrumbs__wrapper">
+            <ol class="c-breadcrumbs">
+                <?php if (function_exists('bcn_display')) bcn_display(); ?>
+            </ol>
+        </div>
     </section>
     <section class="entry__wrapper">
         <div class="entry__inner">

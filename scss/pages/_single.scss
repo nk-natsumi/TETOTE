@@ -146,6 +146,8 @@
 }
 
 .blog-navigation__prev {
+    max-width: 50%;
+
     a {
         padding: 31px 15px 31px 95px;
         text-align: left;
@@ -162,6 +164,8 @@
 }
 
 .blog-navigation__next {
+    max-width: 50%;
+
     a {
         padding: 31px 95px 31px 15px;
         text-align: right;

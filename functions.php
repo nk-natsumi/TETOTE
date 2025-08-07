@@ -7,6 +7,8 @@ function mytheme_setup()
 add_action('after_setup_theme', 'mytheme_setup');
 
 
+//カスタム投稿タイプ「staff」を設定
+
 function register_staff_post_type()
 {
     register_post_type('staff', [
@@ -27,7 +29,7 @@ function register_staff_post_type()
 }
 add_action('init', 'register_staff_post_type');
 
-
+//サイバー（ウィジェットエリア）の登録
 function my_theme_widgets_init()
 {
     register_sidebar(array(
@@ -42,6 +44,8 @@ function my_theme_widgets_init()
 }
 add_action('widgets_init', 'my_theme_widgets_init');
 
+
+//h２タグに自動でidをつける処理
 function add_id_to_h2($content)
 {
     if (is_singular('staff')) { 
@@ -70,8 +74,6 @@ function custom_breadcrumb_title_meta($title, $type, $id)
     return $title;
 }
 
-
-
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false()
@@ -79,7 +81,7 @@ function wpcf7_autop_return_false()
     return false;
 }
 
-
+//jqueryの読み込み
 function my_enqueue_scripts()
 {
     // jQuery（WordPressに元々入ってるバージョンを使用）
@@ -120,3 +122,25 @@ function my_enqueue_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+
+//wp管理ページの表示名前を変える処理
+function change_post_menu_label() {
+    global $menu;
+    global $submenu;
+
+    // 管理メニュー左側の「投稿」 → 「Blog」に変更
+    $menu[5][0] = 'Blog';
+
+    // サブメニュー項目の変更（投稿一覧、新規追加など）
+    $submenu['edit.php'][5][0] = 'Blog一覧';
+    $submenu['edit.php'][10][0] = '新規Blog追加';
+    $submenu['edit.php'][16][0] = 'タグ';
+
+    // 画面上部の「新規追加」メニューの表示変更
+    add_action('admin_bar_menu', function($wp_admin_bar) {
+        $node = $wp_admin_bar->get_node('new-post');
+        $node->title = '新規Blog投稿';
+        $wp_admin_bar->add_node($node);
+    }, 999);
+}
+add_action('admin_menu', 'change_post_menu_label');

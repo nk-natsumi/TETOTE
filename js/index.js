@@ -169,50 +169,49 @@ jQuery(function ($) {
 
     // Contact Form 7：送信ボタン無効制御
     function toggleSubmitButton() {
-  const $form = $('.wpcf7-form');
-  const $submitBtn = $form.find('.wpcf7-submit');
+        const $form = $('.wpcf7-form');
+        const $submitBtn = $form.find('.wpcf7-submit');
 
-  // text必須
-  const isTextValid = $form.find('input[type="text"][aria-required="true"]').toArray().every(el => $(el).val().trim() !== '');
+        // text必須
+        const isTextValid = $form.find('input[type="text"][aria-required="true"]').toArray().every(el => $(el).val().trim() !== '');
 
-  // email必須
-  const isEmailValid = $form.find('input[type="email"][aria-required="true"]').toArray().every(el => $(el).val().trim() !== '');
+        // email必須
+        const isEmailValid = $form.find('input[type="email"][aria-required="true"]').toArray().every(el => $(el).val().trim() !== '');
 
-  // tel必須
-  const isTelValid = $form.find('input[type="tel"][aria-required="true"]').toArray().every(el => $(el).val().trim() !== '');
+        // tel必須
+        const isTelValid = $form.find('input[type="tel"][aria-required="true"]').toArray().every(el => $(el).val().trim() !== '');
 
-  // textarea必須
-  const isTextareaValid = $form.find('textarea[aria-required="true"]').toArray().every(el => $(el).val().trim() !== '');
+        // textarea必須
+        const isTextareaValid = $form.find('textarea[aria-required="true"]').toArray().every(el => $(el).val().trim() !== '');
 
-  // select必須
-  const isSelectValid = $form.find('select[aria-required="true"]').toArray().every(el => $(el).val() && $(el).val() !== '');
+        // select必須
+        const isSelectValid = $form.find('select[aria-required="true"]').toArray().every(el => $(el).val() && $(el).val() !== '');
 
-  // radioはaria-requiredがないので名前でグループ判定。必須は「radio-000」だけ。
-  const isRadioValid = $form.find('input[name="radio-000"]:checked').length > 0;
+        // radioはaria-requiredがないので名前でグループ判定。必須は「radio-000」だけ。
+        const isRadioValid = $form.find('input[name="radio-000"]:checked').length > 0;
 
-  // checkboxは名前がcheckbox-000[]なので、配列として判定
-  const isCheckboxValid = $form.find('input[name="checkbox-000[]"]:checked').length > 0;
+        // checkboxは名前がcheckbox-000[]なので、配列として判定
+        const isCheckboxValid = $form.find('input[name="checkbox-000[]"]:checked').length > 0;
 
-  // text, email, tel, textarea, select はaria-requiredを参照してるので必須だけ対象になる
-  // ラジオとチェックは上で明示的に必須グループを判定
+        // text, email, tel, textarea, select はaria-requiredを参照してるので必須だけ対象になる
+        // ラジオとチェックは上で明示的に必須グループを判定
 
-  if (
-    isTextValid &&
-    isEmailValid &&
-    isTelValid &&
-    isTextareaValid &&
-    isSelectValid &&
-    isRadioValid &&
-    isCheckboxValid
-  ) {
-    $submitBtn.prop('disabled', false);
-  } else {
-    $submitBtn.prop('disabled', true);
-  }
-}
+        if (
+            isTextValid &&
+            isEmailValid &&
+            isTelValid &&
+            isTextareaValid &&
+            isSelectValid &&
+            isRadioValid &&
+            isCheckboxValid
+        ) {
+            $submitBtn.prop('disabled', false);
+        } else {
+            $submitBtn.prop('disabled', true);
+        }
+    }
 
-$(document).on('input change', '.wpcf7-form input, .wpcf7-form textarea, .wpcf7-form select', toggleSubmitButton);
-toggleSubmitButton();
-
+    $(document).on('input change', '.wpcf7-form input, .wpcf7-form textarea, .wpcf7-form select', toggleSubmitButton);
+    toggleSubmitButton();
 
 });

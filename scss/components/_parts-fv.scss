@@ -4,24 +4,22 @@
     parts-fv
 **************************/
 .fv {
-    position: relative;
-
-    img {
-        height: clamp(12.5rem, -2.944rem + 32.18vw, 21.188rem);
-    }
+    background-size: cover; // 画像を全体に広げる
+    background-position: center; // 中央に表示
+    background-repeat: no-repeat; // 繰り返しなし
+    
 }
 
 .fv__wrapper {
-    position: absolute;
-    top: clamp(2.5rem, 1.73rem + 3.29vw, 4.688rem);
-    left: clamp(0rem, -25.778rem + 53.7vw, 14.5rem);
-    color: $main-color;
-    font-weight: bold;
-    max-width: clamp(15.625rem, 4.514rem + 23.15vw, 21.875rem);
-    padding: 0;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 75px 25px 98px; 
+    box-sizing: border-box;
 
     @include tab {
-        padding: 0 20px;
+        padding: 50px 20px;
+        margin: 0 auto;
     }
 }
 
@@ -51,4 +49,5 @@
     display: inline-block;
     font-size: clamp(0.875rem, 0.653rem + 0.46vw, 1rem);
     text-wrap-mode: nowrap;
+    font-weight: bold;
 }

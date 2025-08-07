@@ -20,8 +20,7 @@ $fv_subtitle = get_field('fv_subtitle', $page_id);
 $fv_page_title = get_the_title($page_id);
 ?>
 <?php if (!empty($fv_url)) : ?>
-    <section class="fv">
-        <img src="<?php echo esc_url($fv_url); ?>" alt="FV画像">
+    <section class="fv" style="background-image: url('<?php echo esc_url($fv_url); ?>');">
         <div class="fv__wrapper ">
             <h1 class="fv__title-en"><?php echo esc_html($fv_title); ?></h1>
 
@@ -33,9 +32,10 @@ $fv_page_title = get_the_title($page_id);
                 <p class="fv__subtitle"><?php echo esc_html($fv_subtitle); ?></p>
             <?php endif; ?>
         </div>
-
+    </section>
+    <div class="c-breadcrumbs__wrapper">
         <ol class="c-breadcrumbs">
             <?php if (function_exists('bcn_display')) bcn_display(); ?>
         </ol>
-    </section>
+    </div>
 <?php endif; ?>

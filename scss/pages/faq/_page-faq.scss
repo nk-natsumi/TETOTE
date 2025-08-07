@@ -137,11 +137,7 @@
     .faq__answer {
         border-bottom: 1px solid $btn-color;
         padding: 0 36px 36px 36px;
-        line-height: 1.0;
-
-        @include tab {
-            line-height: 1.5;
-        }
+        line-height: 1.5;
 
         @include sp {
             padding: 0 20px 36px;

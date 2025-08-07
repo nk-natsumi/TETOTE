@@ -129,30 +129,28 @@ a:focus-visible {
             background-color: $main-color;
             color: #FFF;
 
-            &::after {
-                border-top: solid 4px #fff;
-                border-right: solid 4px #fff;
+            &::before {
+                background-color: #fff;
             }
         }
 
-        &::after {
-            content: '';
-            width: 10px;
-            height: 10px;
-            border: 0;
-            border-top: solid 4px $main-color;
-            border-right: solid 4px $main-color;
-            transform: rotate(45deg);
+        &::before {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 24px;
             position: absolute;
             top: 50%;
             right: 24px;
-            bottom: 50%;
-            margin: auto;
+            transform: translateY(-50%);
+            mask: url('./../img/arrow 4.svg') no-repeat center/cover;
+            background-color: #000;
             transition: all 0.3s;
 
-            @include sp {
-                width: 6px;
-                height: 6px;
+            @include sp{
+                width: 16px;
+                height: 16px;
+                right: 17px;
             }
         }
     }
@@ -207,11 +205,18 @@ a:focus-visible {
     }
 }
 
-.c-breadcrumbs {
+.c-breadcrumbs__wrapper {
     background-color: #f0f0f0;
+}
+
+.c-breadcrumbs {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 17px;
     color: $main-color;
     padding-left: clamp(1.25rem, -22.306rem + 49.07vw, 14.5rem);
-    padding: 20px 0 20px calc((232/1440)*100%);
+    padding: 20px 25px;
     font-size: 0.875rem;
 
     .home {
@@ -219,7 +224,7 @@ a:focus-visible {
     }
 
     @include tab {
-        padding: 10px 0 10px calc((20/375)*100%);
+        padding: 10px 20px;
         line-height: 1.5;
     }
 }
@@ -335,6 +340,7 @@ a:focus-visible {
                 height: 10px;
                 background: $main-color;
                 border-radius: 4px;
+                transition: all 0.3s;
             }
 
             &::before {

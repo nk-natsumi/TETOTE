@@ -1,9 +1,11 @@
 <?php get_header(); ?>
 
 <main class="blog__post">
-    <ol class="c-breadcrumbs">
-        <?php if (function_exists('bcn_display')) bcn_display(); ?>
-    </ol>
+    <div class="c-breadcrumbs__wrapper">
+        <ol class="c-breadcrumbs">
+            <?php if (function_exists('bcn_display')) bcn_display(); ?>
+        </ol>
+    </div>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <article class="blog-detail">
                 <div class="blog__meta flex-box">
