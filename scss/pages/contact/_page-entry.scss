@@ -163,15 +163,15 @@
     }
 
     input {
-        font-size: 1rem;
+        font-size: 0.875rem;
     }
 
     select {
-        padding: 22px 20px;
+        padding: 20px;
         font-size: 0.75rem;
 
         @include sp {
-            padding: 22px 7px;
+            padding: 20px 7px;
         }
     }
 
@@ -289,8 +289,9 @@
 
 .form-radio1 {
     span.wpcf7-list-item-label {
+
         &::before,
-        &::after{
+        &::after {
             border-radius: 50%;
         }
     }
